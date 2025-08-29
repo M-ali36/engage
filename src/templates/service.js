@@ -10,11 +10,9 @@ const ServicePage = ({ data }) => {
     slug
   } = data.contentfulService
 
-  const allArticles = data.allArticles.nodes;
-
   return (
     <>
-      <Seo data={seo} slug={`services/${slug}`} />
+      <Seo data={seo} slug={`what-we-do/${slug}`} />
     </>
   )
 }
