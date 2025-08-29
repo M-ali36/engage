@@ -1,0 +1,16 @@
+.logo {
+	composes: inline-block from global;
+	composes: pointer-events-auto from global;
+}
+
+.title {
+	composes: font-bold from global;
+	composes: text-[28px] from global;
+	composes: lg_text-[36px] from global;
+	composes: font-sans from global;
+}
+
+.sChr {
+	composes: font-bb from global;
+	composes: inline from global;
+}

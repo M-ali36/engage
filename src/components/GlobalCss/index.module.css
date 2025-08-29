@@ -1,0 +1,178 @@
+.cont {
+	composes: container from global;
+	composes: mx-auto from global;
+	composes: px-4 from global;
+}
+.row {
+	composes: grid from global;
+	composes: gap-4 from global;
+	composes: grid-cols-12 from global;
+}
+
+.link {
+	composes: relative from global;
+	composes: text-current from global;
+}
+
+.link:before {
+	content:'';
+	display:block;
+	position:absolute;
+	left:0;
+	bottom:0;
+	height:1px;
+	width:0;
+	transition:width 0s ease, background .5s ease;
+ }
+ 
+ .link:after {
+	content:'';
+	display:block;
+	position:absolute;
+	right:0;
+	bottom:0;
+	height:1px;
+	width:0;
+	background: currentColor;
+	transition:width .5s ease;
+ }
+ 
+ .link:hover:before {
+	width:100%;
+	background: currentColor;
+	transition:width .5s ease;
+ }
+ 
+ .link:hover:after {
+	width:100%;
+	background:transparent;
+	transition:all 0s ease;
+ }
+
+ .button {
+	composes: inline-flex from global;
+	composes: items-center from global;
+	composes: justify-center from global;
+	composes: gap-2 from global;
+	composes: py-2 from global;
+	composes: text-center from global;
+	composes: rounded from global;
+	composes: transition-all from global;
+	composes: duration-300 from global;
+}
+
+.button:disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.btnPrimary {
+	composes: button ;
+	composes: bg-primary from global;
+	composes: text-white from global;
+	composes: border from global;
+	composes: border-primary from global;
+	composes: hover_border-secondary from global;
+	composes: hover_bg-secondary from global;
+	composes: hover_text-white from global;
+}
+
+.btnSecondary {
+	composes: button ;
+	composes: bg-black from global;
+	composes: text-white from global;
+	composes: border from global;
+	composes: border-black from global;
+	composes: hover_text-black from global;
+	composes: hover_bg-white from global;
+}
+
+.label {
+	composes: block from global;
+	composes: text-sm from global;
+	composes: font-medium from global;
+	composes: text-gray-700 from global;
+}
+.control {
+	composes: block from global;
+	composes: mb-4 from global;
+}
+.select {
+	composes: mt-1 from global;
+	composes: block from global;
+	composes: w-full from global;
+	composes: px-3 from global;
+	composes: py-3 from global;
+	composes: border from global;
+	composes: border-gray-300 from global;
+	composes: bg-white from global;
+	composes: rounded-md from global;
+	composes: shadow-sm from global;
+	composes: focus_outline-none from global;
+	composes: focus_ring-primary from global;
+	composes: focus_border-primary from global;
+	composes: sm_text-sm from global;
+}
+.text {
+	composes: mt-1 from global;
+	composes: block from global;
+	composes: w-full from global;
+	composes: px-3 from global;
+	composes: py-2 from global;
+	composes: border from global;
+	composes: border-gray-300 from global;
+	composes: rounded-md from global;
+	composes: shadow-sm from global;
+	composes: focus_outline-none from global;
+	composes: focus_ring-primary from global;
+	composes: focus_border-primary from global;
+	composes: sm_text-sm from global;
+}
+.textarea {
+	composes: block from global;
+	composes: w-full from global;
+	composes: min-h-20 from global;
+	composes: px-3 from global;
+	composes: py-2 from global;
+	composes: border from global;
+	composes: border-gray-300 from global;
+	composes: rounded-md from global;
+	composes: shadow-sm from global;
+	composes: focus_outline-none from global;
+	composes: focus_ring-primary from global;
+	composes: focus_border-primary from global;
+}
+
+.panel {
+	composes: bg-white from global;
+	composes: p-4 from global;
+	composes: rounded from global;
+	composes: primary-border from global;
+	composes: mb-8 from global;
+}
+
+.title {
+    composes: text-3xl from global;
+    composes: text-center from global;
+    composes: font-serif from global;
+    composes: font-normal from global;
+}
+
+.title strong{
+	font-weight: 600;
+}
+
+.imageContainer {
+    composes: flex from global;
+    composes: justify-center from global;
+    composes: items-center from global;
+    composes: relative from global;
+    composes: overflow-hidden from global;
+	composes: z-[0] from global;
+}
+
+.image {
+    composes: absolute from global;
+    composes: min-w-full from global;
+    composes: min-h-full from global;
+}

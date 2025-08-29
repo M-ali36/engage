@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: #F4EFED;
+}
+
+body #gatsby-focus-wrapper {
+  visibility: visible;
+}
+
+body.nav-open {
+  overflow: hidden; /* example: lock scroll */
+}
+
+/* Container for the marquee */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  background-color: #f0f0f0; /* Optional: background color */
+}
+
+/* Row holding the client items */
+.marquee-row {
+  display: flex;
+  white-space: nowrap; /* Prevent line breaks */
+  will-change: transform; /* Optimization hint for smooth animations */
+}
+
+.content {
+  will-change: transform; /* Optimization hint for smooth animations */
+}
+
+.light {
+  
+}
+
+@layer components {
+  .btn-link {
+    @apply px-6 py-3 rounded primary-anime text-center;
+  }
+
+  .btn-primary {
+    @apply bg-yellow text-black hover_bg-white;
+  }
+
+  .btn-white {
+    @apply bg-white text-black hover_bg-yellow;
+  }
+}

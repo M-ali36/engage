@@ -1,0 +1,112 @@
+.btn {
+    composes: inline-flex from global;
+    composes: items-center from global;
+    composes: rounded-full from global;
+    composes: relative from global;
+    composes: overflow-hidden from global;
+    composes: before_w-full from global;
+    composes: before_h-full from global;
+    composes: before_absolute from global;
+    composes: before_rounded-full from global;
+    composes: before_z-[0] from global;
+    composes: before_left-0 from global;
+    composes: before_top-full from global;
+    composes: before_primary-anime from global;
+    composes: gap-4 from global;
+    composes: group from global;
+    composes: disabled_pointer-events-none from global;
+    composes: disabled_opacity-50 from global;
+    composes: focus_outline-none from global;
+    composes: focus_ring-0 from global;
+    composes: focus_border-none  from global;
+    composes: active_outline-none from global;
+    composes: active_ring-0 from global;
+    composes: active_border-none from global;
+    composes: shadow-none from global;
+}
+
+.small {
+    composes: h-12 from global;
+    composes: px-8 from global;
+    composes: text-sm from global;
+    composes: tracking-wide from global;
+}
+.big {
+    composes: px-4 from global;
+    composes: h-14 from global;
+    composes: text-lg from global;
+}
+.btn svg {
+    z-index: 1;
+}
+.btn:hover:before {
+    transform: translateY(-100%);
+}
+.primary {
+    composes: text-black from global;
+    composes: bg-green from global;
+    composes: before_bg-white from global;
+}
+
+.secondary {
+    composes: text-black from global;
+    composes: bg-dWhite from global;
+    composes: before_bg-green from global;
+}
+
+.black {
+    composes: text-white from global;
+    composes: bg-black from global;
+    composes: before_bg-white from global;
+}
+.black [aria-hidden] {
+    @apply text-black;
+}
+.hoverBlack {
+}
+
+.hoverBlack:before {
+    background-color: #000 !important;
+}
+
+.hoverBlack:hover svg {
+    color: #fff !important;
+}
+
+.hoverBlack [aria-hidden] {
+    color: #fff;
+}
+
+.textWrapper {
+    composes: overflow-hidden from global;
+    composes: relative from global;
+}
+
+.mainText {
+    composes: block from global;
+}
+
+.btn [data-char] {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(.215,.61,.355,1);
+}
+
+.btn:hover [data-char] {
+    transform: translateY(-100%);
+}
+
+.secondaryText {
+    composes: absolute from global;
+    composes: opacity-0 from global;
+    composes: left-0 from global;
+    transition: all 0.4s cubic-bezier(.215,.61,.355,1);
+}
+
+.btn:hover .secondaryText{
+    opacity: 1;
+}
+
+.icon {
+    composes: z-[1] from global;
+    composes: relative from global;
+}

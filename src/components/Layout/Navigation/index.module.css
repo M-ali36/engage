@@ -1,0 +1,155 @@
+.linksList {
+	composes: flex from global;
+	composes: flex-wrap from global;
+	composes: mOnly_pt-24 from global;
+}
+.link {
+	composes: font-bold from global;
+	composes: text-white from global;
+	composes: text-[30px] from global;
+	composes: lg_text-[20px] from global;
+	composes: hover_text-pink from global;
+	composes: primary-anime from global;
+	composes: mOnly_ps-8 from global;
+}
+.navItem {
+	composes: lg_py-4 from global;
+	composes: lg_px-6 from global;
+	composes: py-4 from global;
+	composes: text-base from global;
+	composes: mOnly_w-full from global;
+	composes: mOnly_flex from global;
+	composes: mOnly_items-center from global;
+	composes: relative from global;
+	composes: group from global;
+	composes: before_inset-y-1/2 from global;
+	composes: before_left-0 from global;
+	composes: before_w-1 from global;
+	composes: before_h-1 from global;
+	composes: before_rounded-full from global;
+	composes: before_bg-current from global;
+	composes: before_absolute from global;
+	composes: before_transform from global;
+	composes: before_-translate-y-1/2 from global;
+	composes: first_before_hidden from global;
+	composes: mOnly_before_hidden from global;
+}
+.toggle {
+	composes: dOnly_hidden from global;
+	composes: text-white from global;
+	composes: rounded from global;
+	composes: p-2 from global;
+	composes: mOnly_border-0 from global;
+	composes: mOnly_z-10 from global;
+	composes: mOnly_relative from global;
+}
+.menuIcon {
+	composes: h-6 from global;
+	composes: w-6 from global;
+}
+.nav {
+	composes: mOnly_fixed from global;
+	composes: mOnly_-start-full from global;
+	composes: mOnly_top-[44px] from global;
+	composes: mOnly_bg-black from global;
+	composes: mOnly_h-full from global;
+	composes: mOnly_w-full from global;
+	composes: mOnly_ease-out from global;
+	composes: mOnly_duration-500 from global;
+	composes: mOnly_transition-all from global;
+	max-height: calc(100% - 44px);
+}
+.navOpend {
+	composes: mOnly_fixed from global;
+	composes: mOnly_bg-black from global;
+	composes: mOnly_top-[44px] from global;
+	composes: mOnly_h-full from global;
+	composes: mOnly_w-full from global;
+	composes: mOnly_ease-out from global;
+	composes: mOnly_duration-500 from global;
+	composes: mOnly_transition-all from global;
+	composes: mOnly_start-0 from global;
+	composes: overflow-y-auto from global;
+	max-height: calc(100% - 44px);
+}
+
+
+
+.lineIndicator {
+	composes: block from global;
+	composes: relative from global;
+	composes: bg-white from global;
+	composes: lg_hidden from global;
+	composes: h-[1px] from global;
+	composes: w-16 from global;
+}
+
+.lineIndicator:after {
+	inset-inline-start: calc(100% - 8px);
+	top: calc(50% + .5px);
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: #fff;
+	border-width: 7px;
+	margin-top: -7px;
+}
+.navOpend ul {
+
+}
+
+.subMenu {
+	composes: lg_absolute from global;
+	composes: lg_top-full from global;
+	composes: bg-black from global;
+	composes: lg_start-0 from global;
+	composes: py-2 from global;
+	composes: lg_min-w-48 from global;
+	composes: hidden from global;
+	composes: lg_group-hover_block from global;
+}
+
+.navSubItem {
+	composes: py-1 from global;
+	composes: px-4 from global;
+}
+
+.logo {
+	composes: lg_hidden from global;
+	composes: h-8 from global;
+	composes: rotate-90 from global;
+	composes: origin-top-left from global;
+	composes: translate-x-8 from global;
+	composes: mb-28 from global;
+	composes: ms-5 from global;
+	composes: mt-5 from global;
+}
+
+.socials {
+	composes: lg_hidden from global;
+	composes: p-2 from global;
+	composes: flex from global;
+	composes: gap-4 from global;
+	composes: justify-center from global;
+}
+
+.socialLink {
+	composes: rounded-full from global;
+	composes: border from global;
+	composes: border-white from global;
+	composes: bg-black from global;
+	composes: text-white from global;
+	composes: primary-anime from global;
+	composes: hover_bg-pink from global;
+	composes: hover_text-black from global;
+	composes: p-2 from global;
+}
+
+.socialIcon {
+	composes: h-6 from global;
+	composes: w-6 from global;
+}

@@ -1,0 +1,32 @@
+.root {
+    composes: bg-black from global;
+    composes: text-white from global;
+    composes: py-12 from global;
+    composes: lg_py-32 from global;
+}
+
+.cont {
+    composes: cont from '@globalCss';
+}
+
+
+.title {
+    composes: text-4xl from global;
+    composes: font-bold from global;
+}
+
+.title strong {
+    @apply text-orange;
+}
+.imageContainer {
+    composes: relative from global;
+    composes: aspect-video from global;
+    composes: w-screen from global;
+    composes: overflow-hidden from global;
+}
+
+.slidesContainer {
+    composes: flex from global;
+    composes: w-fit from global;
+    composes: flex-nowrap from global;
+}

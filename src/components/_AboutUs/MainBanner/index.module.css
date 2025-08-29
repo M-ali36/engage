@@ -1,0 +1,75 @@
+.root {
+    composes: bg-black from global;
+    composes: text-white from global;
+    composes: overflow-hidden from global;
+}
+
+.cont {
+    composes: cont from '@globalCss';
+}
+
+.row {
+    composes: grid from global;
+    composes: grid-cols-1 from global;
+    composes: lg_grid-cols-2 from global;
+}
+
+.contentCol {
+    composes: flex from global;
+    composes: items-center from global;
+    composes: mOnly_mt-32 from global;
+    composes: mOnly_mb-12 from global;
+}
+
+.imagesCol {
+    composes: relative from global;
+    composes: after_absolute from global;
+    composes: after_left-0 from global;
+    composes: after_top-0 from global;
+    composes: after_w-full from global;
+    composes: lg_after_w-[50vw] from global;
+    composes: after_h-full from global;
+    composes: z-[1] from global;
+    composes: mOnly_overflow-hidden from global;
+    
+}
+
+.imagesCol:after {
+    background: linear-gradient(180deg, rgba(30, 31, 39, 0.5) 0%, #1E1F27 100%);
+}
+
+.title {
+    composes: text-4xl from global;
+}
+
+.title strong {
+	@apply text-[80px] lg_text-[115px];
+}
+
+.title span {
+	@apply block;
+}
+
+
+
+.title em strong {
+    font-family: 'Bravebison';
+    font-style: normal;
+}
+
+.subContainer {
+    composes: mt-16 from global;
+    composes: block from global;
+}
+
+.subContainer p{
+    @apply mb-5;
+}
+
+.subTitle {
+    composes: text-base-m from global;
+}
+
+.subTitle strong {
+    @apply text-yellow;
+}

@@ -1,0 +1,142 @@
+.paragraph {
+	composes: text-base from global;
+	composes: mOnly_text-base-m from global;
+	composes: mb-3 from global;
+}
+
+.heading_1 {
+	composes: text-4xl from global;
+	composes: overflow-hidden from global;
+	composes: mb-6 from global;
+}
+.heading_2 {
+	composes: text-3xl from global;
+	composes: overflow-hidden from global;
+	composes: mb-6 from global;
+}
+.heading_3 {
+	composes: text-2xl from global;
+	composes: overflow-hidden from global;
+	composes: mb-3 from global;
+}
+.heading_4 {
+	composes: text-xl from global;
+	composes: overflow-hidden from global;
+	composes: mb-3 from global;
+}
+.heading_5 {
+	composes: text-lg from global;
+	composes: overflow-hidden from global;
+	composes: mb-3 from global;
+}
+.heading_6 {
+	composes: text-xs from global;
+	composes: overflow-hidden from global;
+	composes: mb-2 from global;
+}
+.italics {
+	composes: italic from global;
+}
+.bold {
+	composes: font-bold from global;
+}
+.underLines {
+	composes: underLine from global;
+}
+.sub {
+	composes: text-sm from global;
+}
+.sup {
+	composes: text-sm from global;
+}
+.code {
+	composes: text-md from global;
+	composes: bg-gray from global;
+	composes: border from global;
+	composes: border-opa from global;
+	composes: p-1 from global;
+}
+.olList {
+	composes: mb-4 from global;
+}
+.ulList {
+	composes: mb-8 from global;
+	composes: list-[initial] from global;
+	composes: pl-4 from global;
+}
+.li {
+	composes: mb-2 from global;
+}
+.tableWrapper {
+	composes: overflow-x-auto from global;
+	composes: mb-4 from global;
+}
+.table {
+	composes: border from global;
+	composes: border-opa from global;
+	composes: border-collapse from global;
+	composes: w-full from global;
+	composes: text-left from global;
+}
+.tableHead {
+	composes: border from global;
+	composes: border-opa from global;
+	composes: text-left from global;
+	composes: whitespace-nowrap from global;
+	composes: p-4 from global;
+}
+.tableCell {
+	composes: border from global;
+	composes: border-opa from global;
+	composes: text-left from global;
+	composes: p-4 from global;
+}
+.tableRow {
+	composes: bg-white from global;
+	composes: odd_bg-white from global;
+}
+.hr {
+	composes: w-full from global;
+	composes: h-[1px] from global;
+	composes: bg-gray from global;
+	composes: block from global;
+	composes: border-[0] from global;
+	composes: my-4 from global;
+}
+.quoteSymbol {
+	composes: block from global;
+	composes: text-5xl from global;
+}
+.blockquote {
+	composes: text-darkGray from global;
+	composes: text-xl from global;
+	composes: p-6 from global;
+	composes: bg-gray from global;
+}
+.link {
+	composes: text-current from global;
+	composes: underline from global;
+}
+.imageContainer {
+	composes: imageContainer from '@globalCss';
+	composes: flex from global;
+	composes: aspect-video from global;
+	composes: rounded-3xl from global;
+	composes: my-12 from global;
+	composes: mx-auto from global;
+	composes: relative from global;
+    composes: z-[0] from global;
+}
+.image {
+	composes: image from '@globalCss';
+}
+
+.br {
+	composes: inline from global;
+	composes: lg_block from global;
+	composes: w-[1ch] from global;
+	composes: lg_w-px from global;
+	composes: lg_h-0 from global;
+	composes: mx-1 from global;
+	composes: lg_mx-0 from global;
+}

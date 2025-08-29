@@ -1,0 +1,46 @@
+.root {
+    composes: lg_h-screen from global;
+    composes: overflow-hidden from global;
+    composes: relative from global;
+}
+
+.cont {
+    composes: cont from '@globalCss';
+}
+
+.imageContainer {
+    composes: absolute from global;
+    composes: left-0 from global;
+    composes: top-0 from global;
+    composes: w-full from global;
+    composes: h-full from global;
+    composes: after_h-full from global;
+    composes: after_w-full from global;
+    composes: after_absolute from global;
+    composes: after_left-0 from global;
+    composes: after_top-0 from global;
+    composes: after_bg-black/80 from global;  
+    composes: after_z-[1] from global;
+}
+
+.list {
+    composes: relative from global;
+    composes: z-10 from global;
+    composes: flex from global;
+    composes: flex-col from global;
+    composes: items-center from global;
+    composes: mOnly_py-12 from global;
+}
+
+.item {
+    composes: lg_text-outline from global;
+    composes: text-yellow from global;
+}
+
+.itemTitle {
+    composes: text-[36px] from global;
+    composes: lg_text-[85px] from global;
+    composes: xl_text-[135px] from global;
+    composes: text-yellow from global;
+    composes: font-bold from global;
+}

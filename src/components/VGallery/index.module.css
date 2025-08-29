@@ -1,0 +1,39 @@
+.root {
+    composes: px-4 from global;
+    composes: lg_px-8 from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: h-[350px] from global;
+    composes: lg_h-[850px] from global;
+    composes: max-h-screen from global;
+    composes: relative from global;
+}
+
+.galleryRow {
+    composes: absolute from global;
+    composes: start-0 from global;
+    composes: top-0 from global;
+    composes: grid from global;
+    composes: gap-4 from global;
+    composes: lg_gap-8 from global;
+    composes: grid-cols-3 from global;
+    composes: content-center from global;
+    composes: items-center from global;
+    composes: w-[140%] from global;
+}
+.columnContent {
+    composes: grid from global;
+    composes: gap-4 from global;
+    composes: lg_gap-8 from global;
+}
+.itemContainer {
+    composes: overflow-hidden from global;
+    composes: rounded-3xl from global;
+    composes: aspect-square from global;
+    composes: w-full from global;
+    composes: relative from global;
+    composes: z-[0] from global;
+}
+.odd {}
+.even {}
+.col {}

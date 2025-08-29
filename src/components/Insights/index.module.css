@@ -1,0 +1,108 @@
+.root {
+    composes: py-12 from global;
+    composes: lg_py-24 from global;
+}
+.cont {
+    composes: cont from '@globalCss';
+}
+
+.title {
+    composes: text-4xl from global;
+    composes: font-bold from global;
+}
+
+.subTitle {
+    composes: text-orange from global;
+    composes: mb-4 from global;
+    composes: font-bold from global;
+    composes: text-base from global;
+    composes: uppercase from global;
+}
+.imageContainer {
+    composes: aspect-square from global;
+    composes: relative from global;
+    composes: overflow-hidden from global;
+    composes: rounded-xl from global;
+}
+
+.itemTitle {
+    composes: mt-4 from global;
+    composes: text-base from global;
+    composes: font-bold from global;
+    composes: block from global;
+}
+
+.sliderContainer {
+    composes: cont from '@globalCss';
+}
+
+.itemExcerpt {
+    composes: text-sm from global;
+    composes: text-slate-500 from global;
+}
+
+.meta {
+    composes: flex from global;
+    composes: gap-2 from global;
+    composes: items-center from global;
+    composes: mt-6 from global;
+}
+.authorImage {
+    composes: aspect-square from global;
+    composes: relative from global;
+    composes: overflow-hidden from global;
+    composes: rounded-full from global;
+    composes: w-10 from global;
+    composes: h-10 from global;
+}
+
+.authorName {
+    composes: block from global;
+    composes: text-xs from global;
+}
+.info {
+    composes: block from global;
+    composes: text-slate-500 from global;
+    composes: text-xs from global;
+}
+
+.link {
+    composes: ms-auto from global;
+    composes: py-3 from global;
+    composes: px-4 from global;
+    composes: bg-yellow from global;
+    composes: text-sm from global;
+    composes: font-bold from global;
+    composes: rounded-full from global;
+    composes: primary-anime from global;
+    composes: hover_bg-black from global;
+    composes: hover_text-yellow from global;
+}
+
+.titleContainer {
+    composes: flex from global;
+    composes: items-end from global;
+    composes: mOnly_flex-wrap from global;
+    composes: mb-12 from global;
+}
+
+.titleLink {
+    composes: flex from global;
+    composes: items-center from global;
+    composes: text-xl from global;
+    composes: ms-auto from global;
+    composes: font-bold from global;
+    composes: gap-4 from global;
+}
+
+.linkText {
+    composes: underline from global;
+}
+.icon {
+    composes: w-4 from global;
+    composes: h-4 from global;
+}
+
+.swiper {
+    overflow: unset !important;
+}

@@ -1,0 +1,88 @@
+.root {
+    composes: py-12 from global;
+    composes: lg_py-24 from global;
+}
+.cont {
+    composes: cont from '@globalCss';
+}
+.titleContainer {
+    composes: mb-12 from global;
+}
+.title {
+    composes: text-4xl from global;
+    composes: font-bold from global;
+}
+
+.subTitle {
+    composes: text-orange from global;
+    composes: mb-4 from global;
+    composes: font-bold from global;
+    composes: text-base from global;
+    composes: uppercase from global;
+}
+.serviceItem {
+    composes: border-b from global;
+    composes: border-black from global;
+    composes: last_border-[0] from global;
+}
+.itemCont {
+    composes: row from '@globalCss';
+    composes: gap-4 from global;
+    composes: py-8 from global;
+    composes: lg_py-12 from global;
+    composes: group from global;
+}
+.itemContent {
+    composes: col-span-12 from global;
+    composes: lg_col-span-8 from global;
+}
+
+.itemImage {
+    composes: col-span-12 from global;
+    composes: lg_col-span-3 from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: justify-end from global;
+    composes: w-full from global;
+}
+
+.itemTitle {
+    composes: text-2xl from global;
+    composes: font-bold from global;
+    composes: mb-4 from global;
+}
+
+.itemSubTitle {
+    composes: text-base-m from global;
+    composes: font-light from global;
+}
+
+.imageContainer {
+    composes: relative from global;
+    composes: lg_absolute from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+    composes: primary-anime from global;
+    composes: h-0 from global;
+    composes: w-full from global;
+    composes: lg_w-96 from global;
+    composes: overflow-hidden from global;
+    composes: rounded-lg from global;
+    composes: lg_group-hover_h-96 from global;
+}
+
+.imageContainer [data-gatsby-image-wrapper] {
+    position: absolute;
+}
+
+.iconCol {
+    composes: col-span-1 from global;
+    composes: flex from global;
+    composes: items-end from global;
+    composes: justify-end from global;
+}
+.icon {
+    composes: w-6 from global;
+    composes: h-6 from global;
+}

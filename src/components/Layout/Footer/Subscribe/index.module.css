@@ -1,0 +1,44 @@
+.root {
+    composes: mt-4 from global;
+}
+.wrapper {
+}
+.control {
+    composes: flex from global;
+    composes: mOnly_flex-wrap from global;
+    composes: items-center from global;
+    composes: gap-2  from global;
+    composes: transition-all from global;
+    composes: duration-300 from global;
+    composes: relative from global;
+}
+.controlSubmitted {
+    composes: opacity-50 from global;
+    composes: pointer-events-none from global;
+}
+.input {
+    composes: flex-1 from global;
+    composes: focus_outline-none from global;
+    composes: py-2 from global;
+    composes: border-b from global;
+    composes: border-white from global;
+    composes: bg-transparent from global;
+    composes: text-base from global;
+    composes: uppercase from global;
+    composes: placeholder_text-slate-500 from global;
+    composes: placeholder_opacity-50 from global;
+}
+.btn {
+    composes: text-white from global;
+    composes: absolute from global;
+    composes: end-0 from global;
+    composes: top-4 from global;
+}
+
+.control button:disabled{
+    @apply opacity-50;
+}
+
+.icon {
+    composes: w-3 from global;
+}

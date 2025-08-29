@@ -1,0 +1,74 @@
+.footer {
+	composes: block from global;
+	composes: w-full from global;
+	composes: bg-black from global;
+	composes: text-white from global;
+	composes: pb-20 from global;
+	composes: pt-12 from global;
+}
+.row {
+	composes: row from '@globalCss';
+}
+.cont {
+	composes: cont from '@globalCss';
+}
+.newsletterMessage {
+	composes: text-base-m from global;
+	composes: max-w-xs from global;
+	composes: block from global;
+	composes: mb-8 from global;
+}
+
+.mainCol {
+	composes: col-span-12 from global;
+	composes: lg_col-span-4 from global;
+}
+
+.col {
+	composes: col-span-6 from global;
+	composes: lg_col-span-1 from global;
+	composes: lg_text-end from global;
+}
+
+.colSpace {
+	composes: col-span-12 from global;
+	composes: lg_col-span-6 from global;
+}
+
+.linksTitle {
+	composes: text-[13px] from global;
+	composes: font-bold from global;
+}
+.link {
+	composes: text-[12px] from global;
+	composes: font-inter from global;
+}
+
+.footerLogo {
+	composes: block from global;
+	composes: text-[80px] from global;
+	composes: lg_text-[115px] from global;
+	composes: font-bold from global;
+	composes: mb-8 from global;
+	composes: mt-12 from global;
+	composes: lg_mt-32 from global;
+	composes: leading-none from global;
+}
+
+.spiCh {
+	composes: font-bb from global;
+}
+
+.footerSubTitle {
+	composes: text-base from global;
+	composes: block from global;
+	composes: whitespace-nowrap from global;
+}
+
+.bb {
+	composes: inline from global;
+}
+
+.copyrights {
+	composes: mt-12 from global;
+}

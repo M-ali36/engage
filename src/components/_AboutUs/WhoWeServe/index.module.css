@@ -1,0 +1,52 @@
+.root {
+    composes: py-12 from global;
+    composes: lg_py-24 from global;
+    composes: bg-black from global;
+    composes: text-white from global;
+}
+
+.cont {
+    composes: cont from '@globalCss';
+}
+
+.title {
+    composes: text-3xl from global;
+    composes: font-bold from global;
+    composes: text-center from global;
+}
+
+.miniTitle {
+    composes: bg-orange from global;
+    composes: text-black from global;
+    composes: font-bold from global;
+    composes: text-[20px] from global;
+    composes: py-2 from global;
+    composes: px-2 from global;
+    composes: mb-6 from global;
+    composes: inline-block from global;
+    composes: rounded-full from global;
+}
+
+.titleContainer {
+    composes: block from global;
+    composes: text-center from global;
+    composes: mb-12 from global;
+}
+
+.map {
+    composes: hidden from global;
+    composes: lg_block from global;
+}
+
+.map [data-button] {
+    cursor: pointer;
+}
+
+.map [data-button]:hover + [data-info] {
+    opacity: 1;
+}
+
+.map [data-info] {
+    opacity: 0;
+    transition: all 0.25s ease;
+}

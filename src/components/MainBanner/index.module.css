@@ -1,0 +1,34 @@
+.root {
+    composes: overflow-hidden from global;
+    composes: min-h-72 from global;
+    composes: lg_min-h-[40vh] from global;
+    composes: w-full from global;
+    composes: relative from global;
+    composes: flex from global;
+    composes: justify-center from global;
+    composes: items-center from global;
+    composes: relative from global;
+}
+.imageWrapper {
+    composes: absolute from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: justify-enter from global;
+    composes: w-full from global;
+    composes: h-full from global;
+    composes: after_h-full from global;
+    composes: after_w-full from global;
+    composes: after_absolute from global;
+    composes: after_top-0 from global;
+    composes: after_left-0 from global; 
+}
+.imageWrapper:after {
+    background: rgba(0,0,0,0.1);
+}
+.image {
+    composes: absolute from global;
+    composes: min-w-full from global;
+    composes: min-h-full from global;
+    composes: mOnly_h-full from global;
+    composes: mOnly_max-w-[unset] from global;
+}

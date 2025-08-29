@@ -1,0 +1,14 @@
+.animatedImage {
+    composes: flex from global;
+    composes: justify-center from global;
+    composes: items-center from global;
+    composes: relative from global;
+    composes: overflow-hidden from global;
+    composes: w-full from global;
+    composes: h-full from global;
+}
+.image {
+    composes: absolute from global;
+    composes: min-w-full from global;
+    composes: min-h-full from global;
+}

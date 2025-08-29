@@ -1,0 +1,41 @@
+.audioToggle {
+    composes: absolute from global;
+    composes: bottom-4 from global;
+    composes: end-8 from global;
+    composes: z-10 from global;
+    composes: cursor-pointer from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: mOnly_hidden from global;
+}
+  
+.text {
+    composes: text-white from global;
+}
+  
+.btnTitle {
+    composes: text-base from global;
+    composes: uppercase from global;
+    composes: bg-black from global;
+    composes: text-white from global;
+    composes: rounded-full from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+    composes: h-10 from global;
+    composes: px-5 from global;
+}
+  
+.icon {
+    composes: bg-white from global;
+    composes: h-10 from global;
+    composes: w-10 from global;
+    composes: rounded-full from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+}
+  
+.iconContainer {
+    composes: inline-block from global;
+}

@@ -1,0 +1,70 @@
+.root {
+    composes: py-12 from global;
+    composes: lg_py-24 from global;
+}
+
+.cont {
+    composes: cont from '@globalCss';
+}
+
+.row {
+    composes: grid from global;
+    composes: grid-cols-1 from global;
+    composes: lg_grid-cols-3 from global;
+    composes: gap-8 from global;
+}
+
+.title {
+    composes: text-3xl from global;
+    composes: font-bold from global;
+}
+
+.miniTitle {
+    composes: bg-orange from global;
+    composes: text-black from global;
+    composes: font-bold from global;
+    composes: text-[20px] from global;
+    composes: py-2 from global;
+    composes: px-2 from global;
+    composes: mb-6 from global;
+    composes: inline-block from global;
+    composes: rounded-full from global;
+}
+
+.titleContainer {
+    composes: block from global;
+    composes: mb-12 from global;
+}
+
+.imageContainer {
+    composes: relative from global;
+    composes: aspect-square from global;
+    composes: overflow-hidden from global;
+    composes: rounded-2xl from global;
+    composes: mb-4 from global;
+}
+
+.socialIcon {
+    composes: w-5 from global;
+    composes: h-5 from global;
+    composes: text-slate-500 from global;
+}
+
+.itemTitle {
+    composes: font-bold from global;
+    composes: text-xl from global;
+    composes: mb-2 from global;
+}
+
+.itemRule {
+    composes: text-orange from global;
+    composes: font-bold from global;
+    composes: text-lg from global;
+    composes: mb-4 from global;
+    composes: block from global;
+}
+
+.itemLinks {
+    composes: flex from global;
+    composes: gap-4 from global;
+}

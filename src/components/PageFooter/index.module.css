@@ -1,0 +1,24 @@
+.message {
+    composes: py-10 from global;
+    composes: lg_py-20 from global;
+    composes: bg-black from global;
+}
+.messageContent {
+    composes: text-3xl from global;
+    composes: font-serif from global;
+    composes: text-white from global;
+    composes: text-center from global;
+    composes: mOnly_w-full from global;
+}
+.messageContainer {
+    composes: flex from global;
+    composes: flex-wrap from global;
+    composes: justify-center from global;
+    composes: gap-8 from global;
+    composes: cont from '@globalCss';
+}
+.btnIcon {
+    composes: text-brown from global;
+    composes: group-hover_text-white from global;
+    composes: primary-anime from global;
+}
