@@ -90,7 +90,8 @@
     composes: flex from global;
     composes: items-center from global;
     composes: text-xl from global;
-    composes: ms-auto from global;
+    composes: lg_ms-auto from global;
+    composes: mOnly_mt-8 from global;
     composes: font-bold from global;
     composes: gap-4 from global;
 }

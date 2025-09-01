@@ -21,20 +21,19 @@ const Insights = ({title, items}) => {
             </div>
             <div className={classes.sliderContainer}>
                 <Swiper
-                    spaceBetween={0}
-                    slidesPerView={5}
+                    spaceBetween={30}
                     className={classes.swiper}
                     breakpoints={{
                         640: {
-                            slidesPerView: 1.3,
+                            slidesPerView: 1.5,
                             spaceBetween: 20,
                         },
                         768: {
-                            slidesPerView: 2.3,
+                            slidesPerView: 2.5,
                             spaceBetween: 40,
                         },
                         1024: {
-                            slidesPerView: 3,
+                            slidesPerView: 4,
                             spaceBetween: 50,
                         },
                     }}

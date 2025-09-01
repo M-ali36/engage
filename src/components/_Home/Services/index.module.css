@@ -31,6 +31,7 @@
     composes: py-8 from global;
     composes: lg_py-12 from global;
     composes: group from global;
+    composes: mOnly_relative from global;
 }
 .itemContent {
     composes: col-span-12 from global;
@@ -81,6 +82,10 @@
     composes: flex from global;
     composes: items-end from global;
     composes: justify-end from global;
+    composes: mOnly_absolute from global;
+    composes: mOnly_end-4 from global;
+    composes: mOnly_top-8 from global;
+    composes: mOnly_w-4 from global;
 }
 .icon {
     composes: w-6 from global;

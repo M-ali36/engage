@@ -30,6 +30,7 @@
     composes: flex-col from global;
     composes: items-center from global;
     composes: mOnly_py-12 from global;
+    composes: mOnly_fix-trans from global;
 }
 
 .item {

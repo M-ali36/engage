@@ -137,7 +137,10 @@ module.exports = {
                 '.text-outline': {
                     '-webkit-text-fill-color': 'transparent',
                     '-webkit-text-stroke': '1px'
-                }
+                },
+                '.fix-trans': {
+                    'transform': 'unset !important',
+                },
             })
         })
     ],

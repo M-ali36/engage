@@ -4,10 +4,10 @@ import Seo from '@components/Seo'
 import BannerVideo from '@Ui/BannerVideo'
 import PropTypes from 'prop-types'
 import TextRotator from "@components/_Home/TextRotator"
-import Rules from "../components/_Home/Rules"
-import Services from "../components/_Home/Services"
-import Insights from "../components/Insights"
-import Partners from "../components/Partners"
+import Rules from "@components/_Home/Rules"
+import Services from "@components/_Home/Services"
+import Insights from "@components/Insights"
+import Partners from "@components/Partners"
 
 const IndexPage = ({ data }) => {
 
