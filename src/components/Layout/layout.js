@@ -164,6 +164,7 @@ const LayoutWrapper = ({ children, location }) => {
 
           section, footer {
             margin-top: -1px;
+            overflow: hidden;
           }
         `}</style>
       </Helmet>
