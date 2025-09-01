@@ -4,6 +4,9 @@ import RichText from '@components/RichText';
 import PropTypes from 'prop-types';
 import WorldMap from '@Svg/world-map.svg';
 import * as classes from './index.module.css';
+import Australia from '@Svg/flags/australia.svg';
+import India from '@Svg/flags/india.svg';
+import USA from '@Svg/flags/usa.svg';
 import gsap from 'gsap';
 
 const WhoWeServe = ({ title }) => {
@@ -40,7 +43,27 @@ const WhoWeServe = ({ title }) => {
           <WorldMap className="world-map"/>
         </div>
         <ul className={classes.worldList}>
-          <li></li>
+          <li className={classes.item}>
+            <USA className={classes.image}/>
+            <div className={classes.content}>
+              <h3 className={classes.cityTitle}>New York</h3>
+              <span className={classes.timeZone}>GMT -5:00</span>
+            </div>
+          </li>
+          <li className={classes.item}>
+            <India className={classes.image}/>
+            <div className={classes.content}>
+              <h3 className={classes.cityTitle}>Bangalore</h3>
+              <span className={classes.timeZone}>GMT+5:30</span>
+            </div>
+          </li>
+          <li className={classes.item}>
+            <Australia className={classes.image}/>
+            <div className={classes.content}>
+              <h3 className={classes.cityTitle}>Melbourne</h3>
+              <span className={classes.timeZone}>GMT +11:00</span>
+            </div>
+          </li>
         </ul>
       </div>
     </SectionObserver>

@@ -8,6 +8,7 @@ const globalsSchema = `
         newsletterMessage: ContentfulRichText
         socialLinks: [ContentfulLink] @link(by: "id", from: "socialLinks___NODE")
         defaultPageFooter: ContentfulPageFooter @link(by: "id", from: "defaultPageFooter___NODE")
+        headerMessage: ContentfulRichText
     }
 
     type ContentfulPageFooter implements Node {

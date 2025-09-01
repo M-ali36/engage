@@ -4,7 +4,6 @@
 	composes: w-full from global;
 	composes: z-[12] from global;
 	composes: sticky from global;
-	composes: mOnly_pb-4 from global;
 	composes: bg-black from global;
 	composes: text-white from global;
 }
@@ -15,11 +14,11 @@
 	composes: items-center from global;
 	composes: mOnly_flex-wrap from global;
 	composes: flex from global;
+	composes: mOnly_py-2 from global;
 }
 .logoContainer {
 	composes: w-2/12 from global;
 	composes: mOnly_w-6/12 from global;
-	composes: mOnly_ps-4 from global;
 	composes: relative from global;
 	composes: z-10 from global;
 }
@@ -45,4 +44,16 @@
 	composes: mOnly_mb-4 from global;
 	composes: mOnly_rounded-[0] from global;
 	pointer-events: all;
+}
+
+.headerMessage {
+	composes: py-4 from global;
+	composes: bg-yellow from global;
+	composes: text-black from global;
+	composes: text-center from global;
+	composes: mOnly_hidden from global;
+}
+
+.messageTitle {
+	composes: text-sm from global;
 }

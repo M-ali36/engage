@@ -13,7 +13,7 @@ import X from "@Svg/x-twitter.svg";
 import Tiktok from "@Svg/tiktok.svg";
 import {useStore, setNavState} from '@UseCase/store'
 
-const Navigation = () => {
+const Navigation = ({location}) => {
 
 	const {
     contentfulGlobalConfigurations: { socialLinks }
@@ -65,6 +65,10 @@ const Navigation = () => {
 			setNavState(dispatch, 'nav');
 		}
 	}
+
+    useEffect(() => {
+        setNavState(dispatch, '');
+    }, [location, dispatch]);
 
 
 	return (
