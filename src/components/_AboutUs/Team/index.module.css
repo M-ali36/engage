@@ -29,6 +29,7 @@
     composes: mb-6 from global;
     composes: inline-block from global;
     composes: rounded-full from global;
+    composes: uppercase from global;
 }
 
 .titleContainer {
