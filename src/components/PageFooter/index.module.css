@@ -9,6 +9,7 @@
 .messageContent {
     composes: text-4xl from global;
     composes: mOnly_w-full from global;
+    composes: mb-8 from global;
 }
 
 .messageContainer {
@@ -19,6 +20,7 @@
     composes: z-[1] from global;
     composes: relative from global;
 }
+
 .btnIcon {
     composes: text-brown from global;
     composes: group-hover_text-white from global;
