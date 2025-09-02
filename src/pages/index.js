@@ -8,6 +8,7 @@ import Rules from "@components/_Home/Rules"
 import Services from "@components/_Home/Services"
 import Insights from "@components/Insights"
 import Partners from "@components/Partners"
+import PageFooter from "../components/PageFooter"
 
 const IndexPage = ({ data }) => {
 
@@ -25,7 +26,8 @@ const IndexPage = ({ data }) => {
 		insights,
 		partnersTitle,
 		partners,
-		mainVideoPlaceholder
+		mainVideoPlaceholder,
+		pageFooter
 	} = data.contentfulHomePage;
 
 	return (
@@ -37,6 +39,7 @@ const IndexPage = ({ data }) => {
 			<Services title={servicesTitle} services={services}/>
 			<Insights title={insightsTitle} items={insights}/>
 			<Partners title={partnersTitle} items={partners}/>
+			{pageFooter && <PageFooter footer={pageFooter}/>}
 		</>
 	)
 }
@@ -116,7 +119,17 @@ export const pageQuery = graphql`
 			partners {
 				...Image
 			}
-			
+			pageFooter {
+				content {
+					raw
+				}
+				link {
+					...Link
+				}
+				backgroundImage {
+					...Image
+				}
+			}
 		}
 	}
 `
