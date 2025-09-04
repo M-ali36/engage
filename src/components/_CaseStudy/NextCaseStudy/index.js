@@ -28,7 +28,7 @@ const NextCaseStudy = ({data}) => {
                         <h2 className={classes.mainTitle}>Next Case Study</h2>
                         <div className={classes.imageContainer}>
                             <AnimatedImage
-                                image={bannerImage ? bannerImage : mainImage}
+                                image={mainImage}
                                 height={1280}
                                 width={1024}
                                 className={classes.image}
