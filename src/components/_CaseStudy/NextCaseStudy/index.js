@@ -29,8 +29,8 @@ const NextCaseStudy = ({data}) => {
                         <div className={classes.imageContainer}>
                             <AnimatedImage
                                 image={bannerImage ? bannerImage : mainImage}
-                                height={1920}
-                                width={1080}
+                                height={1280}
+                                width={1024}
                                 className={classes.image}
                             />
                         </div>
