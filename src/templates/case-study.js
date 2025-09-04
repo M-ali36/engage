@@ -27,8 +27,8 @@ const CaseStudyPage = ({ data }) => {
       <Seo data={seo} slug={`our-work/${slug}`} />
       <MainBanner title={featuredTitle} excerpt={excerpt} image={bannerImage} metadata={metadata}/>
       <Services metadata={metadata} allServices={allServices}/>
-      <Builder list={content}/>
-      <NextCaseStudy data={nextCaseStudy}/>
+      {content && <Builder list={content}/>}
+      {nextCaseStudy && <NextCaseStudy data={nextCaseStudy}/>}
     </>
   )
 }
