@@ -22,13 +22,8 @@ const pages = [
     query: 'allContentfulStandardContent',
     template: path.resolve('./src/templates/standard-content.js')
   },
-  {
-    query: 'allContentfulProject',
-    template: path.resolve('./src/templates/project.js'),
-    path: 'real-world/'
-  },
   */
-  {
+ {
     query: 'allContentfulAbout',
     template: path.resolve('./src/templates/about-us.js')
   },
@@ -45,6 +40,15 @@ const pages = [
     query: 'allContentfulService',
     template: path.resolve('./src/templates/service.js'),
     path: 'what-we-do/'
+  },
+  {
+    query: 'allContentfulOurWork',
+    template: path.resolve('./src/templates/our-work.js')
+  },
+  {
+    query: 'allContentfulCaseStudy',
+    template: path.resolve('./src/templates/case-study.js'),
+    path: 'our-work/'
   },
   {
     query: 'allContentfulWhatWeDo',
@@ -121,6 +125,7 @@ const seoSchema = require("./src/schema/seo.schema.js");
 
 const standardSchema = require("./src/schema/standard.schema.js");
 const homePageSchema = require("./src/schema/homePage.schema.js");
+const caseStudySchema = require("./src/schema/caseStudy.schema.js");
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
@@ -133,5 +138,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     ${seoSchema}
     ${standardSchema}
     ${homePageSchema}
+    ${caseStudySchema}
   `);
 };

@@ -1,0 +1,36 @@
+.root {
+    composes: py-16 from global;
+    composes: lg_py-24 from global;
+}
+
+.cont {
+    composes: cont from '@globalCss';
+}
+
+.row {
+    composes: grid from global;
+    composes: grid-cols-1 from global;
+    composes: lg_grid-cols-2 from global;
+    composes: items-center from global;
+    composes: gap-8 from global;
+}
+.title {
+    composes: font-bold from global;
+    composes: text-3xl from global;
+    composes: mb-8 from global;
+}
+
+.content {
+    composes: text-base from global;
+}
+
+.content p {
+    @apply mb-4;
+}
+
+.imageContainer {
+    composes: overflow-hidden from global;
+    composes: rounded-3xl from global;
+    composes: relative from global;
+    composes: aspect-[4/5] from global;
+}

@@ -6,6 +6,7 @@
     composes: items-center from global;
     composes: lg_min-h-screen from global;
 }
+
 .messageContent {
     composes: text-4xl from global;
     composes: mOnly_w-full from global;

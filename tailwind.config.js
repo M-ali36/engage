@@ -16,11 +16,16 @@ module.exports = {
             colors: {
                 'black': '#1E1F27',
                 'white': '#F6F6F6',
+                'white-fff': "#fff",
                 'yellow': '#FFCE1F',
                 'orange': '#FF4F17',
                 'opa': 'var(--opa-color)',
                 'hover': 'var(--hover-color)',
                 'bgOpa': 'var(--bgOpa-color)',
+                slate : {
+                    "500": "#777",
+                    "300": "#D2D2D4"
+                }
             },
             fontFamily: {
                 'sans': ['National', 'Arial', 'sans-serif'],

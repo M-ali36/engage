@@ -1,0 +1,76 @@
+.item {
+    composes: w-full from global;
+    composes: primary-anime from global;
+    composes: cursor-pointer from global;
+    composes: p-3 from global;
+    composes: hover_font-bold from global;
+    composes: rounded-lg from global;
+    composes: lg_mb-4 from global;
+    composes: text-sm from global;
+}
+
+.itemActive {
+    composes: font-bold from global;
+    composes: bg-yellow from global;
+}
+
+.dTitle {
+    composes: uppercase from global;
+    composes: text-base from global;
+    composes: text-orange from global;
+    composes: font-bold from global;
+    composes: mb-8 from global;
+    composes: hidden from global;
+    composes: lg_block from global;
+}
+
+.mTitle {
+    composes: lg_hidden from global;
+}
+
+.mIcon {
+    composes: lg_hidden from global;
+    composes: w-2 from global;
+    composes: -rotate-90 from global;
+    composes: ms-auto from global;
+}
+
+.filtersWrapper {
+    composes: relative from global;
+}
+
+.tagsTitle {
+    composes: mOnly_px-6 from global;
+    composes: mOnly_py-3 from global;
+    composes: mOnly_border from global;
+    composes: mOnly_border-slate-200 from global;
+    composes: mOnly_flex from global;
+    composes: mOnly_items-center from global;
+    composes: mOnly_rounded-full from global;
+}
+
+.filtersContainer {
+    composes: mOnly_absolute from global;
+    composes: mOnly_top-full from global;
+    composes: mOnly_start-0 from global;
+    composes: mOnly_border from global;
+    composes: mOnly_border-slate-200 from global;
+    composes: mOnly_rounded-xl from global;
+    composes: mOnly_bg-white-fff from global;
+    composes: mOnly_w-full from global;
+    composes: mOnly_primary-anime from global;
+    composes: mOnly_z-[1] from global;
+    composes: mOnly_p-2 from global;
+}
+
+.filtersContainerActive {
+    composes: mOnly_translate-y-0 from global;
+    composes: mOnly_opacity-100 from global;
+    composes: mOnly_visible from global;
+}
+
+.filtersContainerinactive {
+    composes: mOnly_translate-y-2 from global;
+    composes: mOnly_opacity-0 from global;
+    composes: mOnly_invisible from global;
+}

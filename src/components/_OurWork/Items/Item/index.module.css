@@ -1,0 +1,91 @@
+.item {
+    
+}
+
+.imageContainer {
+    composes: overflow-hidden from global;
+    composes: rounded-2xl from global;
+    composes: relative from global;
+}
+
+.boxed {
+    composes: aspect-square from global;
+}
+
+.video {
+    composes: aspect-[5/6] from global;
+    composes: lg_aspect-video from global;
+    composes: col-span-2 from global;
+}
+
+.tablet {
+    composes: aspect-[5/6] from global;
+    composes: mb-4 from global;
+}
+
+.list {
+    composes: col-span-2 from global;
+    composes: pb-8 from global;
+    composes: mb-8 from global;
+    composes: border-b from global;
+    composes: border-black from global;
+}
+
+.mega {
+    composes: lg_col-span-2 from global;
+    composes: lg_grid from global;
+    composes: lg_grid-cols-3 from global;
+    composes: lg_gap-8 from global;
+}
+
+.itemTitle {
+    composes: font-bold from global;
+    composes: text-xl from global;
+    
+}
+
+.itemSubTitle {
+    composes: text-slate-500 from global;
+    composes: max-w-2xl from global;
+}
+.tags {
+    composes: flex from global;
+    composes: mt-4 from global;
+    composes: flex-wrap from global;
+    composes: gap-4 from global;
+}
+.tag {
+    composes: text-sm from global;
+    composes: font-bold from global;
+}
+
+.itemContainer {
+    composes: flex from global;
+    composes: flex-col from global;
+}
+
+.grid [data-tags="true"] {
+    @apply -order-[1] mb-4;
+}
+
+.itemLink {
+    composes: flex from global;
+    composes: mb-4 from global;
+}
+
+.arrowIcon {
+    composes: mt-2 from global;
+    composes: ms-auto from global;
+    composes: w-3 from global;
+    composes: h-3 from global;
+}
+
+.arrowIconList {
+    composes: mt-2 from global;
+    composes: ms-auto from global;
+    composes: w-4 from global;
+    composes: h-4 from global;
+}
+.arrowMega {
+    composes: lg_hidden from global;
+}

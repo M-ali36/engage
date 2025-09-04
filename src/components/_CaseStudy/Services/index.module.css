@@ -1,0 +1,34 @@
+.root {
+    composes: py-12 from global;
+    composes: lg_py-20 from global;
+    composes: bg-yellow from global;
+}
+
+.cont {
+    composes: cont from '@globalCss';
+}
+
+.title {
+    composes: text-4xl from global;
+    composes: font-bold from global;
+    composes: mb-8 from global;
+}
+
+.tags {
+    composes: flex from global;
+    composes: flex-wrap from global;
+    composes: gap-4 from global;
+}
+.link {
+    composes: rounded-full from global;
+    composes: py-2 from global;
+    composes: px-3 from global;
+    composes: text-base from global;
+    composes: bg-yellow from global;
+    composes: text-black from global;
+    composes: primary-anime from global;
+    composes: border from global;
+    composes: border-black from global;
+    composes: hover_bg-black from global;
+    composes: hover_text-yellow from global;
+}

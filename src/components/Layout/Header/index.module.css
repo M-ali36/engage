@@ -3,7 +3,7 @@
 	composes: left-0 from global;
 	composes: w-full from global;
 	composes: z-[12] from global;
-	composes: sticky from global;
+	composes: fixed from global;
 	composes: bg-black from global;
 	composes: text-white from global;
 }

@@ -1,0 +1,165 @@
+.root {
+    composes: pb-12 from global;
+    composes: lg_pb-24 from global;
+    composes: bg-white-fff from global;
+}
+
+.cont { 
+    composes: cont from '@globalCss';
+}
+
+.row {
+    composes: grid from global;
+    composes: grid-cols-1 from global;
+    composes: lg_grid-cols-2 from global;
+    composes: gap-8 from global;
+}
+.mainRow {
+    composes: row from '@globalCss';
+}
+
+
+.controls {
+    composes: col-span-12 from global;
+    composes: flex from global;
+    composes: flex-wrap from global;
+    composes: mb-8 from global;
+    composes: items-center from global;
+}
+
+.viewBtns {
+    composes: lg_ms-auto from global;
+    composes: mOnly_mx-auto from global;
+    composes: flex from global;
+    composes: mOnly-w-full from global;
+    composes: mOnly_justify-center from global;
+}
+
+.btnViewContainer {
+    composes: p-0.5 from global;
+    composes: bg-white from global;
+    composes: rounded-lg from global;
+}
+
+.filtersCol {
+    composes: col-span-12 from global;
+    composes: lg_col-span-3 from global;
+}
+
+.itemsCol {
+    composes: col-span-12 from global;
+    composes: lg_col-span-8 from global;
+    composes: lg_col-start-5 from global;
+}
+
+.btnView {
+    composes: py-1 from global;
+    composes: w-32 from global;
+    composes: text-center from global;
+    composes: text-[14px] from global;
+    composes: rounded-lg from global;
+    composes: text-slate-500 from global;
+    composes: h-[28px] from global;
+}
+
+.btnActive {
+    composes: bg-white-fff from global;
+}
+
+.searchIcon {
+    composes: absolute from global;
+    composes: w-4 from global;
+    composes: h-4 from global;
+    composes: start-4 from global;
+    composes: top-4 from global;
+    composes: text-slate-300 from global;
+}
+
+.control {
+    composes: relative from global;
+    composes: mOnly_w-full from global;
+    composes: mOnly_mb-4 from global;
+}
+
+.input {
+    composes: rounded-full from global;
+    composes: ps-10 from global;
+    composes: border from global;
+    composes: border-slate-300 from global;
+    composes: py-3 from global;
+    composes: text-sm from global;
+    composes: bg-white-fff from global;
+    composes: mOnly_w-full from global;
+}
+
+.pagination {
+    composes: grid from global;
+    composes: grid-cols-2 from global;
+    composes: lg_grid-cols-6 from global;
+    composes: mt-20 from global;
+}
+
+.totals {
+    composes: font-bold from global;
+    composes: text-xs from global;
+}
+
+.pagesBtns {
+    composes: col-span-2 from global;
+    composes: lg_col-span-4 from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+    composes: flex from global;
+    composes: gap-1 from global;
+    composes: mOnly_order-1 from global;
+    composes: mOnly_pt-4 from global;
+}
+
+.perPage {
+    composes: text-end from global;
+}
+
+.btnPage {
+    composes: rounded-full from global;
+    composes: h-8 from global;
+    composes: w-8 from global;
+    composes: inline-flex from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+    composes: text-xs from global;
+    composes: font-bold from global;
+    composes: border from global;
+    composes: border-slate-200 from global;
+    composes: primary-anime from global;
+    composes: hover_bg-black from global;
+    composes: hover_border-black from global;
+    composes: hover_text-yellow from global;
+    composes: cursor-pointer from global;
+    composes: disabled_pointer-events-none from global;
+}
+
+.activePage {
+    composes: bg-black from global;
+    composes: border-black from global;
+    composes: text-yellow from global;
+}
+
+.arrowIcon {
+    composes: w-[6px] from global;
+}
+
+.iconNext {
+    composes: rotate-180 from global;
+}
+
+.perPageSelect {
+    composes: rounded-lg from global;
+    composes: px-2 from global;
+    composes: py-1 from global;
+    composes: text-xs from global;
+    composes: font-bold from global;
+    composes: bg-white-fff from global;
+    composes: border from global;
+    composes: border-slate-200 from global;
+
+}

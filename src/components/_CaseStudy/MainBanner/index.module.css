@@ -1,0 +1,52 @@
+.root {
+    composes: py-20 from global;
+    composes: bg-black from global;
+    composes: relative from global;
+    composes: flex from global;
+    composes: items-end from global;
+    composes: lg_min-h-screen from global;
+    composes: text-white from global;
+}
+
+.cont {
+    composes: cont from '@globalCss';
+    composes: relative from global;
+    composes: z-1 from global;
+}
+
+.imageContainer {
+    composes: absolute from global;
+    composes: min-h-full from global;
+    composes: min-w-full from global;
+    composes: left-0 from global;
+    composes: top-0 from global;
+    composes: overflow-hidden from global;
+    composes: after_absolute from global;
+    composes: after_left-0 from global;
+    composes: after_top-0 from global;
+    composes: after_w-full from global;
+    composes: after_h-full from global;
+}
+
+.imageContainer:after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)), rgba(30, 31, 39, 0.4);
+}
+
+.title {
+    composes: text-4xl from global;
+}
+
+.tag {
+    composes: text-base from global;
+    composes: font-bold from global;
+    composes: text-orange from global;
+    composes: uppercase from global;
+    composes: block from global;
+    composes: mb-4 from global;
+}
+
+.excerpt {
+    composes: block from global;
+    composes: mt-8 from global;
+    composes: max-w-lg from global;
+}
