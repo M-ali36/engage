@@ -14,7 +14,7 @@ const Item = ({item, view, isMega}) => {
                 <div className={`${classes.imageContainer} ${view === 'list' ? classes.boxed : isMega ? classes.video : classes.tablet}`}>
                     <AnimatedImage
                         image={mainImage}
-                        height={1024}
+                        height={1280}
                         width={1024}
                         className={classes.image}
                     />
