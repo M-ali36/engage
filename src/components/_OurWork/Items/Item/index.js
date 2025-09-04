@@ -9,7 +9,7 @@ const Item = ({item, view, isMega}) => {
 
     const {slug, title, mainImage, metadata, excerpt} = item;
     return (
-        <div className={`${classes.item} ${classes[view]} ${(isMega && view !== 'list') && classes.mega}`}>
+        <Link to={`/our-work/${slug}`} className={`${classes.item} ${classes[view]} ${(isMega && view !== 'list') && classes.mega}`}>
             {view !== 'list' &&
                 <div className={`${classes.imageContainer} ${view === 'list' ? classes.boxed : isMega ? classes.video : classes.tablet}`}>
                     <AnimatedImage
@@ -21,10 +21,10 @@ const Item = ({item, view, isMega}) => {
                 </div>
             }
             <div className={classes.itemContainer}>
-                <Link className={classes.itemLink} to={`/our-work/${slug}`}>
+                <span className={classes.itemLink} >
                     <h3 className={classes.itemTitle}>{title}</h3>
                     <Arrow className={`${view === 'grid' ? classes.arrowIcon : classes.arrowIconList} ${(isMega && view !== 'list') && classes.arrowMega}`}/>
-                </Link>
+                </span>
                 <p className={classes.itemSubTitle}>{excerpt?.excerpt}</p>
                 <span className={classes.tags} data-tags="true">
                     {metadata.tags
@@ -37,7 +37,7 @@ const Item = ({item, view, isMega}) => {
                     ))}
                 </span>
             </div>
-        </div>
+        </Link>
     );
 };
 
