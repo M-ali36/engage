@@ -17,8 +17,8 @@
 .contentCol {
     composes: flex from global;
     composes: items-center from global;
-    composes: mOnly_mt-32 from global;
-    composes: mOnly_mb-12 from global;
+    composes: mt-32 from global;
+    composes: mb-12 from global;
 }
 
 .imagesCol {
