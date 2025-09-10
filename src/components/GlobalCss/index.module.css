@@ -1,5 +1,6 @@
 .cont {
 	composes: container from global;
+	composes: max-w-2xl from global;
 	composes: mx-auto from global;
 	composes: px-4 from global;
 }
