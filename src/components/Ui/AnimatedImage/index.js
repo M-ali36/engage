@@ -35,7 +35,7 @@ const AnimatedImage = ({ image, ...props }) => {
     }, []);
 
     return (
-        <div className={classes.animatedImage} ref={imageRef} {...props}>
+        <div className={classes.animatedImage} ref={imageRef} {...props} data-animated-image="true">
             <GatsbyImage
                 image={gatsbyImageData}
                 alt={description}
