@@ -75,8 +75,7 @@ module.exports = {
               'mOnly': {'max': '1023px'},
               'dOnly': {'min': '1024px'},
               'lg':{'min' : '1024px'},
-              '2xl': '1440px',
-              '3xl': '1920px',
+              '2xl': '1440px'
             },
         },
     },
