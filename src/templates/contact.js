@@ -7,16 +7,12 @@ import MainBanner from '@components/_ContactUs/MainBanner'
 const ContactUsPage = ({ data }) => {
   const {
     seo,
-    slug,
-    featuredTitle,
-    subTitle,
-    mainBanner,
+    slug
   } = data.contentfulContactUs
 
   return (
     <>
       <Seo data={seo} slug={slug}/>
-      <MainBanner title={featuredTitle} subTitle={subTitle} image={mainBanner}/>
     </>
   )
 }
