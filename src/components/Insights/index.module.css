@@ -7,7 +7,7 @@
 }
 
 .title {
-    composes: text-4xl from global;
+    composes: text-3xl from global;
     composes: font-bold from global;
 }
 
@@ -19,7 +19,7 @@
     composes: uppercase from global;
 }
 .imageContainer {
-    composes: aspect-square from global;
+    composes: aspect-[175/140] from global;
     composes: relative from global;
     composes: overflow-hidden from global;
     composes: rounded-xl from global;
@@ -27,7 +27,7 @@
 
 .itemTitle {
     composes: mt-4 from global;
-    composes: text-base from global;
+    composes: text-base-m from global;
     composes: font-bold from global;
     composes: block from global;
 }
@@ -77,6 +77,7 @@
     composes: primary-anime from global;
     composes: hover_bg-black from global;
     composes: hover_text-yellow from global;
+    composes: leading-normal from global;
 }
 
 .titleContainer {

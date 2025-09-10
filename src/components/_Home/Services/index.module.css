@@ -54,7 +54,7 @@
 }
 
 .itemSubTitle {
-    composes: text-base-m from global;
+    composes: text-base from global;
     composes: font-light from global;
 }
 

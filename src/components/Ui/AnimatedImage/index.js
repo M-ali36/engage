@@ -17,7 +17,7 @@ const AnimatedImage = ({ image, ...props }) => {
         gsap.fromTo(
             imageRef.current.querySelector(".gatsby-image-wrapper"),
             {
-                scale: 1.15,
+                scale: 1.04,
             },
             {
                 scale: 1,

@@ -41,7 +41,7 @@ const Navigation = ({location}) => {
 			title: 'About Us'
 		},
 		{
-			url: '#',
+			url: '/careers',
 			title: 'Careers'
 		},
 		{

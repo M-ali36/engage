@@ -1,17 +1,23 @@
 .root {
     composes: py-12 from global;
+    composes: pt-20 from global;
+    composes: lg_pt-48 from global;
     composes: bg-black from global;
     composes: relative from global;
     composes: flex from global;
-    composes: items-end from global;
+    composes: items-start from global;
     composes: lg_min-h-screen from global;
     composes: text-white from global;
+    composes: flex-col from global;
 }
 
 .cont {
     composes: cont from '@globalCss';
     composes: relative from global;
     composes: z-1 from global;
+    composes: h-full from global;
+    composes: flex-1 from global;
+    composes: grid from global;
 }
 
 .imageContainer {
@@ -36,32 +42,30 @@
     composes: text-4xl from global;
     composes: max-w-3xl from global;
     composes: mOnly_mt-12 from global;
+    composes: mb-4 from global;
 }
 
-.tags {
-    composes: text-xl-m from global;
-    composes: font-bold from global;
-    composes: text-orange from global;
-    composes: capitalize from global;
-    composes: block from global;
-    composes: mt-12 from global;
-    composes: lg_mt-48 from global;
-    composes: text-end from global;
+.contentContainer {
+    composes: flex from global;
+    composes: h-full from global;
+    composes: flex-col from global;
 }
-.tag {
-    composes: after_inline from global;
-    composes: after_content-[","] from global;
-    composes: after_me-1 from global;
-    composes: last_after_hidden from global;
+
+.title strong {
+    @apply text-yellow;
 }
+
 .excerpt {
     composes: block from global;
-    composes: mt-8 from global;
     composes: max-w-lg from global;
 }
 
 .subTitle {
-    composes: text-base from global;
+    composes: text-yellow from global;
     composes: block from global;
-    composes: mt-4 from global;
+    composes: mt-auto from global;
+    composes: ms-auto from global;
+    composes: text-end from global;
+    composes: max-w-96 from global;
+    composes: text-xl-m from global;
 }

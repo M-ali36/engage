@@ -21,7 +21,7 @@ const Insights = ({title, items}) => {
             </div>
             <div className={classes.sliderContainer}>
                 <Swiper
-                    spaceBetween={30}
+                    spaceBetween={35}
                     className={classes.swiper}
                     breakpoints={{
                         640: {
@@ -30,11 +30,11 @@ const Insights = ({title, items}) => {
                         },
                         768: {
                             slidesPerView: 2,
-                            spaceBetween: 40,
+                            spaceBetween: 25,
                         },
                         1024: {
                             slidesPerView: 3,
-                            spaceBetween: 50,
+                            spaceBetween: 35,
                         },
                     }}
                     >

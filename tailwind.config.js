@@ -40,10 +40,10 @@ module.exports = {
                 'sm': [ /* font-size */ '16px', {
                     lineHeight: '19px',
                 }],
-                'base': [ /* font-size */ '18px', {
+                'base': [ /* font-size */ '20px', {
                     lineHeight: '32px',
                 }],
-                'base-m': [ /* font-size */ '22px', {
+                'base-m': [ /* font-size */ '24px', {
                     lineHeight: '30px',
                 }],
                 'lg': [ /* font-size */ 'var(--lg-font-size)', {
@@ -62,10 +62,10 @@ module.exports = {
                     lineHeight: '1.2',
                 }],
                 '4xl': [ /* font-size */ 'var(--4xl-font-size)', {
-                    lineHeight: '1',
+                    lineHeight: '1.2',
                 }],
                 '5xl': [ /* font-size */ 'var(--5xl-font-size)', {
-                    lineHeight: '1',
+                    lineHeight: '1.2',
                 }],
                 'xxl': [ /* font-size */ 'var(--xxl-font-size)', {
                     lineHeight: '1.4',
@@ -75,8 +75,8 @@ module.exports = {
               'mOnly': {'max': '1023px'},
               'dOnly': {'min': '1024px'},
               'lg':{'min' : '1024px'},
-              '2xl': '1440px',
-              '3xl': '1440px',
+              '2xl': '1372px',
+              '3xl': '1372px',
             },
         },
     },

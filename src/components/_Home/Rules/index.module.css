@@ -22,6 +22,7 @@
     composes: col-span-12 from global;
     composes: lg_col-span-5 from global;
     composes: mt-8 from global;
+    composes: max-w-xl from global;
 }
 
 .row {

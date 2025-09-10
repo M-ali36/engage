@@ -11,7 +11,7 @@
     composes: mb-12 from global;
 }
 .title {
-    composes: text-4xl from global;
+    composes: text-3xl from global;
     composes: font-bold from global;
 }
 

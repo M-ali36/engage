@@ -39,7 +39,7 @@
 
 .imageContainer {
     composes: relative from global;
-    composes: aspect-video from global;
+    composes: aspect-[425/296] from global;
     composes: overflow-hidden from global;
     composes: rounded-2xl from global;
     composes: mb-4 from global;
