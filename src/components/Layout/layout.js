@@ -166,6 +166,9 @@ const LayoutWrapper = ({ children, location }) => {
           section, footer {
             overflow: hidden;
           }
+          section:not([class]) {
+            margin-top: -1px;
+          }
         `}</style>
       </Helmet>
       <Header ref={$header} location={location} />
