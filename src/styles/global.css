@@ -49,4 +49,5 @@ body.nav-open {
   .btn-white {
     @apply bg-white text-black hover_bg-yellow;
   }
+
 }

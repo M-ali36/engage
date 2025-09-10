@@ -8,7 +8,7 @@ import Rules from "@components/_Home/Rules"
 import Services from "@components/_Home/Services"
 import Insights from "@components/Insights"
 import Partners from "@components/Partners"
-import PageFooter from "../components/PageFooter"
+import PageFooter from "@components/PageFooter"
 
 const IndexPage = ({ data }) => {
 

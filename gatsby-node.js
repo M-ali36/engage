@@ -1,31 +1,16 @@
 const path = require(`path`);
 const pages = [
-  
-  /*
   {
     query: 'allContentfulAbout',
-    template: path.resolve('./src/templates/about.js')
+    template: path.resolve('./src/templates/about-us.js')
   },
   {
-    query: 'allContentfulRealWorld',
-    template: path.resolve('./src/templates/real-world.js')
-  },
-  {
-    query: 'allContentfulContact',
+    query: 'allContentfulContactUs',
     template: path.resolve('./src/templates/contact.js')
   },
   {
-    query: 'allContentfulTechLab',
-    template: path.resolve('./src/templates/tech-lab.js')
-  },
-  {
-    query: 'allContentfulStandardContent',
-    template: path.resolve('./src/templates/standard-content.js')
-  },
-  */
- {
-    query: 'allContentfulAbout',
-    template: path.resolve('./src/templates/about-us.js')
+    query: 'allContentfulCareers',
+    template: path.resolve('./src/templates/careers.js')
   },
   {
     query: 'allContentfulInsights',
@@ -37,11 +22,6 @@ const pages = [
     path: 'insights/'
   },
   {
-    query: 'allContentfulService',
-    template: path.resolve('./src/templates/service.js'),
-    path: 'what-we-do/'
-  },
-  {
     query: 'allContentfulOurWork',
     template: path.resolve('./src/templates/our-work.js')
   },
@@ -49,10 +29,6 @@ const pages = [
     query: 'allContentfulCaseStudy',
     template: path.resolve('./src/templates/case-study.js'),
     path: 'our-work/'
-  },
-  {
-    query: 'allContentfulWhatWeDo',
-    template: path.resolve('./src/templates/what-we-do.js')
   },
   
 ]

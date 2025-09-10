@@ -103,16 +103,47 @@
 	composes: border-[0] from global;
 	composes: my-4 from global;
 }
-.quoteSymbol {
-	composes: block from global;
-	composes: text-5xl from global;
-}
+
 .blockquote {
+	composes: my-8 from global;
+	composes: lg_my-12 from global;
 	composes: text-darkGray from global;
 	composes: text-xl from global;
-	composes: p-6 from global;
-	composes: bg-gray from global;
+	composes: px-8 from global;
+	composes: py-16 from global;
+	composes: lg_py-24 from global;
+	composes: text-black from global;
+	composes: text-3xl from global;
+	composes: text-center from global;
+	composes: font-bold from global;
+	composes: bg-yellow from global;
+	composes: relative from global;
+	composes: overflow-hidden from global;
+	composes: rounded-3xl from global;
+	composes: before_content-['“'] from global;
+	composes: before_absolute from global;
+	composes: before_start-4 from global;
+	composes: before_-top-12 from global;
+	composes: lg_before_-top-20 from global;
+	composes: before_text-[180px] from global;
+	composes: lg_before_text-[300px] from global;
+	composes: before_text-black/20 from global;
+	composes: before_font-bold from global;
+	composes: after_content-['”'] from global;
+	composes: after_absolute from global;
+	composes: after_end-4 from global;
+	composes: after_-bottom-32 from global;
+	composes: lg_after_-bottom-52 from global;
+	composes: after_text-[180px] from global;
+	composes: lg_after_text-[300px] from global;
+	composes: after_text-black/20 from global;
+	composes: after_font-bold from global;
 }
+
+.blockquote p {
+	@apply text-[24px] lg_text-[32px];
+}
+
 .link {
 	composes: text-current from global;
 	composes: underline from global;

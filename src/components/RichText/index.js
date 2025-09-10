@@ -131,7 +131,6 @@ const RichText = ({content, ele, useHeadings, slug, relatedArticles, staticImage
 		    ),
 		    [BLOCKS.HR]: () => <hr className={classes.hr}/>,
 		    [BLOCKS.QUOTE]: (node, children) => <blockquote className={classes.blockquote}>
-		    	<span className={classes.quoteSymbol}>“</span>
 		    	{children}
 		    </blockquote>,
 

@@ -13,6 +13,10 @@
     composes: mb-8 from global;
 }
 
+.messageContent a {
+    @apply no-underline;
+}
+
 .messageContainer {
     composes: flex from global;
     composes: flex-wrap from global;

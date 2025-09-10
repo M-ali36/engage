@@ -1,0 +1,55 @@
+.filtersContainer {
+    composes: flex from global;
+    composes: gap-4 from global;
+    composes: flex-wrap from global;
+    composes: mb-12 from global;
+    composes: mOnly_hidden from global;
+}
+
+.filterBtn {
+    composes: py-3 from global;
+    composes: px-4 from global;
+    composes: bg-white from global;
+    composes: border from global;
+    composes: border-black from global;
+    composes: text-black from global;
+    composes: rounded-full from global;
+    composes: primary-anime from global;
+    composes: text-sm from global;
+    composes: hover_border-yellow from global;
+    composes: hover_bg-yellow from global;
+}
+
+.active {
+    composes: border-yellow from global;
+    composes: bg-yellow from global;
+    composes: font-bold from global;
+}
+
+.mobileFilter {
+    composes: lg_hidden from global;
+    composes: relative from global;
+    composes: w-full from global;
+    composes: mb-8 from global;
+}
+
+.select {
+    composes: py-2 from global;
+    composes: px-4 from global;
+    composes: rounded-full from global;
+    composes: bg-white from global;
+    composes: border from global;
+    composes: border-black from global;
+    composes: appearance-none from global;
+    composes: w-full from global;
+}
+
+.selectArrow {
+    composes: h-4 from global;
+    composes: w-4 from global;
+    composes: absolute from global;
+    composes: top-3 from global;
+    composes: end-4 from global;
+    composes: text-black from global;
+    composes: -rotate-90 from global;
+}

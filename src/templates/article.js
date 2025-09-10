@@ -1,6 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Seo from '@components/Seo'
+import MainBanner from '@components/_Article/MainBanner'
+import Content from '@components/_Article/Content'
+import PdfForm from '@components/_Article/PdfForm'
+import NextArticle from '../components/_Article/NextArticle'
 
 
 const ArticlePage = ({ data }) => {
@@ -8,7 +12,14 @@ const ArticlePage = ({ data }) => {
     seo,
     slug,
     updatedAt,
-    createdAt
+    metadata,
+    date,
+    mainBanner,
+    featuredTitle,
+    content,
+    pdfForm,
+    createdAt,
+    nextArticle
   } = data.contentfulArticle
 
   const moreArticles = data.allContentfulArticle.nodes;
@@ -16,6 +27,10 @@ const ArticlePage = ({ data }) => {
   return (
     <>
       <Seo data={seo} slug={`insights/${slug}`} article parentCategory="news" createdAt={createdAt} updatedAt={updatedAt}/>
+      <MainBanner image={mainBanner} title={featuredTitle} date={date} metadata={metadata}/>
+      <Content content={content}/>
+      {pdfForm && <PdfForm data={pdfForm}/>}
+      {nextArticle && <NextArticle data={nextArticle}/>}
     </>
   )
 }
@@ -45,14 +60,42 @@ export const pageQuery = graphql`
             featuredTitle {
                 raw
             }
+            date(formatString: "MMMM YYYY") 
             content {
                 raw
                 references {
                     ...References
                 }
             }
+            pdfForm {
+                formId
+                formattedTitle {
+                    raw
+                }
+                buttonTitle
+                thanksMessage
+            }
             updatedAt
             createdAt
+            nextArticle {
+                title
+                slug
+                metadata {
+                    tags {
+                        name
+                        contentful_id
+                    }
+                }
+                excerpt {
+                    excerpt
+                }
+                mainImage {
+                    ...Image
+                }
+                mainBanner {
+                    ...Image
+                }
+            }
         }
         allContentfulArticle (
                 filter: {slug: { ne: $slug } }

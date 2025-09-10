@@ -1,0 +1,105 @@
+.root {
+    composes: pt-12 from global;
+    composes: lg_pt-32 from global;
+    composes: pb-8 from global;
+    composes: lg_pb-24 from global;
+    composes: bg-white from global;
+}
+.cont {
+    composes: cont from '@globalCss';
+}
+.row {
+    composes: row from '@globalCss';
+    composes: gap-8 from global;
+}
+.col {
+    composes: col-span-6 from global;
+    composes: lg_col-span-3 from global;
+}
+.imageContainer {
+    composes: imageContainer from '@globalCss';
+    composes: rounded-3xl from global;
+    composes: overflow-hidden from global;
+    composes: aspect-[9/16] from global;
+}
+.image {
+    composes: image from '@globalCss';
+}
+.title {
+    composes: text-3xl from global;
+}
+.link {
+    composes: group from global;
+}
+.play {
+    composes: bg-black from global;
+    composes: w-16 from global;
+    composes: h-16 from global;
+    composes: rounded-full from global;
+    composes: absolute from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+    composes: z-[1] from global;
+    composes: text-white from global;
+    composes: primary-anime from global;
+    composes: group-hover_scale-125 from global;
+}
+
+.titleContainer {
+    composes: flex from global;
+    composes: items-center from global;
+    composes: flex-wrap from global;
+    composes: mb-12 from global;
+}
+
+.btn {
+    composes: py-2 from global;
+    composes: lg_py-3 from global;
+    composes: px-4 from global;
+    composes: bg-yellow from global;
+    composes: border from global;
+    composes: border-yellow from global;
+    composes: text-black from global;
+    composes: font-bold from global;
+    composes: rounded-full from global;
+    composes: text-sm from global;
+    composes: primary-anime from global;
+    composes: disabled_border-black from global;
+    composes: disabled_bg-white from global;
+}
+
+.sliderBtns {
+    composes: inline-flex from global;
+    composes: lg_ms-auto from global;
+    composes: mOnly_mt-8 from global;
+    composes: gap-4 from global;
+}
+
+.icon {
+    composes: w-8 from global;
+    composes: h-8 from global;
+}
+
+.itmContent {
+    composes: block from global;
+    composes: mt-4 from global;
+}
+
+.itemTitle {
+    composes: font-serif from global;
+    composes: text-sm from global;
+    composes: text-slate-500 from global;
+    composes: mb-4 from global;
+    composes: line-clamp-2 from global;
+}
+
+.tags {
+    composes: text-sm from global;
+    composes: break-words from global;
+    composes: pe-12 from global;
+}
+
+.swiper {
+    overflow: unset !important;
+}

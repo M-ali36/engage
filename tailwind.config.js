@@ -52,24 +52,23 @@ module.exports = {
                 'xl': [ /* font-size */ 'var(--xl-font-size)', {
                     lineHeight: '1.2',
                 }],
+                'xl-m': [ /* font-size */ 'var(--xlm-font-size)', {
+                    lineHeight: '1.2',
+                }],
                 '2xl': [ /* font-size */ 'var(--2xl-font-size)', {
                     lineHeight: '1.2',
                 }],
                 '3xl': [ /* font-size */ 'var(--3xl-font-size)', {
                     lineHeight: '1.2',
-                    letterSpacing: 'clamp(1px, 0.2vw, 2px)'
                 }],
                 '4xl': [ /* font-size */ 'var(--4xl-font-size)', {
                     lineHeight: '1',
-                    letterSpacing: 'clamp(1px, 0.2vw, 2px)'
                 }],
                 '5xl': [ /* font-size */ 'var(--5xl-font-size)', {
                     lineHeight: '1',
-                    letterSpacing: 'clamp(1px, 0.2vw, 2px)'
                 }],
                 'xxl': [ /* font-size */ 'var(--xxl-font-size)', {
                     lineHeight: '1.4',
-                    letterSpacing: 'clamp(1px, 0.2vw, 2px)'
                 }],
             },
             screens: {

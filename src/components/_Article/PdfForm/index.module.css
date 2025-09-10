@@ -1,0 +1,82 @@
+.root {
+    composes: bg-black from global;
+    composes: text-white from global;
+    composes: py-12 from global;
+    composes: lg_py-24 from global;
+}
+
+.cont {
+    composes: cont from '@globalCss';
+}
+
+.title {
+    composes: text-3xl from global;
+}
+
+.input {
+    composes: bg-black from global;
+    composes: border-b from global;
+    composes: border-slate-500 from global;
+    composes: py-4 from global;
+    composes: placeholder_text-white/60 from global;
+    composes: focus_outline-none from global;
+    composes: w-full from global;
+    composes: text-white from global;
+}
+
+.control {
+    composes: block from global;
+    composes: w-full from global;
+    composes: mb-8 from global;
+    composes: relative from global;
+}
+
+.form {
+    composes: mt-12 from global;
+}
+
+.checkbox {
+    composes: absolute from global;
+    composes: h-full from global;
+    composes: w-full from global;
+    composes: left-0 from global;
+    composes: top-0 from global;
+    composes: cursor-pointer from global;
+    composes: opacity-0 from global;
+}
+
+.checkIcon {
+    composes: h-6 from global;
+    composes: w-6 from global;
+}
+
+.checkboxLabel {
+    composes: flex from global;
+    composes: gap-2 from global;
+    composes: py-2 from global;
+    composes: text-sm from global;
+    composes: text-slate-500 from global;
+    composes: items-center from global;
+}
+
+.checkIcon path {
+    @apply hidden;
+}
+
+.checkbox:checked + label path {
+    @apply block;
+}
+
+.checkbox:checked + label {
+    @apply text-white;
+}
+
+.submitBtn {
+    composes: py-3 from global;
+    composes: px-4 from global;
+    composes: bg-yellow from global;
+    composes: text-black from global;
+    composes: font-bold from global;
+    composes: text-sm from global;
+    composes: rounded-full from global;
+}

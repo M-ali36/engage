@@ -49,7 +49,7 @@ const Navigation = ({location}) => {
 			title: 'Our Work'
 		},
 		{
-			url: '#',
+			url: '/insights',
 			title: 'Insights'
 		},
 		{

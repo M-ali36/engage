@@ -1,0 +1,44 @@
+.item {
+    composes: py-8 from global;
+    composes: border-b from global;
+    composes: first_border-t from global;
+    composes: border-black from global;
+    composes: block from global;
+}
+
+.itemTitle {
+    composes: text-[28px] from global;
+    composes: font-bold from global;
+    composes: mb-4 from global;
+    composes: max-w-4xl from global;
+    composes: mOnly_max-w-[94%] from global;
+}
+
+.excerpt {
+    composes: text-base from global;
+    composes: text-slate-500 from global;
+    composes: mb-4 from global;
+    composes: max-w-3xl from global;
+    composes: block from global;
+}
+
+.tags {
+    composes: block from global;
+}
+
+.tag {
+    composes: text-sm from global;
+    composes: font-bold from global;
+}
+
+.itemLink {
+    composes: flex from global;
+    composes: items-start from global;
+}
+
+.arrowIcon {
+    composes: w-5 from global;
+    composes: h-5 from global;
+    composes: ms-auto from global;
+    composes: mt-4 from global;
+}

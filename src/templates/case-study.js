@@ -1,10 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Seo from '@components/Seo'
-import MainBanner from '../components/_CaseStudy/MainBanner'
-import Services from '../components/_CaseStudy/Services'
-import Builder from '../components/_CaseStudy/Builder'
-import NextCaseStudy from '../components/_CaseStudy/NextCaseStudy'
+import MainBanner from '@components/_CaseStudy/MainBanner'
+import Services from '@components/_CaseStudy/Services'
+import Builder from '@components/_CaseStudy/Builder'
+import NextCaseStudy from '@components/_CaseStudy/NextCaseStudy'
 
 
 const CaseStudyPage = ({ data }) => {
