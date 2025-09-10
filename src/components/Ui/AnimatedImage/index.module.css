@@ -12,3 +12,7 @@
     composes: min-w-full from global;
     composes: min-h-full from global;
 }
+
+.image {
+    @apply absolute !important;
+}
