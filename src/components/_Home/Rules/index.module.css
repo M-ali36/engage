@@ -10,9 +10,7 @@
 }
 
 .titleRow {
-    composes: row from '@globalCss';
-    composes: items-end from global;
-    composes: mb-16 from global;
+    composes: mb-20 from global;
 }
 
 .titleContainer {
@@ -23,13 +21,15 @@
 .subTitleContainer {
     composes: col-span-12 from global;
     composes: lg_col-span-5 from global;
+    composes: mt-8 from global;
 }
 
 .row {
     composes: grid from global;
     composes: grid-cols-1 from global;
     composes: lg_grid-cols-3 from global;
-    composes: gap-8 from global;
+    composes: gap-x-6 from global;
+    composes: gap-y-16 from global;
 }
 
 .title {
@@ -59,11 +59,11 @@
 
 .itemTitle {
     composes: text-base-m from global;
-    composes: mt-4 from global;
+    composes: mt-6 from global;
     composes: font-bold from global;
 }
 
 .itemContent {
     composes: text-sm from global;
-    composes: mt-4 from global;
+    composes: mt-6 from global;
 }

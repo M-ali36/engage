@@ -41,7 +41,7 @@ body.nav-open {
   @apply min-h-full;
 }
 
-[data-animated-image="true"] .gatsby-image-wrapper {
+[data-animated-image="true"] [data-gatsby-image-wrapper=""] {
   @apply min-h-full absolute;
 }
 
