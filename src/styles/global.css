@@ -41,9 +41,10 @@ body.nav-open {
   @apply min-h-full;
 }
 
-.gatsby-image-wrapper {
-	height: auto;
+[data-animated-image="true"] .gatsby-image-wrapper {
+  @apply min-h-full absolute;
 }
+
 @layer components {
   .btn-link {
     @apply px-6 py-3 rounded primary-anime text-center;
