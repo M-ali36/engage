@@ -30,7 +30,7 @@ const MainBanner = ({title, image, subTitle}) => {
             <div className={classes.cont}>
                 <div className={classes.contentContainer}>
                     {title && <RichText className={classes.title} content={title} useHeadings="Heading 1"/>}
-                    {subTitle && <span className={classes.subTitle}>{subTitle}</span>}
+                    {subTitle && <RichText className={classes.subTitle} content={subTitle}/>}
                 </div>
             </div>
         </SectionObserver>

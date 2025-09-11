@@ -53,7 +53,7 @@ const Navigation = ({location}) => {
 			title: 'Insights'
 		},
 		{
-			url: '#',
+			url: '/contact-us',
 			title: 'Contact Us'
 		}
 	]

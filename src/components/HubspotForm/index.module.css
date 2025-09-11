@@ -1,0 +1,92 @@
+.control {
+    composes: relative from global;
+    composes: mb-8 from global;
+}
+
+.required {
+    composes: before_content-['*'] from global;
+    composes: before_end-4 from global;
+    composes: before_top-6 from global;
+    composes: before_absolute from global;
+    composes: before_text-base from global;
+    composes: before_opacity-50 from global;
+}
+
+.input {
+    composes: text-sm from global;
+    composes: text-black from global;
+    composes: py-4 from global;
+    composes: bg-white-fff from global;
+    composes: w-full from global;
+    composes: border-b from global;
+    composes: border-black from global;
+    composes: placeholder_opacity-50 from global;
+}
+
+.textarea {
+    composes: text-sm from global;
+    composes: text-black from global;
+    composes: p-4 from global;
+    composes: bg-white-fff from global;
+    composes: w-full from global;
+    composes: placeholder_opacity-50 from global;
+    composes: border from global;
+    composes: border-black from global;
+}
+
+.select {
+    composes: text-lg from global;
+    composes: text-black from global;
+    composes: py-4 from global;
+    composes: bg-white-fff from global;
+    composes: w-full from global;
+    composes: appearance-none from global;
+    composes: placeholder_opacity-0 from global;
+    composes: pe-14 from global;
+    composes: text-ellipsis from global;
+    composes: border-b from global;
+    composes: border-black from global;
+    composes: text-sm from global;
+}
+
+.btnContainer {
+    composes: flex from global;
+    composes: mt-12 from global;
+    composes: flex-wrap from global;
+}
+
+.info {
+    composes: block from global;
+    composes: mt-12 from global;
+    composes: text-center from global;
+    composes: col-span-12 from global;
+}
+
+.formInfo {
+    composes: text-[13px] from global;
+}
+
+.success {
+    composes: text-center from global;
+    composes: w-full from global;
+}
+
+.selectArrow {
+    composes: absolute from global;
+    composes: top-5 from global;
+    composes: end-4 from global;
+    composes: w-2 from global;
+    composes: h-4 from global;
+    composes: -rotate-90 from global;
+}
+
+.submitBtn {
+    composes: py-3 from global;
+    composes: px-4 from global;
+    composes: bg-yellow from global;
+    composes: text-black from global;
+    composes: font-bold from global;
+    composes: text-sm from global;
+    composes: rounded-full from global;
+    composes: disabled_opacity-50 from global;
+}

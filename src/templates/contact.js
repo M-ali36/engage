@@ -2,17 +2,31 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Seo from '@components/Seo'
 import MainBanner from '@components/_ContactUs/MainBanner'
+import Form from '@components/_ContactUs/Form'
+import OurOffices from '../components/_ContactUs/OurOffices'
+import OurLocations from '../components/_ContactUs/OurLocations'
 
 
 const ContactUsPage = ({ data }) => {
   const {
     seo,
-    slug
+    slug,
+    featuredTitle,
+    subTitle,
+    mainBanner,
+    links,
+    formTitle,
+    ourOffices,
+    ourLocations
   } = data.contentfulContactUs
 
   return (
     <>
       <Seo data={seo} slug={slug}/>
+      <MainBanner title={featuredTitle} image={mainBanner} subTitle={subTitle}/>
+      <Form title={formTitle} links={links}/>
+      <OurOffices items={ourOffices}/>
+      <OurLocations items={ourLocations}/>
     </>
   )
 }

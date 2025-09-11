@@ -6,6 +6,7 @@ export const query = graphql`
     title
     url
     linkType
+    icon
     linkToPage {
         ... on ContentfulHome {
             slug
