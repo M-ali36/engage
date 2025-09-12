@@ -17,16 +17,16 @@ const Services = ({title, services}) => {
                 <ul className={classes.servicesList}>
                     {services.map((item, index) => (
                         <li key={index} className={classes.serviceItem}>
-                            <Link to={`/what-we-do/${item.slug}`} className={classes.itemCont}>
+                            <Link to={`${item.link?.url}`} className={classes.itemCont}>
                                 <div className={classes.itemContent}>
                                     <h3 className={classes.itemTitle}>{item.title}</h3>
-                                    {item.homeExcerpt && <span className={classes.itemSubTitle}>{item.homeExcerpt?.homeExcerpt}</span>}
+                                    {item.content && <RichText content={item.content} className={classes.itemSubTitle}/>}
                                 </div>
                                 <div className={classes.itemImage}>
                                     <div className={classes.imageContainer}>
                                         <GatsbyImage 
-                                            image={item.mainImage.gatsbyImageData}
-                                            alt={item.mainImage.description}
+                                            image={item.image.gatsbyImageData}
+                                            alt={item.image.description}
                                             placeholder="blurred"
                                         />
                                     </div>

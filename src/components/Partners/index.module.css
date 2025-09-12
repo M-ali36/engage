@@ -41,3 +41,22 @@
     composes: p-4 from global;
     composes: min-h-32 from global;
 }
+
+.btnShow {
+    composes: text-sm from global;
+    composes: font-bold from global;
+    composes: text-black from global;
+    composes: bg-yellow from global;
+    composes: py-3 from global;
+    composes: px-4 from global;
+    composes: rounded-full from global;
+    composes: block from global;
+    composes: lg_hidden from global;
+    composes: mt-8 from global;
+}
+
+.hideElements {}
+
+.hideElements > div:nth-child(n + 9) {
+    @apply mOnly_hidden;
+}

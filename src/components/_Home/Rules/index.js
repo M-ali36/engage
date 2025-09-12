@@ -2,7 +2,7 @@ import React from 'react';
 import * as classes from './index.module.css'
 import SectionObserver from '@components/SectionObserver';
 import RichText from '@components/RichText';
-import HeartIcon from '@Svg/heart.svg'
+import Svg from '@Ui/Svg'
 import PropTypes from 'prop-types';
 
 const Rules = ({title, subTitle, items}) => {
@@ -19,12 +19,10 @@ const Rules = ({title, subTitle, items}) => {
                 </div>
                 <div className={classes.row}>
                     {items.map((item, index) => (
-                        <div className={classes.col}>
-                            <span className={classes.iconContainer}>
-                                <HeartIcon className={classes.icon}/>
-                            </span>
+                        <div className={classes.col} key={index}>
+                            <Svg className={classes.iconContainer} url={item.image.file?.url}/>
                             <h3 className={classes.itemTitle}>{item.title}</h3>
-                            <RichText content={item.content} className={classes.itemContent}/>
+                            {item.content && <RichText content={item.content} className={classes.itemContent}/>}
                         </div>
                     ))}
                 </div>

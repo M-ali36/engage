@@ -53,9 +53,8 @@
     composes: text-black from global;
 }
 
-.icon {
-    composes: w-5 from global;
-    composes: h-5 from global;
+.iconContainer svg {
+    @apply w-5 h-5;
 }
 
 .itemTitle {

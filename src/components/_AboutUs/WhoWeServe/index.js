@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import SectionObserver from '@components/SectionObserver';
 import RichText from '@components/RichText';
 import PropTypes from 'prop-types';
@@ -7,27 +7,9 @@ import * as classes from './index.module.css';
 import Australia from '@Svg/flags/australia.svg';
 import India from '@Svg/flags/india.svg';
 import USA from '@Svg/flags/usa.svg';
-import gsap from 'gsap';
+import London from '@Svg/flags/london.svg';
 
 const WhoWeServe = ({ title }) => {
-  const mapRef = useRef(null);
-
-  useEffect(() => {
-    if (window.innerWidth >= 1024 && mapRef.current) {
-      const paths = mapRef.current.querySelectorAll(".world-map > path"); 
-
-      paths.forEach((path) => {
-        gsap.to(path, {
-          opacity: 0.4,
-          duration: gsap.utils.random(1, 2),
-          repeat: -1,
-          yoyo: true,
-          delay: gsap.utils.random(0, 3),
-          ease: "power1.inOut",
-        });
-      });
-    }
-  }, []);
 
   return (
     <SectionObserver className={classes.root}>
@@ -39,7 +21,7 @@ const WhoWeServe = ({ title }) => {
             className={classes.title}
           />
         </div>
-        <div ref={mapRef} className={classes.map}>
+        <div className={classes.map}>
           <WorldMap className="world-map"/>
         </div>
         <ul className={classes.worldList}>
@@ -48,6 +30,13 @@ const WhoWeServe = ({ title }) => {
             <div className={classes.content}>
               <h3 className={classes.cityTitle}>New York</h3>
               <span className={classes.timeZone}>GMT -5:00</span>
+            </div>
+          </li>
+          <li className={classes.item}>
+            <London className={classes.image}/>
+            <div className={classes.content}>
+              <h3 className={classes.cityTitle}>London</h3>
+              <span className={classes.timeZone}>GMT</span>
             </div>
           </li>
           <li className={classes.item}>

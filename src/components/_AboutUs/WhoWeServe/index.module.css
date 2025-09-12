@@ -43,11 +43,12 @@
     cursor: pointer;
 }
 
-.map [data-button]:hover + [data-info] {
+.map [data-button]:hover + g {
     opacity: 1;
 }
 
-.map [data-info] {
+.map [data-button] + g {
+    pointer-events: none;
     opacity: 0;
     transition: all 0.25s ease;
 }

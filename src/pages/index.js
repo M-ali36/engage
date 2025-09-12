@@ -76,18 +76,23 @@ export const pageQuery = graphql`
 				content {
 					raw
 				}
+				image {
+					...Image
+				}
 			}
 			servicesTitle {
 				raw
 			}
 			services {
 				title
-				slug
-				mainImage {
+				content {
+					raw
+				}
+				image {
 					...Image
 				}
-				homeExcerpt {
-					homeExcerpt
+				link {
+					...Link
 				}
 			}
 			insightsTitle {
