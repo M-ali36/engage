@@ -42,10 +42,6 @@
     @apply text-yellow;
 }
 
-.iconContainer {
-    display: block;
-
-}
 
 .itemTitle {
     composes: text-base-m from global;

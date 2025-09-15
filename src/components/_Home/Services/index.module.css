@@ -6,13 +6,16 @@
     composes: cont from '@globalCss';
 }
 .titleContainer {
-    composes: mb-12 from global;
+    composes: mb-4 from global;
+    composes: lg_mb-12 from global;
 }
 .title {
     composes: text-4xl from global;
     composes: font-bold from global;
 }
-
+.title br {
+    @apply mOnly_hidden;
+}
 .subTitle {
     composes: text-orange from global;
     composes: mb-4 from global;
@@ -87,7 +90,7 @@
     composes: items-end from global;
     composes: justify-end from global;
     composes: mOnly_absolute from global;
-    composes: mOnly_end-4 from global;
+    composes: mOnly_end-0 from global;
     composes: mOnly_bottom-8 from global;
     composes: mOnly_w-4 from global;
 }

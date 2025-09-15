@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AnimatedImage = ({ image, ...props }) => {
+const AnimatedImage = ({ image, height, width, loading = 'lazy', ...props }) => {
     const { gatsbyImageData, description } = image;
 
     const imageRef = useRef(null);
@@ -17,7 +17,7 @@ const AnimatedImage = ({ image, ...props }) => {
         gsap.fromTo(
             imageRef.current.querySelector(".gatsby-image-wrapper"),
             {
-                scale: 1.04,
+                scale: 1.08,
             },
             {
                 scale: 1,
@@ -35,12 +35,15 @@ const AnimatedImage = ({ image, ...props }) => {
     }, []);
 
     return (
-        <div className={classes.animatedImage} ref={imageRef} {...props} data-animated-image="true">
+        <div className={classes.animatedImage} ref={imageRef} {...props}>
             <GatsbyImage
                 image={gatsbyImageData}
                 alt={description}
                 className={classes.image}
                 placeholder="blurred"
+                height={height}
+                width={width}
+                loading={loading}
             />
         </div>
     );

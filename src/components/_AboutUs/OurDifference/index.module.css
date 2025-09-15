@@ -13,6 +13,8 @@
 .title {
     composes: text-4xl from global;
     composes: font-bold from global;
+    composes: relative from global;
+    composes: z-[1] from global;
 }
 
 .title strong {

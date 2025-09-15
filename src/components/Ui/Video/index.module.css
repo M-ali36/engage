@@ -1,0 +1,82 @@
+.videoWrapper {
+    composes: w-full from global;
+    composes: relative from global;
+    composes: aspect-video from global;
+    composes: lg_vhd from global;
+    composes: lg_min-h-screen from global;
+    composes: overflow-hidden from global;
+}
+
+.videoContainer {
+    composes: relative from global;
+    composes: bg-black from global;
+    composes: w-full from global;
+    composes: overflow-hidden from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+    composes: overflow-hidden from global;
+}
+  
+.videoItem {
+    composes: w-full from global;
+    composes: aspect-video from global;
+    composes: object-cover from global;
+    composes: max-w-[unset] from global;
+    composes: z-[1] from global;
+
+}
+
+.bgImage {
+    composes: absolute from global;
+    composes: w-full from global;
+    composes: min-h-full from global;
+    composes: object-cover from global;
+    composes: max-w-[unset] from global;
+    composes: z-[0] from global;
+}
+.audioToggle {
+    composes: absolute from global;
+    composes: bottom-8 from global;
+    composes: end-8 from global;
+    composes: z-10 from global;
+    composes: cursor-pointer from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: opacity-0 from global;
+}
+  
+.text {
+    composes: text-white from global;
+}
+  
+.btnTitle {
+    composes: text-base from global;
+    composes: uppercase from global;
+    composes: bg-green from global;
+    composes: rounded-full from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+    composes: h-10 from global;
+    composes: px-5 from global;
+}
+  
+.icon {
+    composes: bg-white from global;
+    composes: h-10 from global;
+    composes: w-10 from global;
+    composes: rounded-full from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+}
+  
+.mask {
+    composes: hidden from global;
+}
+  
+.iconContainer {
+    composes: inline-block from global;
+}
+  

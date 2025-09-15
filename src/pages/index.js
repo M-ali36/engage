@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from 'gatsby'
 import Seo from '@components/Seo'
 import BannerVideo from '@Ui/BannerVideo'
+import Video from '@Ui/Video'
 import PropTypes from 'prop-types'
 import TextRotator from "@components/_Home/TextRotator"
 import Rules from "@components/_Home/Rules"
@@ -15,6 +16,7 @@ const IndexPage = ({ data }) => {
 	const {
 		seo,
 		mainVideoId,
+		mainVideo,
 		mainInfoList,
 		mainInfoImage,
 		theRulesTitle,
@@ -33,7 +35,7 @@ const IndexPage = ({ data }) => {
 	return (
 		<>
 			<Seo data={seo} slug="/" />
-			<BannerVideo videoId={mainVideoId} image={mainVideoPlaceholder}/>
+			<Video src={mainVideo} image={mainVideoPlaceholder}/>
 			<TextRotator image={mainInfoImage} list={mainInfoList} />
 			<Rules title={theRulesTitle} subTitle={theRulesSubTitle} items={theRulesList}/>
 			<Services title={servicesTitle} services={services}/>
@@ -58,6 +60,9 @@ export const pageQuery = graphql`
 				...SEO
 			}
 			mainVideoId
+			mainVideo {
+				...Image
+			}
 			mainVideoPlaceholder {
 				...Image
 			}
@@ -132,6 +137,9 @@ export const pageQuery = graphql`
 					...Link
 				}
 				backgroundImage {
+					...Image
+				}
+				mobileBackgroundImage {
 					...Image
 				}
 			}
