@@ -43,18 +43,8 @@
 }
 
 .iconContainer {
-    composes: flex from global;
-    composes: justify-center from global;
-    composes: items-center from global;
-    composes: bg-yellow from global;
-    composes: rounded-full from global;
-    composes: h-12 from global;
-    composes: w-12 from global;
-    composes: text-black from global;
-}
+    display: block;
 
-.iconContainer svg {
-    @apply w-5 h-5;
 }
 
 .itemTitle {

@@ -2,8 +2,8 @@ import React from 'react';
 import * as classes from './index.module.css'
 import SectionObserver from '@components/SectionObserver';
 import RichText from '@components/RichText';
-import Svg from '@Ui/Svg'
 import PropTypes from 'prop-types';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Rules = ({title, subTitle, items}) => {
     return (
@@ -20,7 +20,14 @@ const Rules = ({title, subTitle, items}) => {
                 <div className={classes.row}>
                     {items.map((item, index) => (
                         <div className={classes.col} key={index}>
-                            <Svg className={classes.iconContainer} url={item.image.file?.url}/>
+                            {item.image &&
+                                <GatsbyImage
+                                    image={item.image.gatsbyImageData}
+                                    alt={item.image.description}
+                                    className={classes.iconContainer}
+                                    placeholder="blurred"
+                                />
+                            }
                             <h3 className={classes.itemTitle}>{item.title}</h3>
                             {item.content && <RichText content={item.content} className={classes.itemContent}/>}
                         </div>

@@ -28,19 +28,20 @@
 .itemCont {
     composes: row from '@globalCss';
     composes: gap-4 from global;
-    composes: py-8 from global;
+    composes: py-4 from global;
+    composes: mOnly_pt-8 from global;
     composes: lg_py-12 from global;
     composes: group from global;
     composes: mOnly_relative from global;
 }
 .itemContent {
     composes: col-span-12 from global;
-    composes: lg_col-span-8 from global;
+    composes: lg_col-span-7 from global;
 }
 
 .itemImage {
     composes: col-span-12 from global;
-    composes: lg_col-span-3 from global;
+    composes: lg_col-span-4 from global;
     composes: flex from global;
     composes: items-center from global;
     composes: justify-end from global;
@@ -48,14 +49,17 @@
 }
 
 .itemTitle {
-    composes: text-2xl from global;
+    composes: text-[18px] from global;
+    composes: lg_text-2xl from global;
     composes: font-bold from global;
     composes: mb-4 from global;
 }
 
 .itemSubTitle {
-    composes: text-base from global;
+    composes: text-sm from global;
+    composes: lg_text-base from global;
     composes: font-light from global;
+    composes: mOnly_max-w-[90%] from global;
 }
 
 .imageContainer {
@@ -84,7 +88,7 @@
     composes: justify-end from global;
     composes: mOnly_absolute from global;
     composes: mOnly_end-4 from global;
-    composes: mOnly_top-8 from global;
+    composes: mOnly_bottom-8 from global;
     composes: mOnly_w-4 from global;
 }
 .icon {

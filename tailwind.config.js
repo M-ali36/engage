@@ -38,13 +38,13 @@ module.exports = {
                     lineHeight: '20px',
                 }],
                 'sm': [ /* font-size */ '16px', {
-                    lineHeight: '19px',
+                    lineHeight: '1.4',
                 }],
                 'base': [ /* font-size */ '20px', {
-                    lineHeight: '32px',
+                    lineHeight: '1.4',
                 }],
                 'base-m': [ /* font-size */ '24px', {
-                    lineHeight: '30px',
+                    lineHeight: '1.2',
                 }],
                 'lg': [ /* font-size */ 'var(--lg-font-size)', {
                     lineHeight: 'inherit',
