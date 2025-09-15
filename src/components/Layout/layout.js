@@ -121,8 +121,8 @@ const LayoutWrapper = ({ children, location }) => {
           :root {
             --xxl-font-size: ${getClampValue(50, 135 )};
             --5xl-font-size: ${getClampValue(50, 70 )};
-            --4xl-font-size: ${getClampValue(40, 60 )};
-            --3xl-font-size: ${getClampValue(36, 50 )};
+            --4xl-font-size: ${getClampValue(32, 60 )};
+            --3xl-font-size: ${getClampValue(32, 50 )};
             --2xl-font-size: ${getClampValue(20, 36 )};
             --xlm-font-size: ${getClampValue(20, 30 )};
             --xl-font-size: ${getClampValue(20, 25 )};
