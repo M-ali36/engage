@@ -8,6 +8,7 @@
 	composes: text-[28px] from global;
 	composes: lg_text-[36px] from global;
 	composes: font-sans from global;
+	composes: tracking-tight from global;
 	composes: leading-none from global;
 	composes: -mt-2 from global;
 }

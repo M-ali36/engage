@@ -34,7 +34,9 @@
 	composes: col-span-12 from global;
 	composes: lg_col-span-6 from global;
 }
-
+.logoCol {
+	composes: col-span-12 from global;
+}
 .linksTitle {
 	composes: text-[13px] from global;
 	composes: font-bold from global;
@@ -48,6 +50,8 @@
 	composes: block from global;
 	composes: text-[80px] from global;
 	composes: lg_text-[115px] from global;
+	composes: -tracking-[4px] from global;
+	composes: lg_-tracking-[6px] from global;
 	composes: font-bold from global;
 	composes: mb-8 from global;
 	composes: mt-12 from global;
@@ -67,6 +71,7 @@
 
 .bb {
 	composes: inline from global;
+	composes: -tracking-[.5px] from global;
 }
 
 .copyrights {

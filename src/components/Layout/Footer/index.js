@@ -61,7 +61,7 @@ const Footer = () => {
 					</div>
 					<div className={classes.logoCol}>
 						<span className={classes.footerLogo}>Eng<span className={classes.spiCh}>a</span>ge</span>
-						<span className={classes.footerSubTitle}>Part of <strong className={classes.bb}>Br<span className={classes.spiCh}>a</span>veBison</strong></span>
+						<a href="https://bravebison.com/" target='_blank' className={classes.footerSubTitle}>Part of <strong className={classes.bb}>Br<span className={classes.spiCh}>a</span>veBison</strong></a>
 					</div>
 				</div>
 				<div className={classes.copyrights}>{copyrights}</div>

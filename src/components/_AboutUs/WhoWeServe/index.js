@@ -15,7 +15,6 @@ const WhoWeServe = ({ title }) => {
     <SectionObserver className={classes.root}>
       <div className={classes.cont}>
         <div className={classes.titleContainer}>
-          <h2 className={classes.miniTitle}>Who we serve</h2>
           <RichText
             content={title}
             className={classes.title}

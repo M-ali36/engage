@@ -71,7 +71,7 @@ const OurDifference = ({ title, images }) => {
       </div>
 
       {isMobile ? (
-        // 📱 Mobile → Swiper with Navigation
+        
         <div className={classes.swiperWrapper}>
           <Swiper
             modules={[Navigation]}
@@ -108,7 +108,6 @@ const OurDifference = ({ title, images }) => {
           </div>
         </div>
       ) : (
-        // 💻 Desktop → GSAP horizontal scroll
         <div className="slidesWrapper">
           <div className={`${classes.slidesContainer} slides`}>
             {images.map((item, index) => (

@@ -18,10 +18,12 @@
 .title strong {
     @apply text-orange;
 }
+
 .imageContainer {
     composes: relative from global;
     composes: aspect-video from global;
     composes: w-screen from global;
+    composes: max-w-screen-2xl from global;
     composes: overflow-hidden from global;
 }
 
@@ -29,4 +31,6 @@
     composes: flex from global;
     composes: w-fit from global;
     composes: flex-nowrap from global;
+    composes: items-center from global;
+    composes: h-screen from global;
 }

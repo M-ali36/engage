@@ -167,7 +167,7 @@ const LayoutWrapper = ({ children, location }) => {
             overflow: hidden;
           }
           section:not([class]) {
-            margin-top: -1px;
+            margin-bottom: -1px;
           }
         `}</style>
       </Helmet>

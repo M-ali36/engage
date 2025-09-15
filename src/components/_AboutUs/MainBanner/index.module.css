@@ -43,7 +43,7 @@
 }
 
 .title strong {
-	@apply text-[80px] lg_text-[115px];
+	@apply text-[80px] lg_text-[115px] -tracking-[4px] lg_-tracking-[6px];
 }
 
 .title span {
