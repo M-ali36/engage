@@ -7,16 +7,26 @@ import PropTypes from 'prop-types';
 import SectionObserver from '@components/SectionObserver';
 
 const PageFooter = ({footer}) => {
-    const {content, link, backgroundImage} = footer;
+    const {content, link, backgroundImage, mobileBackgroundImage} = footer;
     console.log(footer)
     return (
         <SectionObserver className={classes.message} isLight>
             {backgroundImage &&
-                <div className={classes.imageContainer}>
+                <div className={`${classes.imageContainer} ${classes.desktopBackgroundImage}`}>
                     <AnimatedImage
                         image={backgroundImage}
                         height={1920}
                         width={1080}
+                        className={classes.image}
+                    />
+                </div>
+            }
+            {mobileBackgroundImage &&
+                <div className={classes.mobileBackgroundImage}>
+                    <AnimatedImage
+                        image={mobileBackgroundImage}
+                        height={1024}
+                        width={1024}
                         className={classes.image}
                     />
                 </div>

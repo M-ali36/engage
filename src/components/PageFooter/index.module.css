@@ -40,3 +40,11 @@
     composes: top-0 from global;
     composes: overflow-hidden from global;
 }
+
+.mobileBackgroundImage {
+    composes: lg_hidden from global;
+}
+
+.desktopBackgroundImage {
+    composes: mOnly_hidden from global;
+}
