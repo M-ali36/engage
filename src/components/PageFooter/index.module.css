@@ -1,10 +1,12 @@
 .message {
-    composes: py-20 from global;
+    composes: py-8 from global;
+    composes: lg_py-20 from global;
     composes: bg-black from global;
     composes: relative from global;
     composes: flex from global;
     composes: items-center from global;
     composes: lg_min-h-screen from global;
+    composes: mOnly_min-h-[410px] from global;
 }
 
 .messageContent {

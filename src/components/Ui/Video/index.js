@@ -12,11 +12,10 @@ const VideoComponent = ({ src, image }) => {
   return (
     <>
       <div className={classes.videoWrapper}>
-        <div className={classes.videoContainer}>
           <GatsbyImage
             image={image?.gatsbyImageData}
             alt={image?.description || "About us background video thumbnail"}
-            className="absolute min-h-full w-full object-cover"
+            className="absolute left-0 top-0 h-full w-full object-cover"
             placeholder="blurred"
             height={1080}
             width={1920}
@@ -27,12 +26,11 @@ const VideoComponent = ({ src, image }) => {
             autoPlay
             playsInline
             loop
-            className={classes.videoItem}
+            className="absolute top-0 left-0 w-full h-full object-cover"
             preload="auto"
           >
             <source src={src.file.url} type="video/mp4" />
           </video>
-        </div>
       </div>
     </>
   );

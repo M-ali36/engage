@@ -22,7 +22,7 @@ const PageFooter = ({footer}) => {
                 </div>
             }
             {mobileBackgroundImage &&
-                <div className={classes.mobileBackgroundImage}>
+                <div className={`${classes.imageContainer} ${classes.mobileBackgroundImage}`}>
                     <AnimatedImage
                         image={mobileBackgroundImage}
                         height={1024}
