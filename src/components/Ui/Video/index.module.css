@@ -1,7 +1,8 @@
 .videoWrapper {
     composes: w-full from global;
     composes: relative from global;
-    composes: aspect-video from global;
+    composes: aspect-[5/4] from global;
+    composes: lg_aspect-video from global;
     composes: lg_vhd from global;
     composes: lg_min-h-screen from global;
     composes: overflow-hidden from global;

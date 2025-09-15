@@ -156,13 +156,6 @@ const LayoutWrapper = ({ children, location }) => {
             font-display: swap;
           }
 
-          @font-face {
-            font-family: 'Inter';
-            src: url(${Inter}) format('woff2');
-            font-weight: 300;
-            font-display: swap;
-          }
-
           section, footer {
             overflow: hidden;
           }

@@ -31,7 +31,6 @@ module.exports = {
                 'sans': ['National', 'Arial', 'sans-serif'],
                 'serif': ['Signifier', 'Arial', 'sans-serif'],
                 'bb': ['Bravebison', 'Arial', 'sans-serif'],
-                'inter': ['Inter', 'Arial', 'sans-serif'],
             },
             fontSize: {
                 'xs': [ /* font-size */ '14px', {

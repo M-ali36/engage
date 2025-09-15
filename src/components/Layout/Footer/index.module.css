@@ -42,8 +42,7 @@
 	composes: font-bold from global;
 }
 .link {
-	composes: text-[12px] from global;
-	composes: font-inter from global;
+	composes: text-[13px] from global;
 }
 
 .footerLogo {

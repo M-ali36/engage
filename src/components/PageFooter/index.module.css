@@ -4,7 +4,7 @@
     composes: bg-black from global;
     composes: relative from global;
     composes: flex from global;
-    composes: items-center from global;
+    composes: lg_items-center from global;
     composes: lg_min-h-screen from global;
     composes: mOnly_min-h-[410px] from global;
 }

@@ -91,7 +91,9 @@ const TextRotator = ({ image, list }) => {
             image={image}
             height={1080}
             width={1920}
+            loaging={isMobile ? 'eager' : "lazy"}
             className={classes.image}
+            
           />
         </div>
         <div className={classes.cont}>
