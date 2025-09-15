@@ -30,6 +30,7 @@
     composes: flex-col from global;
     composes: items-start from global;
     composes: lg_items-center from global;
+    composes: lg_py-48 from global;
     composes: mOnly_py-12 from global;
     composes: mOnly_fix-trans from global;
 }
@@ -45,4 +46,5 @@
     composes: xl_text-[135px] from global;
     composes: text-yellow from global;
     composes: font-bold from global;
+    composes: primary-anime from global;
 }
