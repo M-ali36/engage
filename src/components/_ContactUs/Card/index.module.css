@@ -1,0 +1,95 @@
+.root {
+    composes: py-12 from global;
+    composes: lg_py-20 from global;
+    composes: bg-black from global;
+    composes: text-white from global;
+}
+
+.cont {
+    composes: cont from '@globalCss';
+}
+
+.row {
+    composes: grid from global;
+    composes: grid-cols-12 from global;
+    composes: gap-8 from global;
+}
+
+.colImage {
+    composes: col-span-12 from global;
+    composes: lg_col-span-3 from global;
+}
+
+.colContent {
+    composes: col-span-12 from global;
+    composes: lg_col-span-7 from global;
+    composes: mOnly_-order-1 from global;
+}
+
+.colLink {
+    composes: col-span-12 from global;
+    composes: lg_col-span-2 from global;
+    composes: flex from global;
+    composes: items-end from global;
+}
+
+.imageContainer {
+    composes: relative from global;
+    composes: aspect-[2/3] from global;
+    composes: overflow-hidden from global;
+    composes: rounded-xl from global;
+}
+
+.content {
+    composes: block from global;
+    composes: mt-6 from global;
+}
+
+.memberTitle {
+    composes: text-base-m from global;
+    composes: font-bold from global;
+    composes: block from global;
+}
+
+.memberRule {
+    composes: text-base-m from global;
+    composes: block from global;
+}
+
+.title {
+    composes: text-4xl from global;
+}
+
+.title span {
+    @apply mOnly_block;
+}
+
+.title strong {
+    @apply text-yellow;
+}
+
+.colLink {
+    composes: items-end from global;
+    composes: justify-end from global;
+}
+
+.icon {
+    composes: w-4 from global;
+    composes: h-4 from global;
+    composes: mOnly_hidden from global;
+}
+
+.link {
+    composes: text-base-m from global;
+    composes: font-bold from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: gap-4 from global;
+    composes: mOnly_text-sm from global;
+    composes: mOnly_py-3 from global;
+    composes: mOnly_w-full from global;
+    composes: mOnly_justify-center from global;
+    composes: mOnly_bg-yellow from global;
+    composes: mOnly_rounded-full from global;
+    composes: mOnly_text-black from global;
+}

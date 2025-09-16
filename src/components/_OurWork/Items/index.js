@@ -4,13 +4,15 @@ import PropTypes from 'prop-types';
 import * as classes from './index.module.css';
 import Item from './Item';
 import ServicesFilter from './ServicesFilter';
+import RegionFilter from './RegionFilter';
 import SearchIcon from "@Svg/search.svg";
 import Caret from "@Svg/caret.svg";
 
 const Items = ({ items, tags }) => {
   const [view, setView] = useState('grid');
   const [filteredItems, setFilteredItems] = useState(items);
-  const [currentFilter, setCurrentFilter] = useState('');
+  const [currentService, setCurrentService] = useState('');
+  const [currentRegion, setCurrentRegion] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
 
   // pagination state
@@ -22,12 +24,21 @@ const Items = ({ items, tags }) => {
   useEffect(() => {
     let filtered = items;
 
-    if (currentFilter !== '') {
+    // filter by service
+    if (currentService !== '') {
       filtered = filtered.filter(item =>
-        item.metadata.tags.some(tag => tag.name === currentFilter)
+        item.metadata.tags.some(tag => tag.name === currentService)
       );
     }
 
+    // filter by region
+    if (currentRegion !== '') {
+      filtered = filtered.filter(item =>
+        item.metadata.tags.some(tag => tag.name === currentRegion)
+      );
+    }
+
+    // filter by search
     if (searchTerm.trim() !== '') {
       filtered = filtered.filter(item =>
         item.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -37,8 +48,10 @@ const Items = ({ items, tags }) => {
     setFilteredItems(filtered);
     setCurrentPage(1);
 
+    // update URL query params
     const queryParams = new URLSearchParams();
-    if (currentFilter !== '') queryParams.set('service', currentFilter);
+    if (currentService !== '') queryParams.set('service', currentService);
+    if (currentRegion !== '') queryParams.set('region', currentRegion);
     if (searchTerm !== '') queryParams.set('search', searchTerm);
 
     if (queryParams.toString()) {
@@ -46,7 +59,7 @@ const Items = ({ items, tags }) => {
     } else {
       window.history.replaceState(null, '', window.location.pathname);
     }
-  }, [currentFilter, searchTerm, items]);
+  }, [currentService, currentRegion, searchTerm, items]);
 
   // pagination logic
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -59,6 +72,7 @@ const Items = ({ items, tags }) => {
     <SectionObserver className={classes.root}>
       <div className={classes.cont}>
         <div className={classes.mainRow}>
+          {/* Controls */}
           <div className={classes.controls}>
             <div className={classes.control}>
               <input
@@ -89,14 +103,21 @@ const Items = ({ items, tags }) => {
             </div>
           </div>
 
+          {/* Filters */}
           <div className={classes.filtersCol}>
             <ServicesFilter
               filters={tags}
-              currentFilter={currentFilter}
-              setCurrentFilter={setCurrentFilter}
+              currentFilter={currentService}
+              setCurrentFilter={setCurrentService}
+            />
+            <RegionFilter
+              filters={tags}
+              currentRegion={currentRegion}
+              setCurrentRegion={setCurrentRegion}
             />
           </div>
 
+          {/* Items */}
           <div className={classes.itemsCol}>
             <div className={classes.row}>
               {currentItems.length > 0 ? (
@@ -133,7 +154,7 @@ const Items = ({ items, tags }) => {
             {[...Array(totalPages)].map((_, i) => (
               <button
                 key={i}
-                className={`${classes.btnPage}${currentPage === i + 1 ? classes.activePage : ''}`}
+                className={`${classes.btnPage} ${currentPage === i + 1 ? classes.activePage : ''}`}
                 onClick={() => setCurrentPage(i + 1)}
               >
                 {i + 1}
@@ -170,7 +191,8 @@ const Items = ({ items, tags }) => {
 };
 
 Items.propTypes = {
-  text: PropTypes.object
+  items: PropTypes.array.isRequired,
+  tags: PropTypes.array.isRequired,
 };
 
 export default Items;

@@ -23,7 +23,7 @@
     composes: col-span-12 from global;
     composes: flex from global;
     composes: flex-wrap from global;
-    composes: mb-8 from global;
+    composes: lg_mb-8 from global;
     composes: items-center from global;
 }
 
@@ -31,6 +31,7 @@
     composes: lg_ms-auto from global;
     composes: mOnly_mx-auto from global;
     composes: flex from global;
+    composes: mOnly_hidden from global;
     composes: mOnly-w-full from global;
     composes: mOnly_justify-center from global;
 }

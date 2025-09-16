@@ -1,0 +1,72 @@
+.filtersWrapper {
+    composes: relative from global;
+    composes: mt-4 from global;
+    composes: lg_mt-8 from global;
+}
+
+.tagsTitle {
+    composes: flex from global;
+    composes: gap-2 from global;
+    composes: items-center from global;
+    composes: border from global;
+    composes: border-black from global;
+    composes: rounded-full from global;
+    composes: cursor-pointer from global;
+    composes: py-2 from global;
+    composes: px-4 from global;
+}
+
+.sortIcon {
+    composes: w-4 from global;
+    composes: h-6 from global;
+}
+
+.mIcon {
+    composes: ms-auto from global;
+    composes: w-3 from global;
+    composes: h-3 from global;
+    composes: -rotate-90 from global;
+}
+
+.mTitle {
+    composes: text-sm from global;
+}
+
+.filtersContainer {
+    composes: absolute from global;
+    composes: z-[1] from global;
+    composes: w-full from global;
+    composes: top-full from global;
+    composes: left-0 from global;
+    composes: rounded-2xl from global;
+    composes: border from global;
+    composes: border-slate-500 from global;
+    composes: primary-anime from global;
+    composes: bg-white from global;
+    composes: py-3 from global;
+}
+
+.filtersContainerActive {
+    composes: translate-y-1 from global;
+}
+
+.filtersContainerinactive {
+    composes: opacity-0 from global;
+    composes: invisible from global;
+    composes: translate-y-0 from global;
+}
+
+.item {
+    composes: px-4 from global;
+    composes: py-2 from global;
+    composes: border-b from global;
+    composes: border-slate-500 from global;
+    composes: last_border-0 from global;
+    composes: primary-anime from global;
+    composes: cursor-pointer from global;
+    composes: hover_bg-slate-300 from global;
+}
+
+.itemActive {
+    composes: bg-slate-300 from global;
+}

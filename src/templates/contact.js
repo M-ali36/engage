@@ -5,6 +5,7 @@ import MainBanner from '@components/_ContactUs/MainBanner'
 import Form from '@components/_ContactUs/Form'
 import OurOffices from '../components/_ContactUs/OurOffices'
 import OurLocations from '../components/_ContactUs/OurLocations'
+import Card from '../components/_ContactUs/Card'
 
 
 const ContactUsPage = ({ data }) => {
@@ -16,6 +17,8 @@ const ContactUsPage = ({ data }) => {
     mainBanner,
     links,
     formTitle,
+    partnerMember,
+    partnerTitle,
     ourOffices,
     ourLocations
   } = data.contentfulContactUs
@@ -25,8 +28,8 @@ const ContactUsPage = ({ data }) => {
       <Seo data={seo} slug={slug}/>
       <MainBanner title={featuredTitle} image={mainBanner} subTitle={subTitle}/>
       <Form title={formTitle} links={links}/>
+      <Card data={partnerMember} partnerTitle={partnerTitle}/>
       <OurOffices items={ourOffices}/>
-      <OurLocations items={ourLocations}/>
     </>
   )
 }

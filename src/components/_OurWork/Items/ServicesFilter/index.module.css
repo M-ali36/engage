@@ -40,13 +40,15 @@
 }
 
 .tagsTitle {
-    composes: mOnly_px-6 from global;
+    composes: mOnly_px-4 from global;
     composes: mOnly_py-3 from global;
     composes: mOnly_border from global;
     composes: mOnly_border-slate-200 from global;
     composes: mOnly_flex from global;
     composes: mOnly_items-center from global;
     composes: mOnly_rounded-full from global;
+    composes: mOnly_bg-yellow from global;
+    composes: mOnly_font-bold from global;
 }
 
 .filtersContainer {

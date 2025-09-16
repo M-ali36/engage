@@ -156,7 +156,7 @@ const LayoutWrapper = ({ children, location }) => {
             font-display: swap;
           }
 
-          section, footer {
+           footer {
             overflow: hidden;
           }
           section:not([class]) {
