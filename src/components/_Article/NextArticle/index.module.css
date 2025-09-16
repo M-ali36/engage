@@ -1,5 +1,5 @@
 .root {
-    composes: py-20 from global;
+    composes: py-12 from global;
     composes: lg_py-32 from global;
     composes: bg-black from global;
     composes: relative from global;
@@ -66,10 +66,19 @@
 }
 
 .nextLink {
-    composes: underline from global;
-    composes: text-yellow from global;
+    composes: lg_underline from global;
+    composes: lg_text-yellow from global;
+    composes: lg_text-base-m from global;
     composes: font-bold from global;
-    composes: text-base-m from global;
+    composes: mOnly_text-sm from global;
+    composes: mOnly_py-3 from global;
+    composes: mOnly_w-full from global;
+    composes: mOnly_justify-center from global;
+    composes: mOnly_bg-yellow from global;
+    composes: mOnly_rounded-full from global;
+    composes: mOnly_text-black from global;
+    composes: mOnly_block from global;
+    composes: mOnly_text-center from global;
 }
 
 .colLink {
@@ -81,4 +90,5 @@
     composes: text-yellow from global;
     composes: font-bold from global;
     composes: text-base-m from global;
+    composes: mOnly_text-[40px] from global;
 }

@@ -1,9 +1,12 @@
 .root {
-    composes: py-20 from global;
+    composes: pt-20 from global;
+    composes: pb-8 from global;
+    composes: lg_py-20 from global;
     composes: bg-black from global;
     composes: relative from global;
     composes: flex from global;
     composes: items-end from global;
+    composes: min-h-[400px] from global;
     composes: lg_min-h-screen from global;
     composes: text-white from global;
 }

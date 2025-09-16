@@ -1,6 +1,6 @@
 .paragraph {
 	composes: text-base from global;
-	composes: mOnly_text-base-m from global;
+	composes: mOnly_text-sm from global;
 	composes: mb-3 from global;
 }
 
@@ -50,7 +50,7 @@
 	composes: text-sm from global;
 }
 .code {
-	composes: text-md from global;
+	composes: text-base from global;
 	composes: bg-gray from global;
 	composes: border from global;
 	composes: border-opa from global;
