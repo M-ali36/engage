@@ -14,7 +14,8 @@
 }
 
 .content {
-    composes: text-sm from global;
+    composes: text-[18px] from global;
+    composes: lg_text-sm from global;
     composes: text-slate-500 from global;
     composes: max-w-3xl from global;
 }

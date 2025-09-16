@@ -9,14 +9,14 @@ import Signifier from '@Src/fonts/Signifier/signifier-light.woff2';
 import Bravebison from '@Src/fonts/Bravebison/bravebison.woff2';
 import Inter from '@Src/fonts/inter/Inter_28pt-Regular.woff2';
 import { Helmet } from 'react-helmet';
-import FontFaceObserver from 'fontfaceobserver'; // Add FontFaceObserver
+import FontFaceObserver from 'fontfaceobserver';
 import debounce from 'lodash/debounce';
-import gsap from 'gsap'; // Import GSAP
-import { ScrollSmoother } from 'gsap/ScrollSmoother'
-import { isSafari, isEdge, isIOS } from 'react-device-detect'
+import gsap from 'gsap';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { isSafari, isEdge, isIOS } from 'react-device-detect';
 import PropTypes from 'prop-types';
 
-gsap.registerPlugin( ScrollSmoother);
+gsap.registerPlugin(ScrollSmoother);
 
 const LayoutWrapper = ({ children, location }) => {
   const [store, dispatch] = useStore();
@@ -54,10 +54,10 @@ const LayoutWrapper = ({ children, location }) => {
     initSmoothScroll(); // Initialize smooth scroll after component mount
   }, []);
 
-  const smoothScrollRef = useRef()
+  const smoothScrollRef = useRef();
   useEffect(() => {
-    smoothScrollRef.current = store.smoothScroll
-  }, [store.smoothScroll])
+    smoothScrollRef.current = store.smoothScroll;
+  }, [store.smoothScroll]);
 
   // Handle font loading
   const handleWebfontLoad = useCallback(() => {
@@ -74,7 +74,7 @@ const LayoutWrapper = ({ children, location }) => {
 
     Promise.all(observers)
       .then(() => {
-        loadFonts(dispatch); // Assuming you have a dispatch method to update state
+        loadFonts(dispatch);
       })
       .catch(err => {
         console.warn('Some critical fonts are not available', err);
@@ -95,13 +95,13 @@ const LayoutWrapper = ({ children, location }) => {
     // Add resize event listener
     const resizeObserver = new ResizeObserver(
       debounce(() => {
-        updateResized(dispatch); // Assuming you have an updateResized action in your store
+        updateResized(dispatch);
       }, 50)
     );
-    resizeObserver.observe(document.body); // Start observing body or another container element
+    resizeObserver.observe(document.body);
 
     return () => {
-      resizeObserver.disconnect(); // Cleanup on component unmount
+      resizeObserver.disconnect();
     };
   }, [handleResize, handleWebfontLoad, dispatch]);
 
@@ -112,6 +112,17 @@ const LayoutWrapper = ({ children, location }) => {
       document.body.classList.remove("nav-open");
     }
   }, [store?.navOpenState]);
+
+  // ✅ Scroll to top on route change
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (store?.smoothScroll) {
+        store.smoothScroll.scrollTo(0, true);
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      }
+    }
+  }, [location.pathname, store?.smoothScroll]);
 
   return (
     <>
@@ -156,7 +167,7 @@ const LayoutWrapper = ({ children, location }) => {
             font-display: swap;
           }
 
-           footer {
+          footer {
             overflow: hidden;
           }
           section:not([class]) {

@@ -20,6 +20,7 @@
     composes: left-0 from global;
     composes: top-0 from global;
     composes: overflow-hidden from global;
+    composes: mOnly_hidden from global;
 }
 
 .swiper {
