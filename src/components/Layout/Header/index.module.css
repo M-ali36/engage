@@ -51,7 +51,6 @@
 	composes: bg-yellow from global;
 	composes: text-black from global;
 	composes: text-center from global;
-	composes: mOnly_hidden from global;
 }
 
 .messageTitle {
