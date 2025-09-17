@@ -26,7 +26,16 @@ module.exports = {
 	plugins:
 		[
 			'gatsby-plugin-react-helmet',
-			'gatsby-plugin-netlify',
+			{
+				resolve: `gatsby-plugin-netlify`,
+				options: {
+				headers: {
+					"/*.woff2": [
+					"Cache-Control: public, max-age=31536000, immutable"
+					],
+				},
+				},
+			},
 			'gatsby-transformer-sharp',
 			'gatsby-plugin-sharp',
 			`gatsby-plugin-image`,
