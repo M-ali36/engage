@@ -42,7 +42,6 @@ module.exports = {
 					],
 					},
 					mergeSecurityHeaders: true,
-					mergeLinkHeaders: true,
 					mergeCachingHeaders: true,
 				},
 			},
