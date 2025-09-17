@@ -2,6 +2,7 @@
     composes: pt-20 from global;
     composes: pb-8 from global;
     composes: lg_py-20 from global;
+    composes: mOnly_pt-36 from global;
     composes: bg-black from global;
     composes: relative from global;
     composes: flex from global;

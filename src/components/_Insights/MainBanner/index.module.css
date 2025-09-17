@@ -1,5 +1,6 @@
 .root {
     composes: py-12 from global;
+    composes: mOnly_pt-36 from global;
     composes: bg-black from global;
     composes: relative from global;
     composes: flex from global;

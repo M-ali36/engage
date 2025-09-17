@@ -37,9 +37,9 @@
     composes: py-2 from global;
     composes: px-4 from global;
     composes: rounded-full from global;
-    composes: bg-white from global;
+    composes: bg-yellow from global;
     composes: border from global;
-    composes: border-black from global;
+    composes: border-yellow from global;
     composes: appearance-none from global;
     composes: w-full from global;
 }

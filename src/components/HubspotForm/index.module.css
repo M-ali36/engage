@@ -21,6 +21,7 @@
     composes: border-b from global;
     composes: border-black from global;
     composes: placeholder_opacity-50 from global;
+    composes: focus_outline-none from global;
 }
 
 .textarea {
@@ -32,6 +33,7 @@
     composes: placeholder_opacity-50 from global;
     composes: border from global;
     composes: border-black from global;
+    composes: focus_outline-none from global;
 }
 
 .select {
@@ -47,6 +49,7 @@
     composes: border-b from global;
     composes: border-black from global;
     composes: text-sm from global;
+    composes: focus_outline-none from global;
 }
 
 .btnContainer {

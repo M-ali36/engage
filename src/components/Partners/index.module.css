@@ -53,6 +53,7 @@
     composes: block from global;
     composes: lg_hidden from global;
     composes: mt-8 from global;
+    composes: w-full from global;
 }
 
 .hideElements {}
