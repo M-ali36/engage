@@ -79,4 +79,5 @@
     composes: font-bold from global;
     composes: text-sm from global;
     composes: rounded-full from global;
+    composes: mOnly_w-full from global;
 }
