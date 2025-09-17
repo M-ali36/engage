@@ -29,11 +29,24 @@ module.exports = {
 			{
 				resolve: `gatsby-plugin-netlify`,
 				options: {
-				headers: {
-					"/*.woff2": [
-					"Cache-Control: public, max-age=31536000, immutable"
+					headers: {
+					// ✅ Cache fonts aggressively (1 year, immutable)
+					"/static/*.woff2": [
+						"Cache-Control: public, max-age=31536000, immutable",
+						"Access-Control-Allow-Origin: *",
 					],
-				},
+					// ✅ Cache images aggressively (1 year)
+					"/static/*.{jpg,jpeg,png,gif,webp,avif,svg}": [
+						"Cache-Control: public, max-age=31536000, immutable",
+					],
+					// ✅ Cache CSS/JS moderately (1 week)
+					"/static/*.{js,css}": [
+						"Cache-Control: public, max-age=604800, must-revalidate",
+					],
+					},
+					mergeSecurityHeaders: true,  // default
+					mergeLinkHeaders: true,      // allows Gatsby to add preload links
+					mergeCachingHeaders: true,   // combines with defaults above
 				},
 			},
 			'gatsby-transformer-sharp',
