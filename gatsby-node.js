@@ -26,6 +26,10 @@ const pages = [
     template: path.resolve('./src/templates/our-work.js')
   },
   {
+    query: 'allContentfulStandardContent',
+    template: path.resolve('./src/templates/standard-content.js')
+  },
+  {
     query: 'allContentfulCaseStudy',
     template: path.resolve('./src/templates/case-study.js'),
     path: 'our-work/'

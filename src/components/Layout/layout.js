@@ -170,8 +170,9 @@ const LayoutWrapper = ({ children, location }) => {
           footer {
             overflow: hidden;
           }
-          section:not([class]) {
+          section {
             margin-bottom: -1px;
+            overflow: hidden;
           }
         `}</style>
       </Helmet>

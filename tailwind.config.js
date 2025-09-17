@@ -103,6 +103,9 @@ module.exports = {
                 '.unline': {
                     'outline': 'unset',
                 },
+                '.noFill': {
+                    '-webkit-text-fill-color': 'unset !important',
+                },
                 '.vpm': {
                     'padding-top': 'var(--mobile-padding-top)',
                     'padding-bottom': 'var(--mobile-padding-bottom)',

@@ -7,6 +7,7 @@ import * as classes from './index.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Pagination } from 'swiper/modules';
+import { Link } from 'gatsby';
 
 const Slider = ({ items, title }) => {
   const swiperRef = useRef(null);
@@ -61,31 +62,33 @@ const Slider = ({ items, title }) => {
           >
             {items.map((item, index) => (
               <SwiperSlide key={index} className={classes.swiperSlide}>
-                {item.mainBanner && (
-                  <div className={classes.imageContainer}>
-                    <AnimatedImage
-                      image={item.mainBanner}
-                      height={1920}
-                      width={1080}
-                      className={classes.image}
-                    />
-                  </div>
-                )}
-                <div className={classes.itemContent}>
-                    <div>
-                        <span className={classes.tags} data-tags="true">
-                            {item.metadata.tags
-                                .filter(tag => tag.name.startsWith("Article:"))
-                                .slice(0, 1)
-                                .map((tag, index2) => (
-                                    <span className={classes.tag} key={index2}>
-                                    {tag.name.split(": ")[1] || tag.name}:
-                                    </span>
-                            ))}
-                        </span>
-                        {item.featuredTitle && <RichText className={classes.itemTitle} content={item.featuredTitle} useHeadings="Heading 3"/>}
+                <Link to={`/insights/${item.slug}`}>
+                  {item.mainBanner && (
+                    <div className={classes.imageContainer}>
+                      <AnimatedImage
+                        image={item.mainBanner}
+                        height={1920}
+                        width={1080}
+                        className={classes.image}
+                      />
                     </div>
-                </div>
+                  )}
+                  <div className={classes.itemContent}>
+                      <div>
+                          <span className={classes.tags} data-tags="true">
+                              {item.metadata.tags
+                                  .filter(tag => tag.name.startsWith("Article:"))
+                                  .slice(0, 1)
+                                  .map((tag, index2) => (
+                                      <span className={classes.tag} key={index2}>
+                                      {tag.name.split(": ")[1] || tag.name}:
+                                      </span>
+                              ))}
+                          </span>
+                          {item.featuredTitle && <RichText className={classes.itemTitle} content={item.featuredTitle} useHeadings="Heading 3"/>}
+                      </div>
+                  </div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

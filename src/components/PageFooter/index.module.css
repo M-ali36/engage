@@ -1,12 +1,13 @@
 .message {
     composes: py-8 from global;
     composes: lg_py-20 from global;
-    composes: bg-black from global;
+    composes: bg-yellow from global;
     composes: relative from global;
     composes: flex from global;
     composes: lg_items-center from global;
     composes: lg_min-h-screen from global;
     composes: mOnly_min-h-[410px] from global;
+    composes: overflow-hidden from global;
 }
 
 .messageContent {
@@ -49,4 +50,14 @@
 
 .desktopBackgroundImage {
     composes: mOnly_hidden from global;
+}
+
+.bgSvg {
+    composes: absolute from global;
+    composes: -bottom-[40px] from global;
+    composes: lg_bottom-0 from global;
+    composes: -end-[80px] from global;
+    composes: lg_-end-[200px] from global;
+    composes: w-[310px] from global;
+    composes: lg_w-[930px] from global;
 }

@@ -38,6 +38,7 @@
 .item {
     composes: lg_text-outline from global;
     composes: text-yellow from global;
+    composes: mOnly_noFill from global;
 }
 
 .itemTitle {

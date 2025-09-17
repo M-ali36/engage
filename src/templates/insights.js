@@ -81,6 +81,7 @@ export const pageQuery = graphql`
                 raw
             }
             hotArticles {
+                slug
                 mainBanner {
                     ...Image
                 }

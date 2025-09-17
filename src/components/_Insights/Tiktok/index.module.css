@@ -73,6 +73,7 @@
     composes: inline-flex from global;
     composes: lg_ms-auto from global;
     composes: mOnly_mt-8 from global;
+    composes: mOnly_w-full from global;
     composes: gap-4 from global;
 }
 
