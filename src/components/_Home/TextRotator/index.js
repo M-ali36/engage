@@ -13,7 +13,7 @@ const TextRotator = ({ image, list }) => {
   const listRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  // ✅ detect screen size
+  // ✅ screen size detection
   useEffect(() => {
     const checkScreen = () => setIsMobile(window.innerWidth < 1024);
     checkScreen();
@@ -21,65 +21,45 @@ const TextRotator = ({ image, list }) => {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  // ✅ GSAP animation only for desktop
   useEffect(() => {
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
     if (!isMobile && listRef.current && containerRef.current) {
-      const listHeight = listRef.current?.offsetHeight || 0;
-      const contHeight = containerRef.current?.clientHeight || 0;
+      const listHeight = listRef.current.getBoundingClientRect().height;
+      const contHeight = containerRef.current.getBoundingClientRect().height;
       const dist = listHeight - contHeight;
       const items = gsap.utils.toArray(`.item-title`);
 
-      // timeline for text coloring
       const tl = gsap.timeline({ ease: "none" });
       items.forEach((item, i) => {
-          if (i === 0) {
-              // first item stays gold from the start
-              tl.set(item, {
-                color: "#FFD700",
-                webkitTextFillColor: "#FFD700"
-              }, 0);
-          } else {
-              // reset all
-              tl.to(items, {
-                color: "transparent",
-                webkitTextFillColor: "transparent",
-                duration: 0
-              }, i);
-
-              // highlight the current
-              tl.to(item, {
-                color: "#FFD700",
-                webkitTextFillColor: "#FFD700",
-                duration: 0
-              }, i);
-          }
+        if (i === 0) {
+          tl.set(item, { color: "#FFD700", webkitTextFillColor: "#FFD700" }, 0);
+        } else {
+          tl.to(items, { color: "transparent", webkitTextFillColor: "transparent", duration: 0 }, i);
+          tl.to(item, { color: "#FFD700", webkitTextFillColor: "#FFD700", duration: 0 }, i);
+        }
       });
 
       const master = gsap.timeline({ ease: "none" });
       master.fromTo(
-          listRef.current, 
-          { y: 100 }, 
-          { y: -(dist + 100), duration: items.length, ease: "none" }, 
-          0
+        listRef.current,
+        { y: 100 },
+        { y: -(dist + 100), duration: items.length, ease: "none" },
+        0
       );
-      master.add(tl, 0); 
+      master.add(tl, 0);
 
-      const st = ScrollTrigger.create({
-          trigger: containerRef.current,
-          start: "top top",
-          end: "+=" + dist * 2,
-          scrub: true,
-          animation: master,
-          pin: true,
-          toggleActions: "play reverse play reverse"
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "top top",
+        end: "+=" + dist * 2,
+        scrub: true,
+        animation: master,
+        pin: true,
       });
 
-      // 🧹 Cleanup
-      return () => {
-        st.kill();
-        gsap.killTweensOf(listRef.current);
-        gsap.killTweensOf(items);
-      };
+      // ✅ refresh once GSAP is ready
+      ScrollTrigger.refresh(true);
     }
   }, [isMobile, list]);
 
@@ -91,18 +71,14 @@ const TextRotator = ({ image, list }) => {
             image={image}
             height={1080}
             width={1920}
-            loaging={isMobile ? 'eager' : "lazy"}
+            loading={isMobile ? 'eager' : "lazy"}
             className={classes.image}
-            
           />
         </div>
         <div className={classes.cont}>
           <ul className={classes.list} ref={listRef}>
             {list.map((item, index) => (
-              <li 
-                className={`${classes.item} item-title`} 
-                key={index}
-              >
+              <li className={`${classes.item} item-title`} key={index}>
                 <h2 className={classes.itemTitle}>{item}</h2>
               </li>
             ))}

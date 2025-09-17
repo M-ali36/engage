@@ -9,7 +9,6 @@ import Signifier from '@Src/fonts/Signifier/signifier-light.woff2';
 import Bravebison from '@Src/fonts/Bravebison/bravebison.woff2';
 import Inter from '@Src/fonts/inter/Inter_28pt-Regular.woff2';
 import { Helmet } from 'react-helmet';
-import FontFaceObserver from 'fontfaceobserver';
 import debounce from 'lodash/debounce';
 import gsap from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
@@ -22,12 +21,25 @@ const LayoutWrapper = ({ children, location }) => {
   const [store, dispatch] = useStore();
   const $header = useRef();
 
-  // Handle viewport height for responsive design
+  // ✅ set viewport height (no reflow)
   const setViewportHeight = () => {
     const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    requestAnimationFrame(() => {
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
   };
 
+  // ✅ header height (avoid multiple reflows)
+  const setHeaderHeight = () => {
+    if ($header.current) {
+      const newHeight = $header.current.getBoundingClientRect().height; // single read
+      requestAnimationFrame(() => {
+        document.documentElement.style.setProperty('--headerHeight', `${newHeight}px`);
+      });
+    }
+  };
+
+  // ✅ init GSAP smooth scroll
   const initSmoothScroll = () => {
     if (typeof window !== 'undefined') {
       const smoother = ScrollSmoother.create({
@@ -37,81 +49,32 @@ const LayoutWrapper = ({ children, location }) => {
         normalizeScroll: isIOS,
         effects: true,
       });
-
       setSmoothScroll(dispatch, smoother);
     }
   };
 
-  // Handle header and footer heights dynamically
-  const setHeaderHeight = () => {
-    document.documentElement.style.setProperty(
-      '--headerHeight',
-      `${$header.current.offsetHeight}px`
-    );
-  };
-
   useEffect(() => {
-    initSmoothScroll(); // Initialize smooth scroll after component mount
+    initSmoothScroll();
   }, []);
 
-  const smoothScrollRef = useRef();
+  // ✅ resize handling (debounced + raf)
   useEffect(() => {
-    smoothScrollRef.current = store.smoothScroll;
-  }, [store.smoothScroll]);
-
-  // Handle font loading
-  const handleWebfontLoad = useCallback(() => {
-    const observers = [];
-    const fontData = {
-      'Inter': { weight: 500 }
-    };
-
-    Object.keys(fontData).forEach(family => {
-      const data = fontData[family];
-      const obs = new FontFaceObserver(family, data);
-      observers.push(obs.load());
-    });
-
-    Promise.all(observers)
-      .then(() => {
-        loadFonts(dispatch);
-      })
-      .catch(err => {
-        console.warn('Some critical fonts are not available', err);
-      });
-  }, [dispatch]);
-
-  // Resize handler
-  const handleResize = useCallback(() => {
     setViewportHeight();
     setHeaderHeight();
-  }, []);
 
-  useEffect(() => {
-    // Load fonts and adjust heights on mount
-    handleResize();
-    handleWebfontLoad();
-
-    // Add resize event listener
     const resizeObserver = new ResizeObserver(
       debounce(() => {
-        updateResized(dispatch);
-      }, 50)
+        requestAnimationFrame(() => {
+          setViewportHeight();
+          setHeaderHeight();
+          updateResized(dispatch);
+        });
+      }, 100)
     );
     resizeObserver.observe(document.body);
 
-    return () => {
-      resizeObserver.disconnect();
-    };
-  }, [handleResize, handleWebfontLoad, dispatch]);
-
-  useEffect(() => {
-    if (store?.navOpenState) {
-      document.body.classList.add("nav-open");
-    } else {
-      document.body.classList.remove("nav-open");
-    }
-  }, [store?.navOpenState]);
+    return () => resizeObserver.disconnect();
+  }, [dispatch]);
 
   // ✅ Scroll to top on route change
   useEffect(() => {
@@ -128,6 +91,14 @@ const LayoutWrapper = ({ children, location }) => {
     <>
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://engagedigitalpartners.netlify.app" crossOrigin />
+        {/* ✅ preload fonts early */}
+        <link rel="preload" href={NationalRegular} as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href={NationalBold} as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href={Signifier} as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href={Bravebison} as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href={Inter} as="font" type="font/woff2" crossOrigin="anonymous" />
+
         <style>{`
           :root {
             --xxl-font-size: ${getClampValue(50, 135 )};
@@ -145,35 +116,26 @@ const LayoutWrapper = ({ children, location }) => {
             font-weight: 200;
             font-display: swap;
           }
-
           @font-face {
             font-family: 'National';
             src: url(${NationalBold}) format('woff2');
             font-weight: 700;
             font-display: swap;
           }
-
           @font-face {
             font-family: 'Signifier';
             src: url(${Signifier}) format('woff2');
             font-weight: 300;
             font-display: swap;
           }
-
           @font-face {
             font-family: 'Bravebison';
             src: url(${Bravebison}) format('woff2');
             font-weight: 700;
             font-display: swap;
           }
-
-          footer {
-            overflow: hidden;
-          }
-          section {
-            margin-bottom: -1px;
-            overflow: hidden;
-          }
+          footer { overflow: hidden; }
+          section { margin-bottom: -1px; overflow: hidden; }
         `}</style>
       </Helmet>
       <Header ref={$header} location={location} />
