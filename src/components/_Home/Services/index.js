@@ -10,7 +10,7 @@ const Services = ({title, services}) => {
     return (
         <section className={classes.root}>
             <div className={classes.cont}>
-                <h2 className={classes.subTitle}>Services</h2>
+                <h2 className={classes.subTitle}>Our Services</h2>
                 <div className={classes.titleContainer}>
                     <RichText className={classes.title} content={title}/>
                 </div>

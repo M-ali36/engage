@@ -1,7 +1,7 @@
-import React, { useEffect, useCallback, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Header from "@Layout/Header";
 import Footer from "@Layout/Footer";
-import { updateResized, loadFonts, useStore, setSmoothScroll } from "@UseCase/store";
+import { updateResized, useStore, setSmoothScroll } from "@UseCase/store";
 import { getClampValue } from '@UseCase/style';
 import NationalRegular from '@Src/fonts/National_2/national-2-regular.woff2';
 import NationalBold from '@Src/fonts/National_2/national-2-extrabold.woff2';
@@ -21,7 +21,7 @@ const LayoutWrapper = ({ children, location }) => {
   const [store, dispatch] = useStore();
   const $header = useRef();
 
-  // ✅ set viewport height (no reflow)
+  // ✅ viewport height (safe)
   const setViewportHeight = () => {
     const vh = window.innerHeight * 0.01;
     requestAnimationFrame(() => {
@@ -29,10 +29,10 @@ const LayoutWrapper = ({ children, location }) => {
     });
   };
 
-  // ✅ header height (avoid multiple reflows)
+  // ✅ header height
   const setHeaderHeight = () => {
     if ($header.current) {
-      const newHeight = $header.current.getBoundingClientRect().height; // single read
+      const newHeight = $header.current.getBoundingClientRect().height;
       requestAnimationFrame(() => {
         document.documentElement.style.setProperty('--headerHeight', `${newHeight}px`);
       });
@@ -40,7 +40,7 @@ const LayoutWrapper = ({ children, location }) => {
   };
 
   // ✅ init GSAP smooth scroll
-  const initSmoothScroll = () => {
+  useEffect(() => {
     if (typeof window !== 'undefined') {
       const smoother = ScrollSmoother.create({
         smooth: 1.3,
@@ -51,13 +51,9 @@ const LayoutWrapper = ({ children, location }) => {
       });
       setSmoothScroll(dispatch, smoother);
     }
-  };
+  }, [dispatch]);
 
-  useEffect(() => {
-    initSmoothScroll();
-  }, []);
-
-  // ✅ resize handling (debounced + raf)
+  // ✅ resize handling
   useEffect(() => {
     setViewportHeight();
     setHeaderHeight();
@@ -71,12 +67,12 @@ const LayoutWrapper = ({ children, location }) => {
         });
       }, 100)
     );
-    resizeObserver.observe(document.body);
 
+    resizeObserver.observe(document.body);
     return () => resizeObserver.disconnect();
   }, [dispatch]);
 
-  // ✅ Scroll to top on route change
+  // ✅ scroll to top on route change
   useEffect(() => {
     if (typeof window !== 'undefined') {
       if (store?.smoothScroll) {
@@ -92,6 +88,7 @@ const LayoutWrapper = ({ children, location }) => {
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://engagedigitalpartners.netlify.app" crossOrigin />
+
         {/* ✅ preload fonts early */}
         <link rel="preload" href={NationalRegular} as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href={NationalBold} as="font" type="font/woff2" crossOrigin="anonymous" />
@@ -115,25 +112,35 @@ const LayoutWrapper = ({ children, location }) => {
             src: url(${NationalRegular}) format('woff2');
             font-weight: 200;
             font-display: swap;
+            font-style: normal;
           }
           @font-face {
             font-family: 'National';
             src: url(${NationalBold}) format('woff2');
             font-weight: 700;
             font-display: swap;
+            font-style: normal;
           }
           @font-face {
             font-family: 'Signifier';
             src: url(${Signifier}) format('woff2');
             font-weight: 300;
             font-display: swap;
+            font-style: normal;
           }
           @font-face {
             font-family: 'Bravebison';
             src: url(${Bravebison}) format('woff2');
             font-weight: 700;
             font-display: swap;
+            font-style: normal;
           }
+
+          /* ✅ performance hint for GSAP */
+          #smooth-content, section, footer {
+            will-change: transform, opacity;
+          }
+
           footer { overflow: hidden; }
           section { margin-bottom: -1px; overflow: hidden; }
         `}</style>

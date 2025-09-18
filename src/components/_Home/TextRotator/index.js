@@ -5,63 +5,68 @@ import * as classes from './index.module.css';
 import PropTypes from 'prop-types';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { isMobile } from 'react-device-detect';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const TextRotator = ({ image, list }) => {
   const containerRef = useRef(null);
   const listRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
 
-  // ✅ screen size detection
+  // ✅ Screen size detection (state updates on resize)
   useEffect(() => {
-    const checkScreen = () => setIsMobile(window.innerWidth < 1024);
+    const checkScreen = () => setIsMobileView(window.innerWidth < 1024);
     checkScreen();
     window.addEventListener("resize", checkScreen);
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
   useEffect(() => {
+    // Kill old triggers on rerun
     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-    if (!isMobile && listRef.current && containerRef.current) {
-      const listHeight = listRef.current.getBoundingClientRect().height;
-      const contHeight = containerRef.current.getBoundingClientRect().height;
-      const dist = listHeight - contHeight;
-      const items = gsap.utils.toArray(`.item-title`);
+    if (!isMobileView && listRef.current && containerRef.current) {
+      requestAnimationFrame(() => {
+        const listHeight = listRef.current.getBoundingClientRect().height;
+        const contHeight = containerRef.current.getBoundingClientRect().height;
+        const dist = listHeight - contHeight;
+        const items = gsap.utils.toArray(`.item-title`);
 
-      const tl = gsap.timeline({ ease: "none" });
-      items.forEach((item, i) => {
-        if (i === 0) {
-          tl.set(item, { color: "#FFD700", webkitTextFillColor: "#FFD700" }, 0);
-        } else {
-          tl.to(items, { color: "transparent", webkitTextFillColor: "transparent", duration: 0 }, i);
-          tl.to(item, { color: "#FFD700", webkitTextFillColor: "#FFD700", duration: 0 }, i);
-        }
+        // ✅ Only animate the current + previous item (not all items every step)
+        const tl = gsap.timeline({ ease: "none" });
+        items.forEach((item, i) => {
+          if (i === 0) {
+            tl.set(item, { color: "#FFD700", webkitTextFillColor: "#FFD700" }, 0);
+          } else {
+            tl.to(items[i - 1], { color: "transparent", webkitTextFillColor: "transparent", duration: 0 }, i);
+            tl.to(item, { color: "#FFD700", webkitTextFillColor: "#FFD700", duration: 0 }, i);
+          }
+        });
+
+        const master = gsap.timeline({ ease: "none" });
+        master.fromTo(
+          listRef.current,
+          { y: 100 },
+          { y: -(dist + 100), duration: items.length, ease: "none" },
+          0
+        );
+        master.add(tl, 0);
+
+        ScrollTrigger.create({
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=" + dist * 2,
+          scrub: true,
+          animation: master,
+          pin: true,
+        });
+
+        // ✅ Refresh inside rAF to avoid sync reflow
+        requestAnimationFrame(() => ScrollTrigger.refresh());
       });
-
-      const master = gsap.timeline({ ease: "none" });
-      master.fromTo(
-        listRef.current,
-        { y: 100 },
-        { y: -(dist + 100), duration: items.length, ease: "none" },
-        0
-      );
-      master.add(tl, 0);
-
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top top",
-        end: "+=" + dist * 2,
-        scrub: true,
-        animation: master,
-        pin: true,
-      });
-
-      // ✅ refresh once GSAP is ready
-      ScrollTrigger.refresh(true);
     }
-  }, [isMobile, list]);
+  }, [isMobileView, list]);
 
   return (
     <SectionObserver>
