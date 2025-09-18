@@ -51,9 +51,12 @@
 }
 .tag {
     composes: after_inline from global;
-    composes: after_content-[","] from global;
     composes: after_me-1 from global;
     composes: last_after_hidden from global;
+}
+
+.tag {
+    @apply after_content-[","];
 }
 .excerpt {
     composes: block from global;
