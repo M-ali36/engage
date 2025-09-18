@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from 'gatsby'
 import Seo from '@components/Seo'
-import BannerVideo from '@Ui/BannerVideo'
 import Video from '@Ui/Video'
 import PropTypes from 'prop-types'
 import TextRotator from "@components/_Home/TextRotator"
@@ -15,7 +14,6 @@ const IndexPage = ({ data }) => {
 
 	const {
 		seo,
-		mainVideoId,
 		mainVideo,
 		mainInfoList,
 		mainInfoImage,

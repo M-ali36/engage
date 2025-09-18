@@ -33,13 +33,7 @@ module.exports = {
 						"/static/*.woff2": [
 							"Cache-Control: public, max-age=31536000, immutable",
 							"Access-Control-Allow-Origin: *",
-						],
-						"/static/*.{jpg,jpeg,png,gif,webp,avif,svg}": [
-							"Cache-Control: public, max-age=31536000, immutable",
-						],
-						"/static/*.{js,css}": [
-							"Cache-Control: public, max-age=604800, must-revalidate",
-						],
+						]
 					},
 					mergeSecurityHeaders: true,
     				mergeCachingHeaders: true,
