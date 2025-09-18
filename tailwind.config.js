@@ -33,16 +33,16 @@ module.exports = {
                 'bb': ['Bravebison', 'Arial', 'sans-serif'],
             },
             fontSize: {
-                'xs': [ /* font-size */ '14px', {
+                'xs': [ /* font-size */ '0.88rem', {
                     lineHeight: '20px',
                 }],
-                'sm': [ /* font-size */ '16px', {
+                'sm': [ /* font-size */ '1rem', {
                     lineHeight: '1.4',
                 }],
-                'base': [ /* font-size */ '20px', {
+                'base': [ /* font-size */ '1.25rem', {
                     lineHeight: '1.4',
                 }],
-                'base-m': [ /* font-size */ '24px', {
+                'base-m': [ /* font-size */ '1.5rem', {
                     lineHeight: '1.2',
                 }],
                 'lg': [ /* font-size */ 'var(--lg-font-size)', {

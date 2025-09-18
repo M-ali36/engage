@@ -64,7 +64,7 @@ const SubscribeForm = ({ text }) => {
               className={classes.input}
               tabIndex={submitted ? -1 : undefined}
             />
-            <button className={classes.btn} type="submit" disabled={!canSend}>
+            <button className={classes.btn} type="submit" disabled={!canSend} aria-label="Subscribe">
               <LinkArrow className={classes.icon}/>
             </button>
           </div>
