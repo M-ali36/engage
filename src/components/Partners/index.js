@@ -19,7 +19,7 @@ const Partners = ({title, items}) => {
                 </div>
                 <div className={`${classes.row} ${!show && classes.hideElements}`}>
                     {items.map((item, index) => (
-                        <div className={classes.itemContainer}>
+                        <div className={classes.itemContainer} key={index}>
                             <GatsbyImage
                                 image={item.gatsbyImageData}
                                 alt={item.description}

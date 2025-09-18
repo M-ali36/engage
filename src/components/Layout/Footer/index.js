@@ -47,7 +47,7 @@ const Footer = () => {
 						<h3 className={classes.linksTitle}>Socials</h3>
 						<ul className={classes.fastlinks}>
 						{socialLinks.map((item, index) => (
-							<li><a href={item.url} target="_blank" className={classes.link}>{item.title}</a></li>
+							<li key={index}><a href={item.url} target="_blank" className={classes.link}>{item.title}</a></li>
 						))}
 						</ul>
 					</div>
@@ -55,7 +55,7 @@ const Footer = () => {
 						<h3 className={classes.linksTitle}>Details</h3>
 						<ul className={classes.fastlinks}>
 						{detailsLinks.map((item, index) => (
-							<li><Link to={item.url} className={classes.link}>{item.title}</Link></li>
+							<li key={index}><Link to={item.url} className={classes.link}>{item.title}</Link></li>
 						))}
 						</ul>
 					</div>

@@ -1,8 +1,6 @@
-import React, {useEffect} from 'react';
-import { useStore, setCurrentPage } from '@UseCase/store';
+import React from 'react';
 import SectionObserver from '@components/SectionObserver';
 import AnimatedImage from '@Ui/AnimatedImage';
-import RichText from '@components/RichText';
 import PropTypes from 'prop-types';
 import * as classes from './index.module.css'
 import { Link } from 'gatsby';

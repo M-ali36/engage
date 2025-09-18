@@ -184,7 +184,7 @@ const RichText = ({content, ele, useHeadings, slug, relatedArticles, staticImage
           		text.length === 0 && t === '' ? '' : i > 0 ? (
             		<>
 					{useHeadings ?
-              			<span class={classes.br}></span>
+              			<span className={classes.br}></span>
 						:
 						<br />
 					}
