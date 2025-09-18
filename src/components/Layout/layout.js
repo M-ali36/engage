@@ -136,8 +136,10 @@ const LayoutWrapper = ({ children, location }) => {
             font-style: normal;
           }
 
-          /* ✅ performance hint for GSAP */
-          #smooth-content, section, footer {
+          .item-title,
+          #smooth-content,
+          section,
+          footer {
             will-change: transform, opacity;
           }
 

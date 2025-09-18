@@ -41,6 +41,8 @@ module.exports = {
 							"Cache-Control: public, max-age=604800, must-revalidate",
 						],
 					},
+					mergeSecurityHeaders: true,
+    				mergeCachingHeaders: true,
 				},
 			},
 			'gatsby-transformer-sharp',
