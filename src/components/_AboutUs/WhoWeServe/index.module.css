@@ -39,20 +39,6 @@
     composes: lg_block from global;
 }
 
-.map [data-button] {
-    cursor: pointer;
-}
-
-.map [data-button]:hover + g {
-    opacity: 1;
-}
-
-.map [data-button] + g {
-    pointer-events: none;
-    opacity: 0;
-    transition: all 0.25s ease;
-}
-
 .worldList {
     composes: grid from global;
     composes: gap-8 from global;
