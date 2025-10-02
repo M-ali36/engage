@@ -13,6 +13,7 @@ const InsightsPage = ({ data }) => {
     slug,
     formattedTitle,
     mainBanner,
+    allTags,
     hotArticlesTitle,
     hotArticles,
     subTitle,
@@ -21,7 +22,7 @@ const InsightsPage = ({ data }) => {
     pageFooter
   } = data.contentfulInsights
 
-  const allTags = data.allContentfulTag.nodes
+  const allContentfulTags = data.allContentfulTag.nodes
   const allArticles = data.allContentfulArticle.nodes
 
   return (
@@ -29,7 +30,7 @@ const InsightsPage = ({ data }) => {
       <Seo data={seo} slug={slug} />
       <MainBanner image={mainBanner} title={formattedTitle} allTags={allTags} subTitle={subTitle}/>
       <Slider title={hotArticlesTitle} items={hotArticles}/>
-      <Items items={allArticles} allTags={allTags}/>
+      <Items items={allArticles} allTags={allContentfulTags}/>
       <Tiktok title={tiktokTitle} list={tiktokVideos}/>
       {pageFooter && <PageFooter footer={pageFooter}/>}
     </>

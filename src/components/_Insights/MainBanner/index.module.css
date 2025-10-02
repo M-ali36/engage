@@ -49,15 +49,7 @@
     composes: lg_mt-48 from global;
     composes: text-end from global;
 }
-.tag {
-    composes: after_inline from global;
-    composes: after_me-1 from global;
-    composes: last_after_hidden from global;
-}
 
-.tag {
-    @apply after_content-[","];
-}
 .excerpt {
     composes: block from global;
     composes: mt-8 from global;

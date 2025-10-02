@@ -17,8 +17,18 @@
 }
 
 .messageContent a {
-    @apply no-underline;
+    @apply underline inline-flex gap-4 font-bold items-center;
 }
+
+.messageContent svg {
+    @apply block h-8 w-8;
+}
+
+.messageContent path {
+    @apply stroke-[8px];
+    stroke-linecap: square;
+}
+
 
 .messageContainer {
     composes: flex from global;

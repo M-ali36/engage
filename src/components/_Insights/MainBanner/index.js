@@ -32,11 +32,7 @@ const MainBanner = ({title, image, allTags, subTitle}) => {
                     {title && <RichText className={classes.title} content={title} useHeadings="Heading 1"/>}
                     {subTitle && <span className={classes.subTitle}>{subTitle}</span>}
                     <span className={classes.tags} data-tags="true">
-                        {allTags
-                            .filter(tag => tag.name.startsWith("Article:"))
-                            .map(tag => tag.name.split(": ")[1] || tag.name)
-                            .join(", ")
-                        }
+                        {allTags}
                     </span>
                 </div>
             </div>

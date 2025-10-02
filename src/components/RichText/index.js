@@ -8,6 +8,7 @@ import * as classes from './index.module.css'
 import AnimatedImage from '@Ui/AnimatedImage'
 import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import LinkIcon from '@Svg/link-arrow-b.svg'
 const getHeadingTag = (heading) => {
 	switch(heading) {
 		case 'Heading 1':
@@ -38,6 +39,24 @@ Heading.propTypes = {
 	customClasses: PropTypes.string,
 	defaults: PropTypes.string,
 	children: PropTypes.array,
+}
+
+const SmartLink = ({ to, children, ...props }) => {
+  const isInternal = /^\/(?!\/)/.test(to) || to.startsWith(window.location.origin)
+
+  if (isInternal) {
+    return (
+      <Link to={to} {...props}>
+        {children}<LinkIcon className={classes.linkIcon}/>
+      </Link>
+    )
+  }
+
+  return (
+    <a href={to} target="_blank" rel="noreferrer" {...props}>
+      {children}
+    </a>
+  )
 }
 
 const RichText = ({content, ele, useHeadings, slug, relatedArticles, staticImages = false , ...props}) => {
@@ -164,9 +183,9 @@ const RichText = ({content, ele, useHeadings, slug, relatedArticles, staticImage
 					{(node.data.uri.includes('?keyword=')) ? 
 						<>{getBackLink(node.data.uri, children)}</>
 						:
-						<a href={node.data.uri} target="_blank" rel="noreferrer" className={classes.link}>
-							{children}
-						</a>
+						<SmartLink to={node.data.uri} className={classes.link}>
+							About Page
+						</SmartLink>
 					}
 				</>
 		    ),

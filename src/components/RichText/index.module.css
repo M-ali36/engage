@@ -171,3 +171,8 @@
 	composes: mx-1 from global;
 	composes: lg_mx-0 from global;
 }
+
+.linkIcon {
+	composes: inline-block from global;
+	composes: hidden from global;
+}
