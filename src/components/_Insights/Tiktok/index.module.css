@@ -30,6 +30,7 @@
 }
 .link {
     composes: group from global;
+    composes: cursor-pointer from global;
 }
 .play {
     composes: bg-black from global;

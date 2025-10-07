@@ -6,6 +6,7 @@ StoreContext.displayName = 'StoreContext';
 
 const initialState = {
   navOpenState: '',
+  videoId: '',
   scrollPosition: 0,
   loadingState: false,
   isInLightSection: false,
@@ -24,6 +25,13 @@ function storeReducer(state, action) {
       return {
         ...state,
         navOpenState: action.state,
+      };
+    }
+
+    case 'SET_VIDEO_ID': {
+      return {
+        ...state,
+        videoId: action.state,
       };
     }
 
@@ -101,6 +109,9 @@ export const setColors = (dispatch, colors) =>
 
 export const setNavState = (dispatch, state) =>
   dispatch({ type: 'SET_NAV_STATE', state });
+
+export const setVideoId = (dispatch, state) =>
+  dispatch({ type: 'SET_VIDEO_ID', state });
 
 export const setLoading = (dispatch, progress) =>
   dispatch({ type: 'SET_LOADING', progress });

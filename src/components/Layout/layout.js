@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Header from "@Layout/Header";
 import Footer from "@Layout/Footer";
+import VideoModal from '@Ui/VideoModal'
 import { updateResized, useStore, setSmoothScroll } from "@UseCase/store";
 import { getClampValue } from '@UseCase/style';
 import NationalRegular from '@Src/fonts/National_2/national-2-regular.woff2';
@@ -152,6 +153,7 @@ const LayoutWrapper = ({ children, location }) => {
         <main>{children}</main>
         <Footer location={location} />
       </div>
+      <VideoModal />
     </>
   );
 };
