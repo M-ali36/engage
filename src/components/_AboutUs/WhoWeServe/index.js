@@ -2,12 +2,13 @@ import React from 'react';
 import SectionObserver from '@components/SectionObserver';
 import RichText from '@components/RichText';
 import PropTypes from 'prop-types';
-import WorldMap from '@Svg/world-map.svg';
+
 import * as classes from './index.module.css';
 import Australia from '@Svg/flags/australia.svg';
 import India from '@Svg/flags/india.svg';
 import USA from '@Svg/flags/usa.svg';
 import London from '@Svg/flags/london.svg';
+import WorldMapProximity from './worldMapProximity';
 
 const WhoWeServe = ({ title }) => {
 
@@ -21,7 +22,7 @@ const WhoWeServe = ({ title }) => {
           />
         </div>
         <div className={classes.map}>
-          <WorldMap className="world-map"/>
+          <WorldMapProximity />
         </div>
         <ul className={classes.worldList}>
           <li className={classes.item}>

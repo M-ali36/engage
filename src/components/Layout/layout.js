@@ -107,6 +107,7 @@ const LayoutWrapper = ({ children, location }) => {
             --xlm-font-size: ${getClampValue(20, 30 )};
             --xl-font-size: ${getClampValue(20, 25 )};
             --lg-font-size: ${getClampValue(16, 20 )};
+            --color-orange: #FF4F17;
           }
           @font-face {
             font-family: 'National';

@@ -18,7 +18,7 @@ module.exports = {
                 'white': '#F6F6F6',
                 'white-fff': "#fff",
                 'yellow': '#FFCE1F',
-                'orange': '#FF4F17',
+                'orange': 'var(--color-orange)',
                 'opa': 'var(--opa-color)',
                 'hover': 'var(--hover-color)',
                 'bgOpa': 'var(--bgOpa-color)',

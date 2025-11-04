@@ -106,6 +106,7 @@ const seoSchema = require("./src/schema/seo.schema.js");
 const standardSchema = require("./src/schema/standard.schema.js");
 const homePageSchema = require("./src/schema/homePage.schema.js");
 const caseStudySchema = require("./src/schema/caseStudy.schema.js");
+const articleSchema = require("./src/schema/article.schema.js");
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
@@ -119,5 +120,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     ${standardSchema}
     ${homePageSchema}
     ${caseStudySchema}
+    ${articleSchema}
   `);
 };
