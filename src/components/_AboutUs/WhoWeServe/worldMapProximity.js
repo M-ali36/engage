@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 
 // --- CONFIGURATION ---
 const MAX_PROXIMITY_PX = 20; // Radius (in screen pixels) around the mouse to react
-const BASE_COLOR = '#000000'; // Black (initial fill)
+const BASE_COLOR = '#313340'; // Black (initial fill)
 const ACTIVE_COLOR = '#FF4F17'; // Green (proximity fill)
 
 /**
@@ -96,7 +96,7 @@ const WorldMapProximity = ({ className }) => {
         const svgElement = container.querySelector('svg');
         if (svgElement) {
              // Find all paths within the SVG. This is our target list.
-            const paths = Array.from(container.querySelectorAll('svg > path'));
+            const paths = Array.from(container.querySelectorAll('svg > path:not([fill="#FF4F17"])'));
             pathRefs.current = paths;
 
             // 2. Initialize the fill color for all paths to black using GSAP
