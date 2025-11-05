@@ -36,7 +36,6 @@ const NextCaseStudy = ({data}) => {
                     <div className={classes.colContent}>
                         <div className={classes.contentContainer}>
                             {title && <h3 className={classes.title}>{title}</h3>}
-                            {excerpt && <span className={classes.excerpt}>{excerpt.excerpt}</span>}
                             <span className={classes.tags} data-tags="true">
                                 {metadata.tags
                                     .filter(tag => tag.name.startsWith("Service:"))

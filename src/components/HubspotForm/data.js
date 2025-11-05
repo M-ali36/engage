@@ -20,3 +20,34 @@ export const allReasons = [
         label: "Other"
     }
 ]
+
+export const allSites = [
+    {
+        value: "Google",
+        label: "Google"
+    },
+    {
+        value: "LinkedIn",
+        label: "LinkedIn"
+    },
+    {
+        value: "Email",
+        label: "Email"
+    },
+    {
+        value: "Referral",
+        label: "Referral"
+    },
+    {
+        value: "Press",
+        label: "Press"
+    },
+    {
+        value: "ChatGPT/LLM",
+        label: "ChatGPT/LLM"
+    },
+    {
+        value: "Other",
+        label: "Other"
+    }
+]

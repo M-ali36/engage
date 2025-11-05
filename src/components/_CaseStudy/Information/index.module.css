@@ -19,3 +19,7 @@
     composes: text-slate-500 from global;
     composes: max-w-3xl from global;
 }
+
+.content p {
+    @apply mb-4;
+}

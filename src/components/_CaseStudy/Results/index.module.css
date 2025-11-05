@@ -19,8 +19,9 @@
 }
 
 .title {
-    composes: text-base-m from global;
     composes: font-bold from global;
+    composes: text-4xl from global;
+    composes: mb-8 from global;
 }
 
 .itemTitle {

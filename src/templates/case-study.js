@@ -21,6 +21,20 @@ const CaseStudyPage = ({ data }) => {
   } = data.contentfulCaseStudy
 
   const allServices = data.allContentfulService.nodes
+  const allCaseStudies = data.allContentfulCaseStudy.nodes
+
+  let nextStudy = nextCaseStudy
+
+  if (!nextCaseStudy && allCaseStudies?.length > 0) {
+    // find current index
+    const currentIndex = allCaseStudies.findIndex(cs => cs.slug === slug)
+    const nextIndex =
+      currentIndex >= 0 && currentIndex < allCaseStudies.length - 1
+        ? currentIndex + 1
+        : 0 // fallback to first one if last in list
+    nextStudy = allCaseStudies[nextIndex]
+  }
+
 
   return (
     <>
@@ -47,6 +61,27 @@ export const pageQuery = graphql`
 				}
 				title
 				slug
+            }
+        }
+        allContentfulCaseStudy(sort: { fields: [createdAt], order: ASC }) {
+            nodes {
+                title
+                slug
+                metadata {
+                tags {
+                    name
+                    contentful_id
+                }
+                }
+                excerpt {
+                excerpt
+                }
+                mainImage {
+                ...Image
+                }
+                bannerImage {
+                ...Image
+                }
             }
         }
         contentfulCaseStudy(slug: { eq: $slug }) {

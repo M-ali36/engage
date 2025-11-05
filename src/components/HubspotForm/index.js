@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useForm } from 'react-hubspot';
-import { allReasons } from './data';
+import { allReasons, allSites } from './data';
 import * as classes from './index.module.css'
 import PropTypes from 'prop-types';
 import Arrow from '@Svg/caret.svg'
@@ -13,7 +13,7 @@ const HubspotForm = ({ formInfoText }) => {
 	const formRef = useRef();
 	const mainSection = useRef();
 
-	const formId = '32432cc3-bba2-41b8-8043-6ff16ff77c32';
+	const formId = '0053c51b-b881-4959-a7eb-bfc2c378f3af';
 	const successMessage = `Thanks for sliding into our DM's`;
 
 	const { data, isLoading, handleSubmit } = useForm({
@@ -25,11 +25,11 @@ const HubspotForm = ({ formInfoText }) => {
 		firstname: '',
 		lastname: '',
 		company: '',
-		jopTitle: '',
+		jobtitle: '',
 		email: '',
-		how_can_we_help:'',
-		how_did_you_hear_about_us: '',
-		message: '',
+		enquiry_type:'',
+		where_did_you_hear_about_us_: '',
+		your_message: '',
 		hs_persona: ''
 	};
 
@@ -128,6 +128,20 @@ const HubspotForm = ({ formInfoText }) => {
 						/>
 					</div>
 
+					{/* Email */}
+					<div className={`${classes.control} ${classes.required}`}>
+						<input
+							id="email"
+							name="email"
+							type="email"
+							value={formData.email}
+							onChange={handleChange}
+							className={classes.input}
+							placeholder="Email*"
+							required
+						/>
+					</div>
+
 					{/* Company */}
 					<div className={classes.control}>
 						<input
@@ -145,10 +159,10 @@ const HubspotForm = ({ formInfoText }) => {
 					{/* Jop Title */}
 					<div className={classes.control}>
 						<input
-							id="jopTitle"
-							name="jopTitle"
+							id="jobtitle"
+							name="jobtitle"
 							type="text"
-							value={formData.jopTitle}
+							value={formData.jobtitle}
 							onChange={handleChange}
 							className={classes.input}
 							placeholder="Job Title*"
@@ -156,32 +170,39 @@ const HubspotForm = ({ formInfoText }) => {
 						/>
 					</div>
 
-					{/* How can we help */}
-					<div className={classes.control}>
-						<input
-							id="how_can_we_help"
-							name="how_can_we_help"
-							type="text"
-							value={formData.how_can_we_help}
-							onChange={handleChange}
-							className={classes.input}
-							placeholder="How can we help?*"
-							required
-						/>
-					</div>
-					
+
 					{/* Enquiry Type */}
 					<div className={classes.control}>
 						<select
-							id="how_did_you_hear_about_us"
-							name="how_did_you_hear_about_us"
-							value={formData.how_did_you_hear_about_us}
+							id="enquiry_type"
+							name="enquiry_type"
+							value={formData.enquiry_type}
 							onChange={handleSelectChange}
 							className={classes.select}
 							required
 						>
-							<option value="">How did you hear about us?*</option>
+							<option value="">How can we help?*</option>
 							{allReasons.map((opt) => (
+								<option key={opt.value} value={opt.value}>
+									{opt.label}
+								</option>
+							))}
+						</select>
+						<Arrow className={classes.selectArrow} />
+					</div>
+					
+					{/* How did you hear about us? */}
+					<div className={classes.control}>
+						<select
+							id="where_did_you_hear_about_us_"
+							name="where_did_you_hear_about_us_"
+							value={formData.where_did_you_hear_about_us_}
+							onChange={handleSelectChange}
+							className={classes.select}
+							required
+						>
+							<option value="">Where did you hear about us?*</option>
+							{allSites.map((opt) => (
 								<option key={opt.value} value={opt.value}>
 									{opt.label}
 								</option>
@@ -193,10 +214,10 @@ const HubspotForm = ({ formInfoText }) => {
 					{/* Message */}
 					<div className={classes.control}>
 						<textarea
-							id="message"
-							name="message"
+							id="your_message"
+							name="your_message"
 							rows="8"
-							value={formData.message}
+							value={formData.your_message}
 							onChange={handleChange}
 							className={classes.textarea}
 							placeholder=""
@@ -208,7 +229,7 @@ const HubspotForm = ({ formInfoText }) => {
 				{/* Submit / Success */}
 				<div className={classes.btnContainer}>
 
-					<button type="button" className={classes.submitBtn} disabled={!canSend || loading}>{loading ? 'Sending...' : 'Send message'}</button>
+					<button type="submit" className={classes.submitBtn} disabled={!canSend || loading}>{loading ? 'Sending...' : 'Send message'}</button>
 					{submitted && (
 						<p className={classes.success} role="status" aria-live="polite">
 							{successMessage}

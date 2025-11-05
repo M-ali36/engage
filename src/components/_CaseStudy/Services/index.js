@@ -1,34 +1,30 @@
 import React from 'react';
 import SectionObserver from '@components/SectionObserver';
 import PropTypes from 'prop-types';
-import * as classes from './index.module.css'
+import * as classes from './index.module.css';
 import { Link } from 'gatsby';
 
-const Services = ({ metadata, allServices }) => {
+const Services = ({ metadata }) => {
+  const tags = metadata?.tags || [];
+
   return (
     <SectionObserver className={classes.root}>
       <div className={classes.cont}>
         <h2 className={classes.title}>Services</h2>
         <div className={classes.tags}>
-          {metadata.tags
-            .filter(tag => tag.name.startsWith("Service:"))
-            .map((tag, index2) => {
-              const service = allServices.find(s =>
-                s.metadata.tags.some(t => t.contentful_id === tag.contentful_id)
-              );
+          {tags.map((tag, index) => {
+            const tagName = tag.name?.split(': ')[1] || tag.name || '';
 
-              return (
-                <Link 
-                  to={service ? `/what-we-do/${service.slug}` : '#'} 
-                  key={index2}
-                  className={classes.link}
-                >
-                  <span className={classes.tag}>
-                    {tag.name.split(": ")[1] || tag.name}
-                  </span>
-                </Link>
-              );
-            })}
+            return (
+              <Link
+                to={`/our-work/?service=${encodeURIComponent(tag.name).replace(/%20/g, '+')}`}
+                key={index}
+                className={classes.link}
+              >
+                <span className={classes.tag}>{tagName}</span>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </SectionObserver>
@@ -36,8 +32,7 @@ const Services = ({ metadata, allServices }) => {
 };
 
 Services.propTypes = {
-  metadata: PropTypes.object.isRequired,
-  allServices: PropTypes.array.isRequired,
+  metadata: PropTypes.object,
 };
 
 export default Services;

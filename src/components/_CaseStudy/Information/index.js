@@ -23,12 +23,13 @@ const Information = ({data}) => {
 
         return `${type}-${camelCasedString}`;
     }
+    
 
     return (
         <>
         <SectionObserver className={`${classes.root} ${toCamelCase(backgroundColor, 'bg')} ${toCamelCase(textColor, 'text')}`}>
             <div className={classes.cont}>
-                <h2 className={classes.title}>{title}</h2>
+                <h2 className={classes.title}>{title ? title.charAt(0).toUpperCase() + title.slice(1).toLowerCase() : ''}</h2>
                 {content && <RichText className={`${classes.content} ${toCamelCase(textColor, 'text')}`} content={content}/>}
             </div>
         </SectionObserver>

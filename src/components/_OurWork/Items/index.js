@@ -22,6 +22,17 @@ const Items = ({ items, tags }) => {
   const searchRef = useRef();
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get('service') || '';
+    const region = params.get('region') || '';
+    const search = params.get('search') || '';
+
+    setCurrentService(service);
+    setCurrentRegion(region);
+    setSearchTerm(search);
+  }, []); // run once on mount
+
+  useEffect(() => {
     let filtered = items;
 
     // filter by service
