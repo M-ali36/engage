@@ -22,12 +22,13 @@
     composes: aspect-[175/140] from global;
     composes: relative from global;
     composes: overflow-hidden from global;
-    composes: rounded-xl from global;
+    composes: rounded-[20px] from global;
 }
 
 .itemTitle {
     composes: mt-4 from global;
     composes: text-base-m from global;
+    composes: mOnly_text-[18px] from global;
     composes: font-bold from global;
     composes: block from global;
 }

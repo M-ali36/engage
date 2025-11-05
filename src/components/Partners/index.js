@@ -29,7 +29,7 @@ const Partners = ({title, items}) => {
                         </div>
                     ))}
                 </div>
-                <button type="button" className={classes.btnShow} onClick={() => setShow(!show)}>Show more</button>
+                <button type="button" className={classes.btnShow} onClick={() => setShow(!show)}>{show ? 'Show less' : 'Show more'}</button>
             </div>
         </SectionObserver>
     );

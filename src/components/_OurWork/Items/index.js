@@ -17,7 +17,7 @@ const Items = ({ items, tags }) => {
 
   // pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [itemsPerPage, setItemsPerPage] = useState(7);
 
   const searchRef = useRef();
 
@@ -179,7 +179,7 @@ const Items = ({ items, tags }) => {
                 }}
               >
                 <option value={7}>7 / page</option>
-                <option value={14}>14 / page</option>
+                <option value={15}>15 / page</option>
                 <option value={21}>21 / page</option>
               </select>
             </label>

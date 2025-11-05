@@ -21,9 +21,9 @@ const MainBanner = ({title, subTitle,images}) => {
                 <div className={classes.row}>
                     <div className={classes.contentCol}>
                         <div className={classes.contentContainer}>
-                            <RichText className={classes.title} content={title} useHeadings="Heading 1"/>
+                            <RichText className={classes.title} content={title} useHeadings="Heading 1" useAnimate splitType="lines" direction="right"/>
                             <span className={classes.subContainer}>
-                                <RichText className={classes.subTitle} content={subTitle}/>
+                                <RichText className={classes.subTitle} content={subTitle} useAnimate splitType="lines" direction="bottom" delay={0.5}/>
                             </span>
                         </div>
                     </div>

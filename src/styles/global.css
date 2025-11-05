@@ -54,5 +54,23 @@ body.nav-open {
   .btn-white {
     @apply bg-white text-black hover_bg-yellow;
   }
+  .animate-font {
+    animation: fontSwap 2.5s infinite;
+  	transition: font-family 0.5s ease-in-out;
+  }
+  .animated-text div{
+    @apply will-change-transform;
+  }
+}
 
+@keyframes fontSwap {
+  0% {
+    font-family: 'National';
+  }
+  50% {
+    font-family: 'Bravebison';
+  }
+  100% {
+    font-family: 'National';
+  }
 }

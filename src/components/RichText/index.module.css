@@ -4,6 +4,10 @@
 	composes: mb-3 from global;
 }
 
+.animated {
+	composes: opacity-0 from global;
+}
+
 .heading_1 {
 	composes: text-4xl from global;
 	composes: overflow-hidden from global;

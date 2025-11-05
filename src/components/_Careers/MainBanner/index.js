@@ -5,6 +5,7 @@ import AnimatedImage from '@Ui/AnimatedImage';
 import RichText from '@components/RichText';
 import PropTypes from 'prop-types';
 import * as classes from './index.module.css'
+import AnimatedText from '@Ui/AnimatedText'
 
 const MainBanner = ({title, image, subTitle}) => {
 
@@ -29,8 +30,8 @@ const MainBanner = ({title, image, subTitle}) => {
             }
             <div className={classes.cont}>
                 <div className={classes.contentContainer}>
-                    {title && <RichText className={classes.title} content={title} useHeadings="Heading 1"/>}
-                    {subTitle && <span className={classes.subTitle}>{subTitle}</span>}
+                    {title && <RichText className={classes.title} content={title} useHeadings="Heading 1" useAnimate splitType="lines"/>}
+                    {subTitle && <AnimatedText className={classes.subTitle} text={subTitle} splitType="lines" direction="bottom" delay={0.2}/>}
                 </div>
             </div>
         </SectionObserver>

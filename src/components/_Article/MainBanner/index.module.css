@@ -48,6 +48,7 @@
     composes: uppercase from global;
     composes: block from global;
     composes: mb-4 from global;
+    composes: will-change-transform from global;
 }
 
 .excerpt {

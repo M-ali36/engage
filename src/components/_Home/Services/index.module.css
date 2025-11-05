@@ -26,7 +26,8 @@
 .serviceItem {
     composes: border-b from global;
     composes: border-black from global;
-    composes: last_border-[0] from global;
+    composes: lg_last_border-[0] from global;
+    composes: group from global;
 }
 .itemCont {
     composes: row from '@globalCss';
@@ -40,6 +41,8 @@
 .itemContent {
     composes: col-span-12 from global;
     composes: lg_col-span-7 from global;
+    composes: primary-anime from global;
+    composes: lg_group-hover_translate-x-8 from global;
 }
 
 .itemImage {
@@ -56,6 +59,7 @@
     composes: lg_text-2xl from global;
     composes: font-bold from global;
     composes: mb-4 from global;
+    
 }
 
 .itemSubTitle {

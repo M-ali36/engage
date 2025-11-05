@@ -69,4 +69,5 @@
     composes: text-end from global;
     composes: max-w-96 from global;
     composes: text-xl-m from global;
+    composes: will-change-transform from global;
 }

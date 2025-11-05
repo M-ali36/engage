@@ -54,5 +54,5 @@
 }
 
 .messageTitle {
-	composes: text-sm from global;
+	composes: text-[18px] from global;
 }

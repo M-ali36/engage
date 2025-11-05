@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Header from "@Layout/Header";
 import Footer from "@Layout/Footer";
-import VideoModal from '@Ui/VideoModal'
+import VideoModal from '@Ui/VideoModal';
 import { updateResized, useStore, setSmoothScroll } from "@UseCase/store";
 import { getClampValue } from '@UseCase/style';
 import NationalRegular from '@Src/fonts/National_2/national-2-regular.woff2';
@@ -40,16 +40,19 @@ const LayoutWrapper = ({ children, location }) => {
     }
   };
 
-  // ✅ init GSAP smooth scroll
+  // ✅ init GSAP smooth scroll (only once)
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const smoother = ScrollSmoother.create({
-        smooth: 1.3,
-        wrapper: '#gatsby-focus-wrapper',
-        content: '#smooth-content',
-        normalizeScroll: isIOS,
-        effects: true,
-      });
+      let smoother = ScrollSmoother.get();
+      if (!smoother) {
+        smoother = ScrollSmoother.create({
+          smooth: 1.3,
+          wrapper: '#gatsby-focus-wrapper',
+          content: '#smooth-content',
+          normalizeScroll: isIOS,
+          effects: true,
+        });
+      }
       setSmoothScroll(dispatch, smoother);
     }
   }, [dispatch]);
@@ -73,16 +76,49 @@ const LayoutWrapper = ({ children, location }) => {
     return () => resizeObserver.disconnect();
   }, [dispatch]);
 
-  // ✅ scroll to top on route change
+  // ✅ robust scroll to top on route change
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      if (store?.smoothScroll) {
-        store.smoothScroll.scrollTo(0, true);
+    if (typeof window === 'undefined') return;
+
+    const smoother = gsap.core.globals().ScrollSmoother?.get();
+
+    const scrollToTop = () => {
+      const activeSmoother = store?.smoothScroll || smoother;
+
+      if (activeSmoother) {
+        requestAnimationFrame(() => {
+          activeSmoother.scrollTo(0, true);
+        });
       } else {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        // fallback to native
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        });
       }
-    }
-  }, [location.pathname, store?.smoothScroll]);
+    };
+
+    // attempt immediately
+    scrollToTop();
+
+    // retry after slight delay (ensures smoother is ready)
+    const retry = setTimeout(scrollToTop, 100);
+    const retry2 = setTimeout(scrollToTop, 300);
+
+    return () => {
+      clearTimeout(retry);
+      clearTimeout(retry2);
+    };
+  }, [location.pathname]);
+
+  // ✅ (optional) route-updated event listener fallback
+  useEffect(() => {
+    const handleRouteUpdate = () => {
+      const smoother = gsap.core.globals().ScrollSmoother?.get();
+      if (smoother) smoother.scrollTo(0, true);
+    };
+    window.addEventListener("gatsby:routeUpdated", handleRouteUpdate);
+    return () => window.removeEventListener("gatsby:routeUpdated", handleRouteUpdate);
+  }, []);
 
   return (
     <>
@@ -99,14 +135,14 @@ const LayoutWrapper = ({ children, location }) => {
 
         <style>{`
           :root {
-            --xxl-font-size: ${getClampValue(50, 135 )};
-            --5xl-font-size: ${getClampValue(50, 70 )};
-            --4xl-font-size: ${getClampValue(32, 60 )};
-            --3xl-font-size: ${getClampValue(32, 50 )};
-            --2xl-font-size: ${getClampValue(20, 36 )};
-            --xlm-font-size: ${getClampValue(20, 30 )};
-            --xl-font-size: ${getClampValue(20, 25 )};
-            --lg-font-size: ${getClampValue(16, 20 )};
+            --xxl-font-size: ${getClampValue(50, 135)};
+            --5xl-font-size: ${getClampValue(50, 70)};
+            --4xl-font-size: ${getClampValue(32, 60)};
+            --3xl-font-size: ${getClampValue(32, 50)};
+            --2xl-font-size: ${getClampValue(20, 36)};
+            --xlm-font-size: ${getClampValue(20, 30)};
+            --xl-font-size: ${getClampValue(20, 25)};
+            --lg-font-size: ${getClampValue(16, 20)};
             --color-orange: #FF4F17;
           }
           @font-face {
@@ -149,11 +185,17 @@ const LayoutWrapper = ({ children, location }) => {
           section { margin-bottom: -1px; overflow: hidden; }
         `}</style>
       </Helmet>
+
       <Header ref={$header} location={location} />
-      <div id="smooth-content" className={`${(isSafari || isEdge) ? 'boxedDevices' : ''} content changed`}>
+
+      <div
+        id="smooth-content"
+        className={`${(isSafari || isEdge) ? 'boxedDevices' : ''} content changed`}
+      >
         <main>{children}</main>
         <Footer location={location} />
       </div>
+
       <VideoModal />
     </>
   );

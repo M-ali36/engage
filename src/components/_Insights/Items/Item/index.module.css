@@ -4,6 +4,7 @@
     composes: first_border-t from global;
     composes: border-black from global;
     composes: block from global;
+    composes: group from global;
 }
 
 .itemTitle {
@@ -12,6 +13,8 @@
     composes: mb-4 from global;
     composes: max-w-4xl from global;
     composes: mOnly_max-w-[94%] from global;
+    composes: primary-anime from global;
+    composes: lg_group-hover_translate-x-4 from global;
 }
 
 .excerpt {
@@ -20,10 +23,14 @@
     composes: mb-4 from global;
     composes: max-w-3xl from global;
     composes: block from global;
+    composes: primary-anime from global;
+    composes: lg_group-hover_translate-x-8 from global;
 }
 
 .tags {
     composes: block from global;
+    composes: primary-anime from global;
+    composes: lg_group-hover_translate-x-8 from global;
 }
 
 .tag {

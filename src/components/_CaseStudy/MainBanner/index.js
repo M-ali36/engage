@@ -5,6 +5,7 @@ import AnimatedImage from '@Ui/AnimatedImage';
 import RichText from '@components/RichText';
 import PropTypes from 'prop-types';
 import * as classes from './index.module.css'
+import AnimatedText from '@Ui/AnimatedText'
 
 const MainBanner = ({title, excerpt, image, metadata}) => {
 
@@ -13,6 +14,19 @@ const MainBanner = ({title, excerpt, image, metadata}) => {
     useEffect(() => {
         setCurrentPage(dispatch, 'our-work');
     }, []);
+
+    const tags = () => (
+        <>
+        {metadata.tags
+            .filter(tag => tag.name.startsWith("Service:"))
+            .slice(0, 1)
+            .map((tag, index2) => (
+                <span className={classes.tag} key={index2}>
+                {tag.name.split(": ")[1] || tag.name}
+                </span>
+        ))}
+        </>
+    )
     
     return (
         <>
@@ -29,18 +43,9 @@ const MainBanner = ({title, excerpt, image, metadata}) => {
             }
             <div className={classes.cont}>
                 <div className={classes.contentContainer}>
-                    <span className={classes.tags} data-tags="true">
-                        {metadata.tags
-                            .filter(tag => tag.name.startsWith("Service:"))
-                            .slice(0, 1)
-                            .map((tag, index2) => (
-                                <span className={classes.tag} key={index2}>
-                                {tag.name.split(": ")[1] || tag.name}
-                                </span>
-                        ))}
-                    </span>
-                    {title && <RichText className={classes.title} content={title} useHeadings="Heading 1"/>}
-                    {excerpt && <span className={classes.excerpt}>{excerpt.excerpt}</span>}
+                    {metadata.tags.length > 0 && <AnimatedText text={tags()} splitType="words" direction="top" className={classes.tags} data-tags="true"/>}
+                    {title && <RichText className={classes.title} content={title} useAnimate useHeadings="Heading 1" splitType="lines" direction="right" delay={.2}/>}
+                    {excerpt && <AnimatedText className={classes.excerpt} text={excerpt.excerpt} splitType="lines" direction="bottom" delay={.4}/>}
                 </div>
             </div>
         </SectionObserver>

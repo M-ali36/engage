@@ -45,6 +45,7 @@
 
 .itemTitle {
     composes: text-base-m from global;
+    composes: mOnly_text-[22px] from global;
     composes: mt-6 from global;
     composes: font-bold from global;
 }

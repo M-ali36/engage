@@ -29,6 +29,7 @@
     composes: mb-8 from global;
     composes: border-b from global;
     composes: border-black from global;
+    composes: group from global;
 }
 
 .mega {
@@ -41,18 +42,23 @@
 .itemTitle {
     composes: font-bold from global;
     composes: text-xl from global;
-    
+    composes: primary-anime from global;
+    composes: lg_group-hover_translate-x-4 from global;
 }
 
 .itemSubTitle {
     composes: text-slate-500 from global;
     composes: max-w-2xl from global;
+    composes: primary-anime from global;
+    composes: lg_group-hover_translate-x-4 from global;
 }
 .tags {
     composes: flex from global;
     composes: mt-4 from global;
     composes: flex-wrap from global;
     composes: gap-4 from global;
+    composes: primary-anime from global;
+    composes: lg_group-hover_translate-x-4 from global;
 }
 .tag {
     composes: text-sm from global;

@@ -21,13 +21,21 @@
     composes: focus_outline-none from global;
     composes: py-2 from global;
     composes: border-b from global;
-    composes: border-white from global;
     composes: bg-transparent from global;
     composes: text-base from global;
     composes: uppercase from global;
     composes: placeholder_text-slate-500 from global;
     composes: placeholder_opacity-50 from global;
 }
+
+.inputError {
+    composes: border-red-800 from global;
+}
+
+.inputNoError {
+    composes: border-white from global;
+}
+
 .btn {
     composes: text-white from global;
     composes: absolute from global;

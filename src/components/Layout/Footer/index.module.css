@@ -13,7 +13,8 @@
 	composes: cont from '@globalCss';
 }
 .newsletterMessage {
-	composes: text-base-m from global;
+	composes: text-[22px] from global;
+	composes: lg_text-[20px] from global;
 	composes: max-w-xs from global;
 	composes: block from global;
 	composes: mb-8 from global;

@@ -8,6 +8,11 @@
     composes: overflow-hidden from global;
 }
 
+.root {
+    composes: block from global;
+    composes: pt-28 from global;
+}
+
 .videoContainer {
     composes: relative from global;
     composes: bg-black from global;

@@ -9,6 +9,7 @@ const SubscribeForm = ({ text }) => {
   const [message, setMessage] = useState()
   const [messageStyle, setMessageStyle] = useState({})
   const [canSend, setCanSend] = useState(false)
+  const [hasError, setHasError] = useState(false)
 
   const formRef = useRef()
   const emailInput = useRef()
@@ -26,7 +27,7 @@ const SubscribeForm = ({ text }) => {
     if (data?.data) {
       setSubmitted(true)
     } else {
-        setSubmitted(false)
+      setSubmitted(false)
     }
     setMessage(data?.data.inlineMessage)
   }, [data])
@@ -45,7 +46,9 @@ const SubscribeForm = ({ text }) => {
   }
 
   const handleChange = () => {
-    setCanSend(checkValidate())
+    const valid = checkValidate()
+    setCanSend(valid)
+    setHasError(!valid && emailInput.current.value.length > 0)
   }
 
   return (
@@ -61,7 +64,7 @@ const SubscribeForm = ({ text }) => {
               id="subscribe-EMAIL"
               onChange={handleChange}
               required
-              className={classes.input}
+              className={`${classes.input} ${hasError ? classes.inputError : classes.inputNoError}`}
               tabIndex={submitted ? -1 : undefined}
             />
             <button className={classes.btn} type="submit" disabled={!canSend} aria-label="Subscribe">

@@ -10,7 +10,7 @@ const VideoComponent = ({ src, image }) => {
     
 
   return (
-    <>
+    <div className={classes.root}>
       <div className={classes.videoWrapper}>
           <GatsbyImage
             image={image?.gatsbyImageData}
@@ -32,7 +32,7 @@ const VideoComponent = ({ src, image }) => {
             <source src={src.file.url} type="video/mp4" />
           </video>
       </div>
-    </>
+    </div>
   );
 };
 
