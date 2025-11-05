@@ -36,8 +36,7 @@
 .title {
     composes: text-4xl from global;
     composes: lg_text-[80px] from global;
-    composes: max-w-3xl from global;
-    composes: mOnly_mt-12 from global;
+    composes: max-w-4xl from global;
 }
 
 .tags {
@@ -47,7 +46,10 @@
     composes: block from global;
     composes: mt-12 from global;
     composes: lg_mt-48 from global;
-    composes: text-end from global;
+    composes: lg_text-end from global;
+    composes: mOnly_-order-[1] from global;
+    composes: mOnly_mt-24 from global;
+    composes: mOnly_mb-8 from global;
 }
 
 .excerpt {
@@ -60,4 +62,9 @@
     composes: text-base from global;
     composes: block from global;
     composes: mt-4 from global;
+}
+
+.contentContainer {
+    composes: mOnly_flex from global;
+    composes: mOnly_flex-col from global;
 }

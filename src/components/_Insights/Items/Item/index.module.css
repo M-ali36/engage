@@ -5,6 +5,8 @@
     composes: border-black from global;
     composes: block from global;
     composes: group from global;
+    composes: mOnly_flex from global;
+    composes: mOnly_flex-col from global;
 }
 
 .itemTitle {
@@ -19,6 +21,7 @@
 
 .excerpt {
     composes: text-base from global;
+    composes: mOnly_text-[16px] from global;
     composes: text-slate-500 from global;
     composes: mb-4 from global;
     composes: max-w-3xl from global;
@@ -31,6 +34,8 @@
     composes: block from global;
     composes: primary-anime from global;
     composes: lg_group-hover_translate-x-8 from global;
+    composes: mOnly_-order-[1] from global;
+    composes: mOnly_mb-4 from global;
 }
 
 .tag {

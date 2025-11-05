@@ -67,12 +67,12 @@ const Tiktok = ({ title, list }) => {
             setIsEnd(swiper.isEnd);
           }}
           breakpoints={{
-            640: {
-              slidesPerView: 1,
+            340: {
+              slidesPerView: 1.8,
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 2.8,
               spaceBetween: 40,
             },
             1024: {

@@ -43,19 +43,19 @@ const AnimatedText = forwardRef(({
     const fromVars = { opacity: 0 };
     switch (direction) {
       case "left":
-        fromVars.x = -30;
+        fromVars.x = -60;
         break;
       case "right":
-        fromVars.x = 30;
+        fromVars.x = 60;
         break;
       case "top":
-        fromVars.y = -30;
+        fromVars.y = -60;
         break;
       case "bottom":
-        fromVars.y = 30;
+        fromVars.y = 60;
         break;
       default:
-        fromVars.x = 30;
+        fromVars.x = 60;
     }
 
     const tl = gsap.timeline({

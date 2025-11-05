@@ -57,6 +57,7 @@
 
 .title {
     composes: text-base-m from global;
+    composes: lg_text-[22px] from global;
     composes: mb-1 from global;
 }
 .excerpt {
