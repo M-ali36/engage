@@ -66,9 +66,9 @@ function Seo({
         return result.trim();
     }
 
-    const url = `${siteUrl.replace(/\/$/, '')}/${slug === 'home' ? '' : `${slug.replace(/^\/+|\/+$/g, '')}/`
+    const url = `${siteUrl.replace(/\/$/, '')}/${slug === 'home' ? '' : `${slug.replace(/^\/+|\/+$/g, '')}`
         }`
-    const ogTitle = title ? `${siteTitle} | ${title}` : siteTitle
+    const ogTitle = title ? `${siteTitle} | ${title.replace(/\s+/g, ' ').trim()}` : siteTitle;
     const ogDescription = seoDescriptions ? getFirstWords(seoDescriptions) : siteDescription
     const ogImage = `https:${image ? image.file.url : siteShareImage ? siteShareImage.file.url : ''}`
 
@@ -156,7 +156,6 @@ function Seo({
         "publisher": {
             "@type": "Organization",
             "name": siteTitle,
-            "telephone": sitePhone,
             "email": siteEmail,  // You can replace with your actual email
             "logo": {
                 "@type": "ImageObject",
@@ -166,7 +165,6 @@ function Seo({
         },
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": sitePhone,
             "contactType": "Customer Service",
             "areaServed": "UK",
             "availableLanguage": "English"
@@ -285,7 +283,6 @@ function Seo({
         "mainEntity": {
             "@type": "Organization",
             "name": siteTitle,
-            "telephone": sitePhone,
             "email": siteEmail,  // Replace with your actual email
         }
     } : null;

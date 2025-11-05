@@ -40,7 +40,7 @@
 }
 .itemContent {
     composes: col-span-12 from global;
-    composes: lg_col-span-7 from global;
+    composes: lg_col-span-8 from global;
     composes: primary-anime from global;
     composes: lg_group-hover_translate-x-8 from global;
 }

@@ -17,7 +17,7 @@ const Services = ({title, services}) => {
                 <ul className={classes.servicesList}>
                     {services.map((item, index) => (
                         <li key={index} className={classes.serviceItem}>
-                            <Link to={`${item.link?.url}`} className={classes.itemCont}>
+                            <div className={classes.itemCont}>
                                 <div className={classes.itemContent}>
                                     <h3 className={classes.itemTitle}>{item.title}</h3>
                                     {item.content && <RichText content={item.content} className={classes.itemSubTitle}/>}
@@ -31,10 +31,7 @@ const Services = ({title, services}) => {
                                         />
                                     </div>
                                 </div>
-                                <div className={classes.iconCol}>
-                                    <ArrowIcon className={classes.icon} />
-                                </div>
-                            </Link>
+                            </div>
                         </li>
                     ))}
                 </ul>

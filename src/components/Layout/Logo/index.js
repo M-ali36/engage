@@ -32,7 +32,7 @@ const Logo = ({location}) => {
 			}
 			{(location?.pathname !== '/') &&
 				<Link to={`/`} title="Greatsweb">
-					<h1 className={classes.title}>Eng<span className={classes.sChr}>a</span>ge</h1>
+					<span className={classes.title}>Eng<span className={classes.sChr}>a</span>ge</span>
 				</Link>
 			}
 		</div>
