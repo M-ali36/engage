@@ -24,6 +24,7 @@
 
 .title {
     composes: text-2xl from global;
+    composes: lg_text-[40px] from global;
     composes: font-bold from global;
     composes: mb-4 from global;
 }

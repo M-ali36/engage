@@ -12,6 +12,7 @@
 
 .messageContent {
     composes: text-4xl from global;
+    composes: lg_text-[64px] from global;
     composes: mOnly_w-full from global;
     composes: mb-8 from global;
 }

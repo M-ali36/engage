@@ -2,6 +2,7 @@
     composes: py-12 from global;
     composes: lg_py-20 from global;
     composes: bg-yellow from global;
+    composes: text-black from global;
 }
 
 .cont {
@@ -23,7 +24,7 @@
 }
 
 .itemTitle {
-    composes: text-[24px] leading-none from global;
+    composes: text-[20px] leading-none from global;
 }
 
 .itemTitle strong {

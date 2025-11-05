@@ -17,8 +17,9 @@
 .contentCol {
     composes: flex from global;
     composes: items-center from global;
-    composes: mt-32 from global;
+    composes: mt-48 from global;
     composes: mb-12 from global;
+    composes: lg_pe-12 from global;
 }
 
 .imagesCol {
@@ -67,7 +68,8 @@
 }
 
 .subTitle {
-    composes: text-base-m from global;
+    composes: text-[20px] from global;
+    composes: max-w-xl from global;
 }
 
 .subTitle strong {

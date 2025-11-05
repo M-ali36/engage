@@ -5,8 +5,9 @@
 }
 
 .title {
-    composes: text-3xl from global;
+    composes: text-4xl from global;
     composes: font-bold from global;
+    
 }
 
 .cont {
@@ -19,6 +20,13 @@
     composes: items-center from global;
 }
 
+.tableTitles {
+    composes: grid from global;
+    composes: grid-cols-12 from global;
+    composes: mOnly_hidden from global;
+    composes: mt-12 from global;
+    composes: lg_mt-32 from global;
+}
 .colTitle {
     composes: col-span-12 from global;
     composes: lg_col-span-9 from global;
@@ -32,6 +40,23 @@
     composes: lg_col-span-2 from global;
     composes: text-base from global;
     composes: lg_text-[28px] from global;
+
+}
+
+.colTableTitle {
+    composes: col-span-12 from global;
+    composes: lg_col-span-9 from global;
+    composes: text-base from global;
+    composes: font-bold from global;
+    composes: lg_text-[20px] from global;
+}
+
+.colTableLocation {
+    composes: col-span-11 from global;
+    composes: lg_col-span-2 from global;
+    composes: font-bold from global;
+    composes: text-base from global;
+    composes: lg_text-[20px] from global;
 
 }
 
@@ -60,5 +85,5 @@
 
 .content {
     composes: text-base from global;
-    composes: lg_text-[22px] from global;
+    composes: lg_text-[20px] from global;
 }

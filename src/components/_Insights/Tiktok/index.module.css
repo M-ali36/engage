@@ -26,7 +26,7 @@
     composes: image from '@globalCss';
 }
 .title {
-    composes: text-3xl from global;
+    composes: text-4xl from global;
 }
 .link {
     composes: group from global;
@@ -90,7 +90,7 @@
 
 .itemTitle {
     composes: font-serif from global;
-    composes: text-sm from global;
+    composes: text-[20px] from global;
     composes: text-slate-500 from global;
     composes: mb-4 from global;
     composes: line-clamp-2 from global;

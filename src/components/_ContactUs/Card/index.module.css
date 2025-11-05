@@ -36,6 +36,7 @@
 .imageContainer {
     composes: relative from global;
     composes: aspect-[2/3] from global;
+    composes: mOnly_aspect-[4/5] from global;
     composes: overflow-hidden from global;
     composes: rounded-xl from global;
 }
@@ -47,12 +48,14 @@
 
 .memberTitle {
     composes: text-base-m from global;
+    composes: mOnly_text-[20px] from global;
     composes: font-bold from global;
     composes: block from global;
 }
 
 .memberRule {
     composes: text-base-m from global;
+    composes: mOnly_text-[16px] from global;
     composes: block from global;
 }
 

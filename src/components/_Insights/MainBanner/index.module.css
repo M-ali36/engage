@@ -35,6 +35,7 @@
 
 .title {
     composes: text-4xl from global;
+    composes: lg_text-[80px] from global;
     composes: max-w-3xl from global;
     composes: mOnly_mt-12 from global;
 }
@@ -43,7 +44,6 @@
     composes: text-xl-m from global;
     composes: font-bold from global;
     composes: text-orange from global;
-    composes: capitalize from global;
     composes: block from global;
     composes: mt-12 from global;
     composes: lg_mt-48 from global;

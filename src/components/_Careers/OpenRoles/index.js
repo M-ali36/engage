@@ -14,6 +14,10 @@ const OpenRoles = ({items, awareness}) => {
         <SectionObserver className={classes.root}>
             <div className={classes.cont}>
                 <h2 className={classes.title}>Open Roles</h2>
+                <div className={classes.tableTitles}>
+                    <span className={classes.colTableTitle}>Position</span>
+                    <span className={classes.colTableLocation}>Location</span>
+                </div>
                 <ul className={classes.roles}>
                     {items.map((item, index) => (
                         <li className={classes.item} key={index}>

@@ -43,6 +43,9 @@ body.nav-open {
 
 
 @layer components {
+  body {
+    @apply text-black;
+  }
   .btn-link {
     @apply px-6 py-3 rounded primary-anime text-center;
   }

@@ -18,6 +18,7 @@
 .title {
     composes: font-bold from global;
     composes: text-xl-m from global;
+    composes: mOnly_text-[34px] from global;
     composes: mb-12 from global;
 }
 

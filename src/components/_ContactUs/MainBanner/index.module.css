@@ -40,7 +40,7 @@
 }
 
 .title {
-    composes: text-4xl from global;
+    composes: text-5xl from global;
     composes: max-w-3xl from global;
     composes: mOnly_mt-12 from global;
     composes: mb-4 from global;
@@ -61,7 +61,8 @@
     composes: text-yellow from global;
     composes: block from global;
     composes: mt-auto from global;
-    composes: ms-auto from global;
-    composes: text-end from global;
+    composes: lg_ms-auto from global;
+    composes: lg_text-end from global;
     composes: text-xl-m from global;
+    composes: mOnly_text-[16px] from global;
 }

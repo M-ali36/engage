@@ -4,6 +4,7 @@
     composes: pt-4 from global;
     composes: lg_pt-12 from global;
     composes: bg-white from global;
+    composes: pb-1 from global;
 }
 
 
@@ -109,7 +110,7 @@
 }
 
 .itemTitle {
-    composes: text-3xl from global;
+    composes: text-4xl from global;
     composes: max-w-2xl from global;
 }
 

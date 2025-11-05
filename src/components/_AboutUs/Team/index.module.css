@@ -15,20 +15,16 @@
 }
 
 .title {
-    composes: text-3xl from global;
+    composes: text-4xl from global;
     composes: font-bold from global;
 }
 
 .miniTitle {
-    composes: bg-orange from global;
-    composes: text-black from global;
+    composes: text-orange from global;
     composes: font-bold from global;
     composes: text-[20px] from global;
-    composes: py-2 from global;
-    composes: px-2 from global;
     composes: mb-6 from global;
     composes: inline-block from global;
-    composes: rounded-full from global;
     composes: uppercase from global;
 }
 
