@@ -74,7 +74,7 @@ export const pageQuery = graphql`
                 }
                 }
                 excerpt {
-                excerpt
+                    excerpt
                 }
                 mainImage {
                 ...Image

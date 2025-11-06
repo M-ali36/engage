@@ -23,7 +23,7 @@ const Information = ({data}) => {
 
         return `${type}-${camelCasedString}`;
     }
-    
+    console.log(data)
 
     return (
         <>
