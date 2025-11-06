@@ -77,38 +77,41 @@ const LayoutWrapper = ({ children, location }) => {
   }, [dispatch]);
 
   // ✅ robust scroll to top on route change
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
+  // ✅ scroll instantly to top on route change
+useEffect(() => {
+  if (typeof window === 'undefined') return;
 
-    const smoother = gsap.core.globals().ScrollSmoother?.get();
+  const smoother = gsap.core.globals().ScrollSmoother?.get();
 
-    const scrollToTop = () => {
-      const activeSmoother = store?.smoothScroll || smoother;
+  const scrollToTop = () => {
+    const activeSmoother = store?.smoothScroll || smoother;
 
-      if (activeSmoother) {
-        requestAnimationFrame(() => {
-          activeSmoother.scrollTo(0, true);
-        });
-      } else {
-        // fallback to native
-        requestAnimationFrame(() => {
-          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        });
-      }
-    };
+    if (activeSmoother) {
+      // jump to top without animation
+      requestAnimationFrame(() => {
+        activeSmoother.scrollTo(0, false);
+      });
+    } else {
+      // instant native scroll
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+      });
+    }
+  };
 
-    // attempt immediately
-    scrollToTop();
+  // attempt immediately
+  scrollToTop();
 
-    // retry after slight delay (ensures smoother is ready)
-    const retry = setTimeout(scrollToTop, 100);
-    const retry2 = setTimeout(scrollToTop, 300);
+  // retry shortly to catch delayed smoother initialization
+  const retry = setTimeout(scrollToTop, 100);
+  const retry2 = setTimeout(scrollToTop, 300);
 
-    return () => {
-      clearTimeout(retry);
-      clearTimeout(retry2);
-    };
-  }, [location.pathname]);
+  return () => {
+    clearTimeout(retry);
+    clearTimeout(retry2);
+  };
+}, [location.pathname]);
+
 
   // ✅ (optional) route-updated event listener fallback
   useEffect(() => {

@@ -2,6 +2,9 @@
     composes: pb-12 from global;
     composes: lg_pb-24 from global;
     composes: bg-white-fff from global;
+    composes: relative from global;
+    composes: z-[1] from global;
+    overflow: unset;
 }
 
 .cont { 
@@ -12,8 +15,9 @@
     composes: grid from global;
     composes: grid-cols-1 from global;
     composes: lg_grid-cols-2 from global;
-    composes: gap-8 from global;
+    composes: gap-12 from global;
 }
+
 .mainRow {
     composes: row from '@globalCss';
 }
@@ -31,13 +35,13 @@
     composes: lg_ms-auto from global;
     composes: mOnly_mx-auto from global;
     composes: flex from global;
-    composes: mOnly_hidden from global;
+    
     composes: mOnly-w-full from global;
     composes: mOnly_justify-center from global;
 }
 
 .btnViewContainer {
-    composes: p-0.5 from global;
+    composes: p-1 from global;
     composes: bg-white from global;
     composes: rounded-lg from global;
 }
@@ -55,16 +59,17 @@
 
 .btnView {
     composes: py-1 from global;
-    composes: w-32 from global;
+    composes: w-[150px] from global;
     composes: text-center from global;
     composes: text-[14px] from global;
     composes: rounded-lg from global;
-    composes: text-slate-500 from global;
+    composes: text-[#0A0D14] from global;
     composes: h-[28px] from global;
 }
 
 .btnActive {
     composes: bg-white-fff from global;
+    box-shadow: 0px 2px 4px rgba(27,28,29,0.1);
 }
 
 .searchIcon {
@@ -90,6 +95,7 @@
     composes: py-3 from global;
     composes: text-sm from global;
     composes: bg-white-fff from global;
+    composes: w-80 from global;
     composes: mOnly_w-full from global;
 }
 
@@ -101,8 +107,14 @@
 }
 
 .totals {
-    composes: font-bold from global;
+    composes: mOnly_hidden from global;
     composes: text-xs from global;
+    color: #525866;
+}
+
+.totalsMob {
+    composes: lg_hidden from global;
+    composes: mx-auto from global;
 }
 
 .pagesBtns {
@@ -111,17 +123,29 @@
     composes: items-center from global;
     composes: justify-center from global;
     composes: flex from global;
-    composes: gap-1 from global;
+    composes: gap-2 from global;
     composes: mOnly_order-1 from global;
     composes: mOnly_pt-4 from global;
+    composes: mOnly_border-t from global;
+    composes: mObly_border-slate-200 from global;
 }
 
 .perPage {
     composes: text-end from global;
+    composes: mOnly_hidden from global;
+}
+
+.numBtn {
+    composes: mOnly_hidden from global;
+    composes: border from global;
+    composes: border-slate-200 from global;
 }
 
 .btnPage {
-    composes: rounded-full from global;
+    composes: rounded from global;
+    composes: lg_rounded-full from global;
+    composes: mOnly_border from global;
+    composes: mOnly_border-slate-200 from global;
     composes: h-8 from global;
     composes: w-8 from global;
     composes: inline-flex from global;
@@ -129,8 +153,6 @@
     composes: justify-center from global;
     composes: text-xs from global;
     composes: font-bold from global;
-    composes: border from global;
-    composes: border-slate-200 from global;
     composes: primary-anime from global;
     composes: hover_bg-black from global;
     composes: hover_border-black from global;
@@ -147,20 +169,57 @@
 
 .arrowIcon {
     composes: w-[6px] from global;
+    composes: mOnly_hidden from global;
 }
 
 .iconNext {
     composes: rotate-180 from global;
+    composes: mOnly_hidden from global;
+}
+
+.arrowIconM {
+    composes: w-[10px] from global;
+    composes: lg_hidden from global;
+}
+
+.iconPrevM {
+    composes: rotate-[225deg] from global;
+}
+
+.iconNextM {
+    composes: rotate-45 from global;
+}
+
+.arrowIconM path {
+    stroke-width: 4px;
 }
 
 .perPageSelect {
     composes: rounded-lg from global;
-    composes: px-2 from global;
+    composes: ps-3 from global;
+    composes: pe-12 from global;
     composes: py-1 from global;
     composes: text-xs from global;
     composes: font-bold from global;
     composes: bg-white-fff from global;
     composes: border from global;
     composes: border-slate-200 from global;
+    composes: appearance-none from global;
+}
 
+.selectContainer {
+    composes: relative from global;
+    composes: inline-block from global;
+}
+
+.selectContainer:after {
+    position: absolute;
+    inset-inline-end: 10px;
+    width: 12px;
+    height: 12px;
+    top: 10px;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.773 3.7125L8.4855 0L9.546 1.0605L4.773 5.8335L0 1.0605L1.0605 0L4.773 3.7125Z' fill='%23525866'/%3E%3C/svg%3E%0A");
 }

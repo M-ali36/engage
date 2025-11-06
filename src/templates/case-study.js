@@ -63,7 +63,7 @@ export const pageQuery = graphql`
 				slug
             }
         }
-        allContentfulCaseStudy(sort: { fields: [createdAt], order: ASC }) {
+        allContentfulCaseStudy(sort: { fields: [order, createdAt], order: [DESC, DESC] }) {
             nodes {
                 title
                 slug

@@ -10,13 +10,14 @@
 .title {
     composes: font-bold from global;
     composes: text-4xl from global;
+    composes: mOnly_text-[40px] from global;
     composes: mb-8 from global;
 }
 
 .content {
     composes: text-[18px] from global;
-    composes: lg_text-sm from global;
-    composes: text-slate-500 from global;
+    composes: lg_text-[20px] from global;
+    composes: text-neutral-500 from global;
     composes: max-w-3xl from global;
 }
 

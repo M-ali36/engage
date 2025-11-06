@@ -55,7 +55,13 @@ const Footer = () => {
 						<h3 className={classes.linksTitle}>Details</h3>
 						<ul className={classes.fastlinks}>
 						{detailsLinks.map((item, index) => (
-							<li key={index}><Link to={item.url} className={classes.link}>{item.title}</Link></li>
+							<li key={index}>
+								{item.linkType ==='internal' ?
+									<Link to={item.url} className={classes.link}>{item.title}</Link>
+									:
+									<a href={item.url} target='_blank' className={classes.link}>{item.title}</a>
+								}
+							</li>
 						))}
 						</ul>
 					</div>

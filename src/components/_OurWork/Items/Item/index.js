@@ -25,7 +25,7 @@ const Item = ({item, view, isMega}) => {
                     <h3 className={classes.itemTitle}>{title}</h3>
                     <Arrow className={`${view === 'grid' ? classes.arrowIcon : classes.arrowIconList} ${(isMega && view !== 'list') && classes.arrowMega}`}/>
                 </span>
-                <p className={classes.itemSubTitle}>{excerpt?.excerpt}</p>
+                {excerpt && <p className={classes.itemSubTitle}>{excerpt?.excerpt}</p>}
                 <span className={classes.tags} data-tags="true">
                     {metadata.tags
                         .filter(tag => tag.name.startsWith("Service:"))

@@ -25,9 +25,9 @@
 }
 
 .itemTitle {
-    composes: text-[24px] leading-none from global;
+    composes: text-[20px] leading-none from global;
 }
 
 .itemTitle strong {
-    @apply text-3xl block;
+    @apply text-4xl block;
 }

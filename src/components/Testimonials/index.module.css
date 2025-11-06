@@ -31,7 +31,7 @@
 .content {
     composes: text-yellow from global;
     composes: font-bold from global;
-    composes: text-[24px] from global;
+    composes: text-[28px] from global;
     composes: lg_text-[44px] from global;
 }
 

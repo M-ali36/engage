@@ -4,6 +4,7 @@
 
 body {
     background: #fff;
+    overflow-x: hidden;
 }
 
 body #gatsby-focus-wrapper {

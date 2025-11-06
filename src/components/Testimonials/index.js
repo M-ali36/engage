@@ -37,7 +37,7 @@ const Testimonials = ({items, image}) => {
                 >
                     {items.map((item, index) => (
                         <SwiperSlide key={index}>
-                            <div classname={classes.itemContainer}>
+                            <div className={classes.itemContainer}>
                                 <RichText className={classes.content} content={item.content}/>
                                 {item.image &&
                                     <div className={classes.itemImage}>

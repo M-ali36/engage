@@ -1,6 +1,6 @@
 .root {
     composes: py-12 from global;
-    composes: pt-24 from global;
+    composes: pt-48 from global;
     composes: lg_py-24 from global;
     composes: lg_pt-40 from global;
     composes: bg-white-fff from global;
@@ -11,7 +11,8 @@
 }
 
 .title {
-    composes: text-4xl from global;
+    composes: text-5xl from global;
+    composes: lg_text-[80px] from global;
     composes: mb-8 from global;
     composes: block from global;
     composes: font-bold from global;
@@ -20,4 +21,5 @@
 .subTitle {
     composes: text-slate-500 from global;
     composes: text-base from global;
+    composes: mOnly_text-[16px] from global;
 }

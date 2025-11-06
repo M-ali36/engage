@@ -39,9 +39,11 @@
     composes: lg_gap-8 from global;
 }
 
+
 .itemTitle {
     composes: font-bold from global;
     composes: text-xl from global;
+    composes: lg_text-[28px] from global;
     composes: primary-anime from global;
     composes: lg_group-hover_translate-x-4 from global;
 }
@@ -51,14 +53,21 @@
     composes: max-w-2xl from global;
     composes: primary-anime from global;
     composes: lg_group-hover_translate-x-4 from global;
+    composes: mt-4 from global;
 }
+
+.list .tags {
+    @apply lg_mt-4;
+}
+
 .tags {
     composes: flex from global;
-    composes: mt-4 from global;
+    composes: mOnly_mb-4 from global;
     composes: flex-wrap from global;
     composes: gap-4 from global;
     composes: primary-anime from global;
     composes: lg_group-hover_translate-x-4 from global;
+    composes: mOnly_-order-[1] from global;
 }
 .tag {
     composes: text-sm from global;
@@ -76,7 +85,6 @@
 
 .itemLink {
     composes: flex from global;
-    composes: mb-4 from global;
 }
 
 .arrowIcon {
@@ -89,8 +97,12 @@
 .arrowIconList {
     composes: mt-2 from global;
     composes: ms-auto from global;
-    composes: w-4 from global;
-    composes: h-4 from global;
+    composes: w-6 from global;
+    composes: h-6 from global;
+}
+
+.arrowIcon path {
+    stroke-width: 4px;
 }
 .arrowMega {
     composes: lg_hidden from global;

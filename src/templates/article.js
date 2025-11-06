@@ -24,13 +24,26 @@ const ArticlePage = ({ data }) => {
 
   const moreArticles = data.allContentfulArticle.nodes;
 
+  let nextStudy = nextArticle
+
+  if (!nextArticle && moreArticles?.length > 0) {
+    // find current index
+    const currentIndex = moreArticles.findIndex(cs => cs.slug === slug)
+    const nextIndex =
+      currentIndex >= 0 && currentIndex < moreArticles.length - 1
+        ? currentIndex + 1
+        : 0 // fallback to first one if last in list
+    nextStudy = moreArticles[nextIndex]
+  }
+
+
   return (
     <>
       <Seo data={seo} slug={`insights/${slug}`} article parentCategory="news" createdAt={createdAt} updatedAt={updatedAt}/>
       <MainBanner image={mainBanner} title={featuredTitle} date={date} metadata={metadata}/>
       <Content content={content}/>
       {pdfForm && <PdfForm data={pdfForm}/>}
-      {nextArticle && <NextArticle data={nextArticle}/>}
+      {nextArticle && <NextArticle data={nextStudy}/>}
     </>
   )
 }
@@ -103,14 +116,20 @@ export const pageQuery = graphql`
             nodes {
                 title
                 slug
-                mainImage {
-                    ...Image
-                }
                 metadata {
                     tags {
                         name
                         contentful_id
                     }
+                }
+                excerpt {
+                    excerpt
+                }
+                mainImage {
+                    ...Image
+                }
+                mainBanner {
+                    ...Image
                 }
             }
         }
