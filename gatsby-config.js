@@ -152,7 +152,8 @@ module.exports = {
 					env: {
 						production: {
 							policy: [{ userAgent: '*' }],
-							sitemap: 'https://www.engagedigitalpartners.com/sitemap-index.xml',
+							// it should be https://www.engagedigitalpartners.com/
+							sitemap: 'https://engagedigitalpartners.netlify.app/sitemap-index.xml',
 						},
 						development: {
 							policy: [{ userAgent: '*', disallow: ['/'] }],

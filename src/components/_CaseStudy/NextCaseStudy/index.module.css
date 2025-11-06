@@ -89,6 +89,6 @@
     composes: mb-8 from global;
     composes: text-yellow from global;
     composes: font-bold from global;
-    composes: text-base-m from global;
+    composes: text-[22px] from global;
     composes: mOnly_text-[40px] from global;
 }
