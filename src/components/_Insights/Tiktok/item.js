@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import * as classes from './index.module.css'
 import AnimatedImage from '@Ui/AnimatedImage'
 import TiktokIcon from '@Svg/tiktok-play.svg'
-import VimeoModal from '@Ui/VideoModal';
 import {useStore, setNavState, setVideoId} from '@UseCase/store'
 import PropTypes from 'prop-types';
 

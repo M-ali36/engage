@@ -3,5 +3,5 @@ module.exports = `
       raw: String
       references: [ContentTextBlockRefrences] @link(by: "id", from: "references___NODE")
     }
-    union ContentTextBlockRefrences = ContentfulLink | ContentfulAsset
+    union ContentTextBlockRefrences = ContentfulLink | ContentfulAsset | ContentfulVideo
 `

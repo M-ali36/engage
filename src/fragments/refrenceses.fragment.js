@@ -13,5 +13,14 @@ export const query = graphql`
       __typename
       ...Image
     }
+    ... on ContentfulVideo {
+      contentful_id
+      __typename
+      title
+      url
+      image {
+        ...Image
+      }
+    }
   }
 `
