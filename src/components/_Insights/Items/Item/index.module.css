@@ -3,7 +3,8 @@
     composes: border-b from global;
     composes: first_border-t from global;
     composes: border-black from global;
-    composes: block from global;
+    composes: grid from global;
+    composes: grid-cols-12 from global;
     composes: group from global;
     composes: mOnly_flex from global;
     composes: mOnly_flex-col from global;
@@ -44,10 +45,42 @@
 }
 
 .itemLink {
-    composes: flex from global;
-    composes: items-start from global;
+    composes: col-span-11 from global;
+    composes: lg_col-span-7 from global;
 }
 
+.itemImage {
+    composes: col-span-3 from global;
+    composes: col-start-9 from global;
+    composes: mOnly_hidden from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: justify-end from global;
+    composes: w-full from global;
+}
+.imageContainer {
+    composes: relative from global;
+    composes: lg_absolute from global;
+    composes: flex from global;
+    composes: items-center from global;
+    composes: justify-center from global;
+    composes: primary-anime from global;
+    composes: h-0 from global;
+    composes: w-full from global;
+    composes: lg_w-96 from global;
+    composes: overflow-hidden from global;
+    composes: rounded-lg from global;
+    composes: lg_group-hover_h-96 from global;
+}
+
+.imageContainer [data-gatsby-image-wrapper] {
+    position: absolute;
+}
+.arrowCol {
+    composes: col-span-1 from global;
+    composes: mOnly_absolute from global;
+    composes: mOnly_end-4 from global;
+}
 .arrowIcon {
     composes: w-5 from global;
     composes: h-5 from global;

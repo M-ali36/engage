@@ -56,6 +56,9 @@ export const pageQuery = graphql`
 						contentful_id
 					}
 				}
+                mainImage {
+                    ...Image
+                }
                 featuredTitle {
                     raw
                 }
