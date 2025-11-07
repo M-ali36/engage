@@ -32,7 +32,7 @@
 
 .row {
     composes: lg_grid from global;
-    composes: lg_grid-cols-1 from global;
+    composes: grid-cols-1 from global;
     composes: lg_grid-cols-2 from global;
     composes: lg_gap-12 from global;
     composes: lg_items-center from global;
