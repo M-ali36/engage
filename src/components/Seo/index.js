@@ -18,7 +18,6 @@ function Seo({
         contentfulGlobalConfigurations: {
             siteUrl,
             siteTitle,
-            sitePhone,
             siteEmail,
             siteDescription: { siteDescription },
             siteShareImage,
@@ -31,7 +30,6 @@ function Seo({
         contentfulGlobalConfigurations {
             siteTitle
             siteUrl
-            sitePhone
             siteEmail
             siteDescription {
                 siteDescription

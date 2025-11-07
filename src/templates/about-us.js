@@ -20,6 +20,7 @@ const AboutUsPage = ({ data }) => {
     results,
     ourDifferenceTitle,
     ourDifferenceImages,
+    ourDifferenceList,
     whoWeServeTitle,
     partnersTitle,
     partners,
@@ -32,7 +33,7 @@ const AboutUsPage = ({ data }) => {
       <Seo data={seo} slug={slug}/>
       <MainBanner title={bannerTitle} subTitle={bannerSubTitle} images={bannerImages}/>
       <Results title={resultsTitle} items={results}/>
-      <OurDifference title={ourDifferenceTitle} images={ourDifferenceImages}/>
+      <OurDifference title={ourDifferenceTitle} images={ourDifferenceImages} list={ourDifferenceList}/>
       <WhoWeServe title={whoWeServeTitle}/>
       <Partners title={partnersTitle} items={partners}/>
       <Team items={team} title={teamTitle}/>
@@ -72,6 +73,15 @@ export const pageQuery = graphql`
             }
             ourDifferenceImages {
                 ...Image
+            }
+            ourDifferenceList {
+                title
+                content {
+                    raw
+                }
+                image {
+                    ...Image
+                }
             }
             whoWeServeTitle {
                 raw

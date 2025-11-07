@@ -10,10 +10,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import Item from './item';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const OurDifference = ({ title, images }) => {
+const OurDifference = ({ title, images, list }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   // Refs for swiper buttons
@@ -62,7 +63,7 @@ const OurDifference = ({ title, images }) => {
 
   return (
     <SectionObserver className={classes.root}>
-      <div className={classes.cont}>
+      <div className={`${classes.cont} ${classes.titleCont}`}>
         <RichText
           content={title}
           className={classes.title}
@@ -87,16 +88,9 @@ const OurDifference = ({ title, images }) => {
               swiper.params.navigation.nextEl = nextRef.current;
             }}
           >
-            {images.map((item, index) => (
+            {list.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className={classes.imageContainer}>
-                  <AnimatedImage
-                    image={item}
-                    height={1920}
-                    width={1080}
-                    className={classes.image}
-                  />
-                </div>
+                <Item item={item}/>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -110,15 +104,8 @@ const OurDifference = ({ title, images }) => {
       ) : (
         <div className="slidesWrapper">
           <div className={`${classes.slidesContainer} slides`}>
-            {images.map((item, index) => (
-              <div className={classes.imageContainer} key={index}>
-                <AnimatedImage
-                  image={item}
-                  height={1920}
-                  width={1080}
-                  className={classes.image}
-                />
-              </div>
+            {list.map((item, index) => (
+              <Item item={item}/>
             ))}
           </div>
         </div>

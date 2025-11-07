@@ -21,13 +21,6 @@
     @apply text-orange;
 }
 
-.imageContainer {
-    composes: relative from global;
-    composes: aspect-video from global;
-    composes: w-screen from global;
-    composes: max-w-screen-2xl from global;
-    composes: overflow-hidden from global;
-}
 
 .slidesContainer {
     composes: flex from global;
@@ -35,4 +28,54 @@
     composes: flex-nowrap from global;
     composes: items-center from global;
     composes: h-screen from global;
+}
+
+.row {
+    composes: lg_grid from global;
+    composes: lg_grid-cols-1 from global;
+    composes: lg_grid-cols-2 from global;
+    composes: lg_gap-12 from global;
+    composes: lg_items-center from global;
+}
+
+.imageContainer {
+    composes: relative from global;
+    composes: aspect-[4/5] from global;
+}
+.itemRoot {
+    composes: w-screen from global;
+    composes: mOnly_border from global;
+    composes: mOnly_border-yellow from global;
+    composes: mOnly_rounded-3xl from global;
+    composes: mOnly_p-8 from global;
+    composes: mOnly_w-full from global;
+}
+
+.itemTitle {
+    composes: font-bold from global;
+    composes: text-4xl from global;
+    composes: text-yellow from global;
+    composes: lg_mt-20 from global;
+    composes: mb-8 from global;
+    composes: lg_mb-4 from global;
+}
+
+.content {
+    composes: text-[20px] from global;
+}
+
+.itemCont {
+    composes: lg_ps-28 from global;
+}
+
+.swiperWrapper {
+    composes: mOnly_mt-8 from global;
+}
+
+.contentCol {
+    composes: lg_pt-12 from global;
+}
+
+.imageCol {
+    composes: mOnly_hidden from global;
 }
