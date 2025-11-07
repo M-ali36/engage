@@ -11,6 +11,7 @@ const contentfulConfig = {
 }
 
 const { spaceId, accessToken } = contentfulConfig
+const siteLink = 'https://engagedigitalpartners.netlify.app/'; // it should be https://www.engagedigitalpartners.com/
 
 if (!spaceId || !accessToken) {
 	throw new Error(
@@ -21,7 +22,7 @@ if (!spaceId || !accessToken) {
 module.exports = {
 	siteMetadata: {
 		title: `Engage`,
-		siteUrl: `https://www.engagedigitalpartners.com/`
+		siteUrl: siteLink
 	},
 	plugins:
 		[
@@ -152,8 +153,7 @@ module.exports = {
 					env: {
 						production: {
 							policy: [{ userAgent: '*' }],
-							// it should be https://www.engagedigitalpartners.com/
-							sitemap: 'https://engagedigitalpartners.netlify.app/sitemap-index.xml',
+							sitemap: `${siteLink}sitemap-index.xml`,
 						},
 						development: {
 							policy: [{ userAgent: '*', disallow: ['/'] }],

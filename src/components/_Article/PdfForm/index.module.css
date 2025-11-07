@@ -80,4 +80,16 @@
     composes: text-sm from global;
     composes: rounded-full from global;
     composes: mOnly_w-full from global;
+    composes: disabled_opacity-20 from global;
+}
+
+.infoText {
+    composes: mt-4 from global;
+    composes: block from global;
+}
+
+.downloadButton {
+    composes: ms-1 from global;
+    composes: inline from global;
+    composes: underline from global;
 }
