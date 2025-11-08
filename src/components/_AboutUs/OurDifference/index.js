@@ -11,15 +11,15 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Item from './item';
+import Arrow from '@Svg/slider-arrow.svg'
 
 gsap.registerPlugin(ScrollTrigger);
 
 const OurDifference = ({ title, images, list }) => {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Refs for swiper buttons
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const swiperRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   // ✅ detect screen width
   useEffect(() => {
@@ -28,6 +28,18 @@ const OurDifference = ({ title, images, list }) => {
     window.addEventListener("resize", checkScreen);
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
+
+    const handlePrev = () => {
+        if (swiperRef.current && currentIndex > 0) {
+            swiperRef.current.slidePrev();
+        }
+    };
+
+    const handleNext = () => {
+        if (swiperRef.current && currentIndex < list.length - 1) {
+            swiperRef.current.slideNext();
+        }
+    };
 
   // ✅ GSAP ScrollTrigger only for desktop
   useEffect(() => {
@@ -79,14 +91,8 @@ const OurDifference = ({ title, images, list }) => {
             spaceBetween={20}
             slidesPerView={1.1}
             centeredSlides={true}
-            navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-            }}
-            onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-            }}
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
           >
             {list.map((item, index) => (
               <SwiperSlide key={index}>
@@ -95,10 +101,21 @@ const OurDifference = ({ title, images, list }) => {
             ))}
           </Swiper>
 
-          {/* ✅ Custom Navigation Buttons */}
-          <div className={classes.swiperNav}>
-            <button ref={prevRef} className={classes.prevBtn}>Prev</button>
-            <button ref={nextRef} className={classes.nextBtn}>Next</button>
+          <div className={classes.sliderBtns}>
+              <button
+                  className={classes.btn}
+                  onClick={handlePrev}
+                  disabled={currentIndex === 0}
+              >
+                  <Arrow className={classes.iconPrev}/>
+              </button>
+              <button
+                  className={classes.btn}
+                  onClick={handleNext}
+                  disabled={currentIndex === list.length - 1}
+              >
+                  <Arrow className={classes.icon}/>
+              </button>
           </div>
         </div>
       ) : (

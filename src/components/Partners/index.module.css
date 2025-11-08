@@ -4,15 +4,22 @@
     composes: bg-black from global;
     composes: text-white from global;
 }
+
 .cont {
     composes: cont from '@globalCss';
 }
+
 .titleContainer {
     composes: mb-12 from global;
 }
+
 .title {
     composes: text-4xl from global;
     composes: font-bold from global;
+}
+
+.title br {
+    @apply mOnly_hidden;
 }
 
 .subTitle {

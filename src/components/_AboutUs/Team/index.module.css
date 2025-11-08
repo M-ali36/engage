@@ -19,6 +19,10 @@
     composes: font-bold from global;
 }
 
+.title br {
+    @apply mOnly_hidden;
+}
+
 .miniTitle {
     composes: text-orange from global;
     composes: font-bold from global;

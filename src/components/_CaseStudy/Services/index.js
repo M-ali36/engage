@@ -17,7 +17,7 @@ const Services = ({ metadata }) => {
 
             return (
               <Link
-                to={`/our-work/?service=${encodeURIComponent(tag.name).replace(/%20/g, '+')}`}
+                to={`/our-work/?${(tag.name?.split(': ')[0] === 'Service') ? 'service' : 'region'}=${encodeURIComponent(tag.name).replace(/%20/g, '+')}`}
                 key={index}
                 className={classes.link}
               >

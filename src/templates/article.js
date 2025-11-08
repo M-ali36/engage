@@ -110,9 +110,7 @@ export const pageQuery = graphql`
                 }
             }
         }
-        allContentfulArticle (
-                filter: {slug: { ne: $slug } }
-            ) {
+        allContentfulArticle {
             nodes {
                 title
                 slug
