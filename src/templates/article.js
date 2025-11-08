@@ -24,7 +24,7 @@ const ArticlePage = ({ data }) => {
 
   const moreArticles = data.allContentfulArticle.nodes;
 
-  let nextStudy = nextArticle
+  let nextArt = nextArticle
 
   if (!nextArticle && moreArticles?.length > 0) {
     // find current index
@@ -33,7 +33,7 @@ const ArticlePage = ({ data }) => {
       currentIndex >= 0 && currentIndex < moreArticles.length - 1
         ? currentIndex + 1
         : 0 // fallback to first one if last in list
-    nextStudy = moreArticles[nextIndex]
+    nextArt = moreArticles[nextIndex]
   }
 
 
@@ -43,7 +43,7 @@ const ArticlePage = ({ data }) => {
       <MainBanner image={mainBanner} title={featuredTitle} date={date} metadata={metadata}/>
       <Content content={content}/>
       {pdfForm && <PdfForm data={pdfForm}/>}
-      {nextArticle && <NextArticle data={nextStudy}/>}
+      {nextArt && <NextArticle data={nextArt}/>}
     </>
   )
 }
