@@ -40,3 +40,6 @@
     composes: w-4 from global;
 }
 
+.linkTitle {}
+
+.linkList {}

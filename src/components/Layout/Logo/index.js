@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import * as classes from './index.module.css'
 import PropTypes from 'prop-types'
-import Logos from "@Svg/logo.svg";
+import Logos from "@Svg/engage-logo.svg";
 import { Link } from 'gatsby'
 
 const Logo = ({location}) => {
@@ -28,11 +28,11 @@ const Logo = ({location}) => {
 	return (
 		<div className={classes.logo}>
 			{(location?.pathname === '/') &&
-				<h1 className={classes.title}>Eng<span className={classes.sChr}>a</span>ge</h1>
+				<Logos className={`${classes.svg} animated-logo`}/>
 			}
 			{(location?.pathname !== '/') &&
-				<Link to={`/`} title="Greatsweb">
-					<span className={classes.title}>Eng<span className={classes.sChr}>a</span>ge</span>
+				<Link to={`/`} title="Greatsweb" className={classes.title}>
+					<Logos className={`${classes.svg} animated-logo`}/>
 				</Link>
 			}
 		</div>

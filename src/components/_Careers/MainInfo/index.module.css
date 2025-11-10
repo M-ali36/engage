@@ -33,3 +33,7 @@
     composes: max-w-xl from global;
     composes: text-base from global;
 }
+
+.image {}
+
+.col {}

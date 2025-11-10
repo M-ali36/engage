@@ -7,3 +7,5 @@
     composes: cont from '@globalCss';
     composes: max-w-4xl from global;
 }
+
+.content {}

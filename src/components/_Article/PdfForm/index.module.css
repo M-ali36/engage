@@ -93,3 +93,13 @@
     composes: inline from global;
     composes: underline from global;
 }
+
+.thanksMessage {}
+
+.loadingText {}
+
+.error {}
+
+.feedback {}
+
+.titleContainer {}

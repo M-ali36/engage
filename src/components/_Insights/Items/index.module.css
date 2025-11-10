@@ -7,3 +7,7 @@
 .cont {
     composes: cont from '@globalCss';
 }
+
+.itemsContainer {}
+
+.filtersContainer {}

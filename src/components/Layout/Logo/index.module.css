@@ -1,16 +1,10 @@
 .logo {
-	composes: inline-block from global;
+	composes: flex from global;
+	composes: items-center from global;
 	composes: pointer-events-auto from global;
 }
 
 .title {
-	composes: font-bold from global;
-	composes: text-[28px] from global;
-	composes: lg_text-[36px] from global;
-	composes: font-sans from global;
-	composes: tracking-tight from global;
-	composes: leading-none from global;
-	composes: -mt-2 from global;
 }
 
 .sChr {
@@ -18,3 +12,7 @@
 	composes: inline from global;
 }
 
+.svg {
+	composes: w-[123px] from global;
+	composes: text-white from global;
+}

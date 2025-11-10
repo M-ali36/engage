@@ -53,3 +53,5 @@
     composes: text-black from global;
     composes: -rotate-90 from global;
 }
+
+.notActive {}

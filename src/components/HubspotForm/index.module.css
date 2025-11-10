@@ -1,3 +1,7 @@
+.root {}
+
+.row {}
+
 .control {
     composes: relative from global;
     composes: mb-8 from global;

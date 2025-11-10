@@ -16,7 +16,7 @@ const RegionFilter = ({ filters, currentRegion, setCurrentRegion }) => {
     <div className={classes.filtersWrapper}>
       <div className={classes.tagsTitle} onClick={() => setState(!state)}>
         <Sort className={classes.sortIcon}/>
-        <span className={classes.mTitle}>{currentRegion ? currentRegion : 'All Regions'}</span>
+        <span className={classes.mTitle}>{currentRegion ? currentRegion : 'Region'}</span>
         <Caret className={classes.mIcon} />
       </div>
 
@@ -29,7 +29,7 @@ const RegionFilter = ({ filters, currentRegion, setCurrentRegion }) => {
           className={`${classes.item} ${currentRegion === '' && classes.itemActive}`}
           onClick={() => setCurrentRegion('')}
         >
-          All Regions
+          Region
         </li>
 
         {regionTags.map((tag, index) => (

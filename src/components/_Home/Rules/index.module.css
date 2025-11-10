@@ -54,3 +54,9 @@
     composes: text-sm from global;
     composes: mt-6 from global;
 }
+
+.iconContainer {}
+
+.col {}
+
+.subTitle {}

@@ -75,3 +75,11 @@
 .subTitle strong {
     @apply text-yellow;
 }
+
+.contentContainer {}
+
+.svg {
+    composes: w-full from global;
+	composes: lg_w-96 from global;
+    composes: mt-4 from global;
+}

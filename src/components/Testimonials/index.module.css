@@ -48,3 +48,7 @@
     composes: block from global;
     composes: mt-8 from global;
 }
+
+.itemContainer {}
+
+.image {}

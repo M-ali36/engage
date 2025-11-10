@@ -31,3 +31,5 @@
 .itemTitle strong {
     @apply text-4xl block;
 }
+
+.itemContainer {}

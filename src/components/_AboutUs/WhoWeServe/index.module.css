@@ -69,3 +69,8 @@
     composes: text-base-m from global;
     composes: font-bold from global;
 }
+
+.timeZone {}
+
+.content {}
+

@@ -87,3 +87,5 @@
     composes: text-base from global;
     composes: lg_text-[20px] from global;
 }
+
+.awareness {}

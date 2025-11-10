@@ -13,8 +13,8 @@ const ServicesFilter = ({filters, currentFilter, setCurrentFilter}) => {
 
     return (
         <div className={classes.filtersWrapper}>
+            <span className={classes.dTitle}>Services</span> 
             <div className={classes.tagsTitle} onClick={() => setState(!state)}>
-                <span className={classes.dTitle}>Services</span> 
                 <span className={classes.mTitle}>{currentFilter ? currentFilter : 'All Services'}</span>
                 <Caret className={classes.mIcon} />
             </div>
@@ -25,6 +25,9 @@ const ServicesFilter = ({filters, currentFilter, setCurrentFilter}) => {
                         {(tag.name.split(': ').length > 1) ? tag.name.split(': ')[1] : tag.name}
                     </li>
                 ))}
+                <li className={`${classes.item} ${currentFilter === '' && classes.itemActive}`} onClick={() => setCurrentFilter('')}>
+                    All
+                </li>
             </ul>
         </div>
     );

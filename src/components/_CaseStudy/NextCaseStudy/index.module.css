@@ -92,3 +92,12 @@
     composes: text-[22px] from global;
     composes: mOnly_text-[40px] from global;
 }
+
+.contentContainer {}
+
+.tags {}
+
+.image {}
+
+.colImage {}
+

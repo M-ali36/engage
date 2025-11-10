@@ -69,3 +69,11 @@
     composes: flex from global;
     composes: gap-4 from global;
 }
+
+.itemLink {}
+
+.itemContent {}
+
+.itemContainer {}
+
+.image {}

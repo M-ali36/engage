@@ -50,6 +50,7 @@
     composes: mOnly_rounded-3xl from global;
     composes: mOnly_p-8 from global;
     composes: mOnly_w-full from global;
+    composes: mOnly_h-full from global;
 }
 
 .itemTitle {
@@ -111,4 +112,15 @@
     composes: h-4 from global;
     composes: w-4 from global;
     composes: rotate-180 from global;
+}
+
+.titleCont {}
+
+.image {}
+
+.slide {
+    composes: h-full from global;
+    flex: 1 0 auto;
+    height: auto !important;
+    display: flex;
 }

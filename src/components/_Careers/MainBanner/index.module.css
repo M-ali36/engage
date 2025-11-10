@@ -71,3 +71,5 @@
     composes: text-xl-m from global;
     composes: will-change-transform from global;
 }
+
+.image {}

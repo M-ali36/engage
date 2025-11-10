@@ -62,6 +62,58 @@ input[type="search"] {
   appearance: none;
 }
 
+/* keep all non-animated paths visible */
+.animated-logo path:not(#n):not(#n-s):not(#g):not(#g-s):not(#e):not(#e-s) {
+  opacity: 1;
+}
+
+/* start hidden for animated ones */
+.animated-logo #n, .animated-logo #n-s, .animated-logo #g, .animated-logo #g-s, .animated-logo #e, .animated-logo #e-s {
+  opacity: 0;
+}
+
+/* instant step animation, 1s on + 0.3s off */
+@keyframes showMain3 {
+  0%, 76.9% { opacity: 1; }
+  76.91%, 100% { opacity: 0; }
+}
+@keyframes showSecondary3 {
+  0%, 76.9% { opacity: 0; }
+  76.91%, 100% { opacity: 1; }
+}
+
+@keyframes showMain2 {
+  0%, 50.9% { opacity: 1; }
+  50.91%, 76.9% { opacity: 0; }
+  76.91%, 100% { opacity: 1; }
+}
+@keyframes showSecondary2 {
+  0%, 50.9% { opacity: 0; }
+  50.91%, 76.9% { opacity: 1; }
+  76.91%, 100% { opacity: 0; }
+}
+
+@keyframes showMain {
+  0%, 26.9% { opacity: 1; }
+  26.91%, 50.9% { opacity: 0; }
+  50.91%, 100% { opacity: 1; }
+}
+@keyframes showSecondary {
+  0%, 26.9% { opacity: 0; }
+  26.91%, 50.9% { opacity: 1; }
+  50.91%, 100% { opacity: 0; }
+}
+
+/* apply animations with hard steps (no transition) */
+.animated-logo #n   { animation: showMain 1.6s steps(1, end) infinite; }
+.animated-logo #n-s { animation: showSecondary 1.6s steps(1, end) infinite; }
+
+.animated-logo #g   { animation: showMain2 1.6s steps(1, end) infinite }
+.animated-logo #g-s { animation: showSecondary2 1.6s steps(1, end) infinite }
+
+.animated-logo #e   { animation: showMain3 1.6s steps(1, end) infinite }
+.animated-logo #e-s { animation: showSecondary3 1.6s steps(1, end) infinite }
+
 @layer components {
   body {
     @apply text-black;

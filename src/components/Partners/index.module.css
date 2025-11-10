@@ -68,3 +68,5 @@
 .hideElements > div:nth-child(n + 9) {
     @apply mOnly_hidden;
 }
+
+.image {}

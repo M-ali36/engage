@@ -95,7 +95,7 @@ const OurDifference = ({ title, images, list }) => {
             onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
           >
             {list.map((item, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className={classes.slide}>
                 <Item item={item}/>
               </SwiperSlide>
             ))}

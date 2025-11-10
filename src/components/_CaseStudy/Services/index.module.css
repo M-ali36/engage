@@ -20,6 +20,9 @@
     composes: flex-wrap from global;
     composes: gap-4 from global;
 }
+
+.tag {}
+
 .link {
     composes: rounded-full from global;
     composes: py-2 from global;

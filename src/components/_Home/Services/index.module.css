@@ -102,3 +102,5 @@
     composes: w-6 from global;
     composes: h-6 from global;
 }
+
+.servicesList {}

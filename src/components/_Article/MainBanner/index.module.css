@@ -56,3 +56,9 @@
     composes: mt-8 from global;
     composes: max-w-lg from global;
 }
+
+.image {}
+
+.tag {}
+
+.contentContainer {}

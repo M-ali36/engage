@@ -21,6 +21,7 @@
     composes: rounded-3xl from global;
     composes: overflow-hidden from global;
     composes: aspect-[9/16] from global;
+    composes: mOnly_aspect-[4/6] from global;
 }
 .image {
     composes: image from '@globalCss';

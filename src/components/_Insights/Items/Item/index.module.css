@@ -8,6 +8,7 @@
     composes: group from global;
     composes: mOnly_flex from global;
     composes: mOnly_flex-col from global;
+    composes: relative from global;
 }
 
 .itemTitle {
@@ -47,6 +48,8 @@
 .itemLink {
     composes: col-span-11 from global;
     composes: lg_col-span-7 from global;
+    composes: flex from global;
+    composes: flex-col from global;
 }
 
 .itemImage {
@@ -80,6 +83,7 @@
     composes: col-span-1 from global;
     composes: mOnly_absolute from global;
     composes: mOnly_end-4 from global;
+    composes: mOnly_top-[70px] from global;
 }
 .arrowIcon {
     composes: w-5 from global;

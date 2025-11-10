@@ -30,3 +30,5 @@
 .itemTitle strong {
     @apply text-[60px] lg_text-[100px] block;
 }
+
+.itemContainer {}

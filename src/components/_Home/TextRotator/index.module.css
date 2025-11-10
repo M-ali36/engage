@@ -50,3 +50,5 @@
     composes: font-bold from global;
     composes: primary-anime from global;
 }
+
+.image {}

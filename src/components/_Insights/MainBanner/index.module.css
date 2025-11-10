@@ -41,12 +41,14 @@
 
 .tags {
     composes: text-xl-m from global;
+    composes: mOnly_text-[12px] from global;
     composes: font-bold from global;
     composes: text-orange from global;
     composes: block from global;
     composes: mt-12 from global;
     composes: lg_mt-32 from global;
     composes: lg_text-end from global;
+    composes: mOnly_text-start from global;
     composes: mOnly_-order-[1] from global;
     composes: mOnly_mt-24 from global;
     composes: mOnly_mb-8 from global;
@@ -62,9 +64,12 @@
     composes: text-base from global;
     composes: block from global;
     composes: mt-4 from global;
+    composes: mOnly_text-[12px] from global;
 }
 
 .contentContainer {
     composes: mOnly_flex from global;
     composes: mOnly_flex-col from global;
 }
+
+.image {}

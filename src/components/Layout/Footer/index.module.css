@@ -46,19 +46,6 @@
 	composes: text-[13px] from global;
 }
 
-.footerLogo {
-	composes: block from global;
-	composes: text-[80px] from global;
-	composes: lg_text-[115px] from global;
-	composes: -tracking-[4px] from global;
-	composes: lg_-tracking-[6px] from global;
-	composes: font-bold from global;
-	composes: mb-8 from global;
-	composes: mt-12 from global;
-	composes: lg_mt-32 from global;
-	composes: leading-none from global;
-}
-
 .spiCh {
 	composes: font-bb from global;
 }
@@ -76,4 +63,15 @@
 
 .copyrights {
 	composes: mt-12 from global;
+}
+
+.fastlinks {}
+
+.svg {
+	composes: w-full from global;
+	composes: lg_w-96 from global;
+	composes: block from global;
+	composes: mb-8 from global;
+	composes: mt-12 from global;
+	composes: lg_mt-32 from global;
 }

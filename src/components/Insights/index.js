@@ -46,9 +46,10 @@ const Insights = ({ title, items }) => {
                         spaceBetween={35}
                         className={classes.swiper}
                         slidesPerView={3}
+                        autoHeight={false}
                     >
                         {items.map((item, index) => (
-                            <SwiperSlide key={index}>
+                            <SwiperSlide key={index} className={classes.slide}>
                                 <InsightItem item={item} classes={classes} />
                             </SwiperSlide>
                         ))}
@@ -77,8 +78,8 @@ const InsightItem = ({ item, classes }) => (
                 className={classes.image}
             />
         </div>
+        <h3 className={classes.itemTitle}>{item.title}</h3>
         <div className={classes.content}>
-            <h3 className={classes.itemTitle}>{item.title}</h3>
             <span className={classes.itemExcerpt}>{item.excerpt?.excerpt}</span>
             <div className={classes.meta}>
                 <div className={classes.authorImage}>
@@ -94,7 +95,7 @@ const InsightItem = ({ item, classes }) => (
                     <span className={classes.info}>{item.date} • 5min read </span>
                 </div>
                 <Link className={classes.link} to={`/insights/${item.slug}`}>
-                    Send Me more
+                    Read more
                 </Link>
             </div>
         </div>

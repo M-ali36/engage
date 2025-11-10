@@ -17,11 +17,12 @@
 .dTitle {
     composes: uppercase from global;
     composes: text-base from global;
+    composes: mOnly_text-[16px] from global;
     composes: text-orange from global;
     composes: font-bold from global;
-    composes: mb-8 from global;
-    composes: hidden from global;
-    composes: lg_block from global;
+    composes: mb-4 from global;
+    composes: lg_mb-8 from global;
+    composes: block from global;
 }
 
 .mTitle {

@@ -96,3 +96,5 @@
     composes: mOnly_rounded-full from global;
     composes: mOnly_text-black from global;
 }
+
+.image {}

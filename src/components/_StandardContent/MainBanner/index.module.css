@@ -54,3 +54,7 @@
     composes: mt-8 from global;
     composes: max-w-lg from global;
 }
+
+.contentContainer {}
+
+.image {}

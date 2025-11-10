@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { useStaticQuery, graphql } from 'gatsby'
 import * as classes from './index.module.css'
+import Logo from '@Svg/engage-logo.svg'
 import SubscribeForm from './Subscribe'
 
 const Footer = () => {
@@ -66,7 +67,7 @@ const Footer = () => {
 						</ul>
 					</div>
 					<div className={classes.logoCol}>
-						<span className={classes.footerLogo}>Eng<span className={classes.spiCh}>a</span>ge</span>
+						<Logo className={`${classes.svg} animated-logo`}/>
 						<a href="https://bravebison.com/" target='_blank' className={classes.footerSubTitle}>Part of <strong className={classes.bb}>Br<span className={classes.spiCh}>a</span>veBison</strong></a>
 					</div>
 				</div>

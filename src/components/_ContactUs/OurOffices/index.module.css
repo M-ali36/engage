@@ -40,3 +40,5 @@
 .content {
     composes: text-base-m from global;
 }
+
+.image {}

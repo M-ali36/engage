@@ -58,3 +58,9 @@
     composes: max-w-lg from global;
     composes: mOnly_text-xs from global;
 }
+
+.tags {}
+
+.image {}
+
+.contentContainer {}

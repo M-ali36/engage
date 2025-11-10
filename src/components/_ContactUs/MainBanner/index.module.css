@@ -66,3 +66,5 @@
     composes: text-xl-m from global;
     composes: mOnly_text-[16px] from global;
 }
+
+.image {}
