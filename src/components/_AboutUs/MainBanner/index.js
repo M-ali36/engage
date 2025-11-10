@@ -1,15 +1,17 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import { useStore, setCurrentPage } from '@UseCase/store';
 import SectionObserver from '@components/SectionObserver';
 import RichText from '@components/RichText';
 import VGallery from '@components/VGallery';
 import Logo from '@Svg/engage-logo.svg'
 import PropTypes from 'prop-types';
+import AnimatedText from '@Ui/AnimatedText'
 import * as classes from './index.module.css'
 
 const MainBanner = ({title, subTitle,images}) => {
 
     const [store, dispatch] = useStore();
+    const mainRef = useRef();
 
     useEffect(() => {
         setCurrentPage(dispatch, 'about-us');
@@ -23,8 +25,8 @@ const MainBanner = ({title, subTitle,images}) => {
                     <div className={classes.contentCol}>
                         <div className={classes.contentContainer}>
                             <h1 className={classes.title}>
-                                {`We are `}
-                                <Logo className={`${classes.svg} animated-logo`}/>
+                                <AnimatedText text={`We are `} splitType="words" direction="right" ref={mainRef}/>
+                                <AnimatedText text={<Logo className={`${classes.svg} animated-logo`}/>} splitType="combo" direction="right" ref={mainRef} delay={0.2}/>
                             </h1>
                             <span className={classes.subContainer}>
                                 <RichText className={classes.subTitle} content={subTitle} useAnimate splitType="lines" direction="bottom" delay={0.5}/>
