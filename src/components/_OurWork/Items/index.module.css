@@ -134,6 +134,7 @@
 .perPage {
     composes: text-end from global;
     composes: mOnly_hidden from global;
+    composes: lg_col-start-6 from global;
 }
 
 .numBtn {

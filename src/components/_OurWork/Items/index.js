@@ -190,12 +190,12 @@ const Items = ({ items, tags }) => {
         </div>
 
         {/* Pagination Controls */}
-        {totalPages > 1 && (
           <div className={classes.pagination}>
             <div className={classes.totals}>
               Page {currentPage} of {totalPages}
             </div>
 
+            {totalPages > 1 && (
             <div className={classes.pagesBtns}>
               <button
                 disabled={currentPage === 1}
@@ -230,7 +230,7 @@ const Items = ({ items, tags }) => {
                 <Arrow className={`${classes.arrowIconM} ${classes.iconNextM}`}/>
               </button>
             </div>
-
+            )}
             <div className={classes.perPage}>
               <span className={classes.selectContainer}>
                 <select
@@ -248,7 +248,7 @@ const Items = ({ items, tags }) => {
               </span>
             </div>
           </div>
-        )}
+        
       </div>
     </SectionObserver>
   );
