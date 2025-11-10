@@ -28,7 +28,6 @@ const Testimonials = ({items, image}) => {
                 </div>
             }
             <div className={classes.cont}>
-                <Quote className={classes.quoteIcon}/>
                 <Swiper
                     spaceBetween={30}
                     effect={'fade'}
@@ -41,6 +40,7 @@ const Testimonials = ({items, image}) => {
                                 <RichText className={classes.content} content={item.content}/>
                                 {item.image &&
                                     <div className={classes.itemImage}>
+                                        <span className={classes.title}>{item.title}</span>
                                         <GatsbyImage 
                                             image={item.image.gatsbyImageData}
                                             alt={item.image.description}

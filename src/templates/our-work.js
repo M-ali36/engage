@@ -64,6 +64,7 @@ export const pageQuery = graphql`
                 raw
             }
             testimonials {
+                title
                 image {
                     ...Image
                 }

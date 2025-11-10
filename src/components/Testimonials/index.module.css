@@ -24,7 +24,7 @@
 }
 
 .swiper {
-    composes: max-w-2xl from global;
+    composes: max-w-3xl from global;
     margin-inline-start: 0px !important;
 }
 
@@ -45,10 +45,17 @@
 }
 
 .itemImage {
-    composes: block from global;
+    composes: flex from global;
+    composes: mOnly_flex-wrap from global;
+    composes: mOnly_gap-4 from global;
     composes: mt-8 from global;
 }
 
+.title {
+    composes: text-[16px] from global;
+    composes: lg_text-[22px] from global;
+    composes: max-w-sm from global;
+}
 .itemContainer {}
 
 .image {}
