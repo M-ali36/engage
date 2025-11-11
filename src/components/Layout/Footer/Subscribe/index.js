@@ -20,7 +20,7 @@ const SubscribeForm = ({ text }) => {
 
   const { data, isLoading, isError, handleSubmit } = useForm({
     portalId: '25832621',
-    formId: 'b03eebce-50fa-451c-a365-8e0005326a77',
+    formId: 'be77cea0-67aa-4ef3-8894-5cac42a1fb17',
   })
 
   useEffect(() => {

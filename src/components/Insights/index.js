@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import * as classes from './index.module.css'
 import SectionObserver from '@components/SectionObserver';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 import AnimatedImage from '@Ui/AnimatedImage';
 import RichText from '@components/RichText';
 import ArrowIcon from '@Svg/link-arrow.svg'
@@ -27,6 +28,21 @@ const useIsDesktop = () => {
 const Insights = ({ title, items }) => {
     const isDesktop = useIsDesktop();
 
+    const swiperRef = useRef(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const handlePrev = () => {
+        if (swiperRef.current && currentIndex > 0) {
+            swiperRef.current.slidePrev();
+        }
+    };
+
+    const handleNext = () => {
+        if (swiperRef.current && currentIndex < items.length - 1) {
+            swiperRef.current.slideNext();
+        }
+    };
+
     return (
         <SectionObserver className={classes.root}>
             <div className={classes.cont}>
@@ -47,6 +63,9 @@ const Insights = ({ title, items }) => {
                         className={classes.swiper}
                         slidesPerView={3}
                         autoHeight={false}
+                        modules={[Pagination]}
+                        onSwiper={(swiper) => (swiperRef.current = swiper)}
+                        onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
                     >
                         {items.map((item, index) => (
                             <SwiperSlide key={index} className={classes.slide}>
@@ -63,6 +82,24 @@ const Insights = ({ title, items }) => {
                         ))}
                     </div>
                 )}
+            </div>
+            <div className={classes.bottomSec}>
+                <div className={classes.sliderBtns}>
+                    <button
+                    className={classes.btn}
+                    onClick={handlePrev}
+                    disabled={currentIndex === 0}
+                    >
+                    Previous
+                    </button>
+                    <button
+                    className={classes.btn}
+                    onClick={handleNext}
+                    disabled={currentIndex === items.length - 1}
+                    >
+                    Next
+                    </button>
+                </div>
             </div>
         </SectionObserver>
     );

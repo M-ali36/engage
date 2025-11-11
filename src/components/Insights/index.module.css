@@ -135,3 +135,34 @@
 .content {
     composes: mt-auto from global;
 }
+
+.btn {
+    composes: py-2 from global;
+    composes: lg_py-3 from global;
+    composes: px-4 from global;
+    composes: bg-yellow from global;
+    composes: border from global;
+    composes: border-yellow from global;
+    composes: text-black from global;
+    composes: font-bold from global;
+    composes: rounded-full from global;
+    composes: text-sm from global;
+    composes: primary-anime from global;
+    composes: disabled_border-black from global;
+    composes: disabled_bg-white from global;
+}
+
+.sliderBtns {
+    composes: inline-flex from global;
+    composes: lg_ms-auto from global;
+    composes: mOnly_hidden from global;
+    composes: gap-4 from global;
+    composes: mOnly_w-full from global;
+}
+
+.bottomSec {
+    composes: cont from '@globalCss';
+    composes: block from global;
+    composes: mt-12 from global;
+    composes: text-end from global;
+}
