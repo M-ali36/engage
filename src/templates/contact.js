@@ -68,6 +68,9 @@ export const pageQuery = graphql`
                 image {
                     ...Image
                 }
+                links {
+                    ...Link
+                }
             }
             ourOffices {
                 title

@@ -9,7 +9,7 @@ import { Link } from 'gatsby';
 
 const Card = ({data, partnerTitle}) => {
 
-    const {title, rule, image} = data;
+    const {title, rule, image, links} = data;
     
     return (
         <>
@@ -25,16 +25,23 @@ const Card = ({data, partnerTitle}) => {
                                 className={classes.image}
                             />
                         </div>
-                        <div className={classes.content}>
-                            <span className={classes.memberTitle}>{title}</span>
-                            <span className={classes.memberRule}>{rule}</span>
-                        </div>
+                        {links.length > 0 ?
+                            <a className={classes.content} href={links[0].url} target="_blank">
+                                <span className={classes.memberTitle}>{title}</span>
+                                <span className={classes.memberRule}>{rule}</span>
+                            </a>
+                            :
+                            <div className={classes.content}>
+                                <span className={classes.memberTitle}>{title}</span>
+                                <span className={classes.memberRule}>{rule}</span>
+                            </div>
+                        }
                     </div>
                     <div className={classes.colContent}>
                         <RichText content={partnerTitle} className={classes.title} useHeadings="Heading 2"/>
                     </div>
                     <div className={classes.colLink}>
-                        <Link className={classes.link} to="#">Contact Us <ArrowIcon className={classes.icon}/></Link>
+                        <Link className={classes.link} to="#contact-form">Contact Us <ArrowIcon className={classes.icon}/></Link>
                     </div>
                 </div>
             </div>
